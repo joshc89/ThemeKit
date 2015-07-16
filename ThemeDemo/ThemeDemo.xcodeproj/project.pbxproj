@@ -14,6 +14,8 @@
 		A59A6C981B4AB99800F708DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A59A6C961B4AB99800F708DC /* LaunchScreen.storyboard */; };
 		A59A6CA31B4AB99800F708DC /* ThemeDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59A6CA21B4AB99800F708DC /* ThemeDemoTests.swift */; };
 		A59A6CAE1B4AB99800F708DC /* ThemeDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59A6CAD1B4AB99800F708DC /* ThemeDemoUITests.swift */; };
+		A59A6CF61B4ABC9B00F708DC /* ThemeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59A6CE51B4ABC4B00F708DC /* ThemeKit.framework */; };
+		A59A6CF71B4ABC9B00F708DC /* ThemeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A59A6CE51B4ABC4B00F708DC /* ThemeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +33,49 @@
 			remoteGlobalIDString = A59A6C891B4AB99800F708DC;
 			remoteInfo = ThemeDemo;
 		};
+		A59A6CE41B4ABC4B00F708DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A59A6CDF1B4ABC4B00F708DC /* ThemeKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A59A6CC51B4AB9B100F708DC;
+			remoteInfo = ThemeKit;
+		};
+		A59A6CE61B4ABC4B00F708DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A59A6CDF1B4ABC4B00F708DC /* ThemeKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A59A6CCF1B4AB9B100F708DC;
+			remoteInfo = ThemeKitTests;
+		};
+		A59A6CF41B4ABC8B00F708DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A59A6CDF1B4ABC4B00F708DC /* ThemeKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A59A6CC41B4AB9B100F708DC;
+			remoteInfo = ThemeKit;
+		};
+		A59A6CF81B4ABC9B00F708DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A59A6CDF1B4ABC4B00F708DC /* ThemeKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A59A6CC41B4AB9B100F708DC;
+			remoteInfo = ThemeKit;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A59A6CFA1B4ABC9B00F708DC /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A59A6CF71B4ABC9B00F708DC /* ThemeKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		A59A6C8A1B4AB99800F708DC /* ThemeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThemeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +91,7 @@
 		A59A6CA91B4AB99800F708DC /* ThemeDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThemeDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A59A6CAD1B4AB99800F708DC /* ThemeDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeDemoUITests.swift; sourceTree = "<group>"; };
 		A59A6CAF1B4AB99800F708DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A59A6CDF1B4ABC4B00F708DC /* ThemeKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ThemeKit.xcodeproj; path = ../ThemeKit/ThemeKit.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A59A6CF61B4ABC9B00F708DC /* ThemeKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +127,7 @@
 				A59A6CA11B4AB99800F708DC /* ThemeDemoTests */,
 				A59A6CAC1B4AB99800F708DC /* ThemeDemoUITests */,
 				A59A6C8B1B4AB99800F708DC /* Products */,
+				A59A6CDF1B4ABC4B00F708DC /* ThemeKit.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +172,15 @@
 			path = ThemeDemoUITests;
 			sourceTree = "<group>";
 		};
+		A59A6CE01B4ABC4B00F708DC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A59A6CE51B4ABC4B00F708DC /* ThemeKit.framework */,
+				A59A6CE71B4ABC4B00F708DC /* ThemeKitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,10 +191,13 @@
 				A59A6C861B4AB99800F708DC /* Sources */,
 				A59A6C871B4AB99800F708DC /* Frameworks */,
 				A59A6C881B4AB99800F708DC /* Resources */,
+				A59A6CFA1B4ABC9B00F708DC /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A59A6CF51B4ABC8B00F708DC /* PBXTargetDependency */,
+				A59A6CF91B4ABC9B00F708DC /* PBXTargetDependency */,
 			);
 			name = ThemeDemo;
 			productName = ThemeDemo;
@@ -214,6 +273,12 @@
 			mainGroup = A59A6C811B4AB99800F708DC;
 			productRefGroup = A59A6C8B1B4AB99800F708DC /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = A59A6CE01B4ABC4B00F708DC /* Products */;
+					ProjectRef = A59A6CDF1B4ABC4B00F708DC /* ThemeKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				A59A6C891B4AB99800F708DC /* ThemeDemo */,
@@ -222,6 +287,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		A59A6CE51B4ABC4B00F708DC /* ThemeKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ThemeKit.framework;
+			remoteRef = A59A6CE41B4ABC4B00F708DC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A59A6CE71B4ABC4B00F708DC /* ThemeKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ThemeKitTests.xctest;
+			remoteRef = A59A6CE61B4ABC4B00F708DC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		A59A6C881B4AB99800F708DC /* Resources */ = {
@@ -288,6 +370,16 @@
 			isa = PBXTargetDependency;
 			target = A59A6C891B4AB99800F708DC /* ThemeDemo */;
 			targetProxy = A59A6CAA1B4AB99800F708DC /* PBXContainerItemProxy */;
+		};
+		A59A6CF51B4ABC8B00F708DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ThemeKit;
+			targetProxy = A59A6CF41B4ABC8B00F708DC /* PBXContainerItemProxy */;
+		};
+		A59A6CF91B4ABC9B00F708DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ThemeKit;
+			targetProxy = A59A6CF81B4ABC9B00F708DC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -399,6 +491,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ThemeDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.josh-campion.ThemeDemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -410,6 +503,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ThemeDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.josh-campion.ThemeDemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -483,6 +577,7 @@
 				A59A6CB41B4AB99800F708DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A59A6CB51B4AB99800F708DC /* Build configuration list for PBXNativeTarget "ThemeDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -491,6 +586,7 @@
 				A59A6CB71B4AB99800F708DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A59A6CB81B4AB99800F708DC /* Build configuration list for PBXNativeTarget "ThemeDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +595,7 @@
 				A59A6CBA1B4AB99800F708DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

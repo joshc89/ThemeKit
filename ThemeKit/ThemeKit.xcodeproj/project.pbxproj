@@ -10,6 +10,7 @@
 		A59A6CC91B4AB9B100F708DC /* ThemeKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A59A6CC81B4AB9B100F708DC /* ThemeKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A59A6CD01B4AB9B100F708DC /* ThemeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59A6CC51B4AB9B100F708DC /* ThemeKit.framework */; };
 		A59A6CD51B4AB9B100F708DC /* ThemeKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59A6CD41B4AB9B100F708DC /* ThemeKitTests.swift */; };
+		A59A6CFE1B4ABD4900F708DC /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59A6CFD1B4ABD4900F708DC /* Theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		A59A6CCF1B4AB9B100F708DC /* ThemeKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThemeKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A59A6CD41B4AB9B100F708DC /* ThemeKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeKitTests.swift; sourceTree = "<group>"; };
 		A59A6CD61B4AB9B100F708DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A59A6CFD1B4ABD4900F708DC /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				A59A6CC81B4AB9B100F708DC /* ThemeKit.h */,
+				A59A6CFD1B4ABD4900F708DC /* Theme.swift */,
 				A59A6CCA1B4AB9B100F708DC /* Info.plist */,
 			);
 			path = ThemeKit;
@@ -142,6 +145,7 @@
 		A59A6CBC1B4AB9B100F708DC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Josh Campion";
 				TargetAttributes = {
@@ -193,6 +197,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A59A6CFE1B4ABD4900F708DC /* Theme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +312,7 @@
 		A59A6CDA1B4AB9B100F708DC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -317,12 +323,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.josh-campion.ThemeKit";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		A59A6CDB1B4AB9B100F708DC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -375,6 +383,7 @@
 				A59A6CDB1B4AB9B100F708DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A59A6CDC1B4AB9B100F708DC /* Build configuration list for PBXNativeTarget "ThemeKitTests" */ = {
 			isa = XCConfigurationList;
@@ -383,6 +392,7 @@
 				A59A6CDE1B4AB9B100F708DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
