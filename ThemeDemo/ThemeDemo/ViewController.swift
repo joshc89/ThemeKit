@@ -32,9 +32,6 @@ class ViewController: UIViewController {
             let footnoteFont = UIFont.preferredFontForTextStyle(UIFontTextStyleFootnote)
             let bodyFont = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
             
-            
-            
-            
             if let label = sv as? UILabel {
                 print("label: \(label.font)")
             }

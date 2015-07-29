@@ -24,6 +24,13 @@ let AppleFontSizes = [UIFontTextStyleBody: 17,
     UIFontTextStyleCaption2: 11,
     UIFontTextStyleFootnote: 13]
 
+enum ColourStyle:String {
+    
+    case AccentLight, Accent, AccentDark
+    case Main, MainLight, MainDark
+    case Text, SecondaryText
+}
+
 enum TextStyle:String {
     
     case Display4, Display3, Display2, Display1
@@ -46,6 +53,13 @@ let MaterialTextSizes:[TextStyle:CGFloat] = [
     .Body1: 14.0,
     .Caption: 12.0,
     .Button: 14.0
+]
+
+let MaterialColours:[ColourStyle:UIColor] = [
+    .Accent: UIColor.redColor(),
+    .Main: UIColor.greenColor(),
+    .Text: UIColor.blackColor().colorWithAlphaComponent(0.87),
+    .SecondaryText: UIColor.blackColor().colorWithAlphaComponent(0.54)
 ]
 
 struct MaterialTheme {
@@ -82,6 +96,9 @@ struct MaterialTheme {
         return UIFont(name: fontName(textStyle), size: fontSize(textStyle))!
     }
     
+    func colour(colourStyle:ColourStyle) -> UIColor? {
+        return MaterialColours[colourStyle]
+    }
 }
 
 let AppleFontAdjustments:[String:CGFloat] = [
@@ -109,6 +126,7 @@ struct TKTheme {
     
 }
 
+/*
 protocol Themeable {
     
 //    var theme:TKTheme { get set }
@@ -129,16 +147,14 @@ protocol ThemeableControl {
     
 }
 
-
 private var TKColourTypeKey = "TKColourType"
 private var TKFontTypeKey = "TKFontType"
 
 extension Themeable where Self: UIView {
     
-    
-    
-    
+
 }
+*/
 
 /*
 extension UIView: Themeable {
@@ -224,20 +240,98 @@ public class TestLabel: UILabel {
     
 }
 
+protocol Themeable {
+    func applyTheme()
+}
 
+extension Themeable {
+    func applyTheme() {
+        
+        if let textSelf = self as? ThemeableText {
+            textSelf.applyTextTheme()
+        }
+    }
+}
+
+extension UIView : Themeable {
+    
+    public override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        applyTheme()
+    }
+    
+    public override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        
+        applyTheme()
+    }
+}
 
 @IBDesignable
-public class TestButton: UIButton {
+public class TKSwitch:UISwitch {
     
-    var colours = ["red": UIColor.redColor(), "green": UIColor.greenColor(), "purple": UIColor.purpleColor()]
-    var fonts = ["bold":UIFont.boldSystemFontOfSize(16.0), "italic":UIFont.italicSystemFontOfSize(16.0)]
+    // MARK: - Properties
     
-//    var baseFontSizes = [UIContentSizeCategoryExtraSmall: ]
-//    var testStyleSizeAdjustment = []
+    // MARK: IB Properties
+    @IBInspectable var onTintColourId:String? {
+        set {
+            if let idString = newValue,
+                let style = ColourStyle(rawValue: idString) {
+                onTintColourStyle = style
+            }
+        }
+        get {
+            return onTintColourStyle?.rawValue
+        }
+    }
     
-    @IBInspectable var tintColourID:String?
-    @IBInspectable var fontID:String?
-    @IBInspectable var fontSizeID:String?
+    @IBInspectable var thumbTintColourId:String? {
+        set {
+            if let idString = newValue,
+                let style = ColourStyle(rawValue: idString) {
+                    thumbTintColourStyle = style
+            }
+        }
+        get {
+            return thumbTintColourStyle?.rawValue
+        }
+    }
+    
+    // MARK: Theme Enums
+    var onTintColourStyle:ColourStyle?
+    var thumbTintColourStyle:ColourStyle?
+    
+    func applyTheme() {
+        if let style = onTintColourStyle
+            where style == .Accent {
+                onTintColor = UIColor.redColor()
+        }
+        
+        if let style = thumbTintColourStyle
+            where style == .Accent {
+                thumbTintColor = UIColor.blackColor()
+        }
+        
+    }
+    
+    public override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        
+        applyTheme()
+    }
+    
+    public override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        applyTheme()
+    }
+}
+
+@IBDesignable
+public class TKButton: UIButton {
+    
+    @IBInspectable var tintColourId:String?
     @IBInspectable var textStyleId:String?
     
     public override func prepareForInterfaceBuilder() {
@@ -249,28 +343,25 @@ public class TestButton: UIButton {
     func applyTheme() {
         fontDump()
         
-        if let colourID = tintColourID,
-            let colour = colours[colourID] {
+        let theme = MaterialTheme()
+        
+        if let colourID = tintColourId,
+            let style = ColourStyle(rawValue: colourID),
+            let colour = theme.colour(style) {
                 self.tintColor = colour
         }
         
-//        if let fontID = self.fontID,
-//            let font = fonts[fontID] {
-//                titleLabel?.font = font
-//        }
-        
         if let textStyleId = self.textStyleId,
             let textStyle = TextStyle(rawValue: textStyleId) {
-            
-                let theme = MaterialTheme()
                 titleLabel?.font = theme.font(textStyle)
         }
     }
     
     public override func willMoveToSuperview(newSuperview: UIView?) {
         super.willMoveToSuperview(newSuperview)
-        
-        applyTheme()
+     
+        // TODO: Re-implement when using
+//        applyTheme()
     }
     
     public override func awakeFromNib() {
