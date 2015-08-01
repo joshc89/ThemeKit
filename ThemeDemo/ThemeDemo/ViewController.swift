@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ThemeKit
 
 class ViewController: UIViewController {
 
@@ -16,13 +17,14 @@ class ViewController: UIViewController {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateLabelSize", name: UIContentSizeCategoryDidChangeNotification, object: nil)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     func updateLabelSize() {
+        /*
         for sv in self.view.subviews {
             
             let headlineFont = UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
@@ -39,6 +41,7 @@ class ViewController: UIViewController {
             sv.setNeedsLayout()
         }
         view.setNeedsLayout()
+*/
     }
 
     override func viewDidAppear(animated: Bool) {

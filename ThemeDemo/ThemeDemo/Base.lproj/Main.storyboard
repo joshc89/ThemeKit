@@ -80,7 +80,7 @@
         <!--View Controller-->
         <scene sceneID="4zv-7B-gbK">
             <objects>
-                <viewController id="PyO-UL-U9O" sceneMemberID="viewController">
+                <viewController id="PyO-UL-U9O" customClass="ViewController" customModule="ThemeDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5Xz-8j-e5S"/>
                         <viewControllerLayoutGuide type="bottom" id="6DA-L1-O80"/>
@@ -119,26 +119,32 @@
                                 <rect key="frame" x="0.0" y="116" width="600" height="75"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Body 2 Text Field" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="liv-ZG-Ssg" customClass="TKTextField" customModule="ThemeKit">
-                                <rect key="frame" x="20" y="272" width="560" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Headline Text Field" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="liv-ZG-Ssg" customClass="TKTextField" customModule="ThemeKit">
+                                <rect key="frame" x="20" y="272" width="560" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="textStyleId" value="Headline"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="textColourStyleId" value="Text"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="textStyleId" value="Display1"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="textInsetsString" value="{2,40,2,20}"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="3OA-Op-vsc">
                                 <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Some Placeholoder" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xLQ-wb-DI9">
-                                <rect key="frame" x="20" y="310" width="560" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="fill" borderStyle="roundedRect" placeholder="Some Placeholoder" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xLQ-wb-DI9" customClass="TKTextField" customModule="ThemeKit">
+                                <rect key="frame" x="20" y="324" width="560" height="56"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="textInsetsString" value="{2,40,2,20}"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="textStyleId" value="Title"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholderTextStyleId" value="Display2"/>
+                                </userDefinedRuntimeAttributes>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FS3-eK-rRk" customClass="TKTextView" customModule="ThemeKit">
-                                <rect key="frame" x="20" y="348" width="560" height="151"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FS3-eK-rRk" customClass="TKTextView" customModule="ThemeKit">
+                                <rect key="frame" x="20" y="375" width="560" height="124"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
