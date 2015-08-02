@@ -18,7 +18,7 @@ protocol Textable {
     
 }
 
-protocol ThemeableText {
+protocol ThemeableText: Themeable {
     
     var textStyle:TextStyle? { get set }
     var textStyleId:String? { get set }
@@ -26,24 +26,23 @@ protocol ThemeableText {
     var textColourStyle:ColourStyle? { get set }
     var textColourStyleId:String? { get set }
     
-    func applyTextTheme()
+    func applyTextTheme<T:Theme>(theme:T)
 }
 
 // require self to be AnyObject as requiring mutating currently causes a compilation crash
 extension ThemeableText where Self:Textable, Self:AnyObject {
     
-    func applyDefaultTextTheme() {
-        let theme = MaterialTheme()
-        if let textStyle = self.textStyle {
+    func applyDefaultTextTheme<T:Theme>(theme:T) {
+        if let textStyle = self.textStyle as? T.TextStyleType {
             font = theme.font(textStyle)
         }
         
-        if let colourStyle = self.textColourStyle {
+        if let colourStyle = self.textColourStyle as? T.ColourStyleType {
             textColor = theme.colour(colourStyle)
         }
     }
     
-    func applyTextTheme() {
+    func applyTextTheme<T:Theme>(theme:T)
         applyDefaultTextTheme()
     }
 }
@@ -105,16 +104,25 @@ extension UISearchBar {
     }
 }
 
-@IBDesignable
-public class TKLabel: UILabel, ThemeableText {
+//public class
+
+struct ThemedTextItem<T:Theme> {
     
-    var textStyle:TextStyle?
-    var textColourStyle:ColourStyle?
+    var textStyle:T.TextStyleType?
+    var textColourStyle:T.ColourStyleType?
+    
+}
+
+@IBDesignable
+class TKLabel<ThemeType:Theme where ThemeType.TextStyleType.RawValue == String, ThemeType.ColourStyleType.RawValue == String>: UILabel {
+    
+    var textStyle:ThemeType.TextStyleType?
+    var textColourStyle:ThemeType.ColourStyleType?
     
     @IBInspectable var textStyleId:String? {
         set {
             if let idString = newValue,
-                let style = TextStyle(rawValue:idString) {
+                let style = ThemeType.TextStyleType(rawValue:idString) {
                     textStyle = style
             }
         }
@@ -126,7 +134,7 @@ public class TKLabel: UILabel, ThemeableText {
     @IBInspectable var textColourStyleId:String? {
         set {
             if let idString = newValue,
-                let style = ColourStyle(rawValue:idString) {
+                let style = ThemeType.ColourStyleType(rawValue:idString) {
                     textColourStyle = style
             }
         }
@@ -148,6 +156,7 @@ public class TKTextField: UITextField, ThemeableText {
         
         super.layoutSubviews()
         
+        // TODO: This should be .Fill if there is no text and the placholderTextStyle != nil but .Center otherwise. There is still a bug when editting but no text is typed, so the placeholder is still visible
         if let text = self.text where !text.isEmpty {
             contentVerticalAlignment = .Center
         } else {
@@ -370,15 +379,12 @@ public class TKTextField: UITextField, ThemeableText {
                 attributes[NSFontAttributeName] = theme.font(placeholderStyle)
             }
             
-            if let placeholderColourStyle = self.placeholderTextColourStyle,
-                let placeholderColour = theme.colour(placeholderColourStyle) {
-                    attributes[NSForegroundColorAttributeName] = placeholderColour
+            if let placeholderColourStyle = self.placeholderTextColourStyle {
+                    attributes[NSForegroundColorAttributeName] = theme.colour(placeholderColourStyle)
             }
             
             // Set new text with extracted attributes
             self.attributedPlaceholder = NSAttributedString(string: attributedPlaceholder.string, attributes: attributes)
-            // TODO: This should be .Fill if there is no text and the placholderTextStyle != nil but .Center otherwise
-//            self.contentVerticalAlignment = .Fill
         }
     }
 }

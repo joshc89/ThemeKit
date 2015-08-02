@@ -24,12 +24,13 @@ let AppleFontSizes = [UIFontTextStyleBody: 17,
     UIFontTextStyleCaption2: 11,
     UIFontTextStyleFootnote: 13]
 
+
 enum ColourStyle:String {
-    
     case AccentLight, Accent, AccentDark
-    case Main, MainLight, MainDark
-    case Text, SecondaryText
+    case MainLight, Main, MainDark
+    case Text, SecondaryText, LightText, SecondaryLightText
 }
+
 
 enum TextStyle:String {
     
@@ -55,14 +56,99 @@ let MaterialTextSizes:[TextStyle:CGFloat] = [
     .Button: 14.0
 ]
 
+typealias RawRepresentableKey = protocol<RawRepresentable, Hashable>
+
 let MaterialColours:[ColourStyle:UIColor] = [
     .Accent: UIColor.redColor(),
     .Main: UIColor.greenColor(),
     .Text: UIColor.blackColor().colorWithAlphaComponent(0.87),
-    .SecondaryText: UIColor.blackColor().colorWithAlphaComponent(0.54)
+    .SecondaryText: UIColor.blackColor().colorWithAlphaComponent(0.54),
+    .LightText: UIColor.whiteColor().colorWithAlphaComponent(0.87),
+    .SecondaryLightText: UIColor.whiteColor().colorWithAlphaComponent(0.54)
 ]
 
-struct MaterialTheme {
+protocol Theme {
+    
+    typealias TextStyleType:RawRepresentableKey
+    typealias ColourStyleType:RawRepresentableKey
+    
+    var defaultTextSizes:[TextStyleType:CGFloat] { get }
+    var textSizeAdjustments:[UIContentSizeCategory:CGFloat] { get }
+    
+    var themeColours:[ColourStyleType:UIColor] { get }
+    
+    /**
+
+    Returns the font name for a given text style, which is used in UIFont(name:size:).
+    
+    To ensure good consistent design, only a few font faces should be specified for a theme, and text styles should be variants of those font faces. Due to the number of text styles vs the number of font names, this can be more succinctly expressed as a switch than a dictionary.
+
+    - seealso: MaterialTheme
+    */
+    func fontName(textStyle:TextStyleType) -> String
+    
+    
+    func font(textStyle:TextStyleType) -> UIFont
+}
+
+extension Theme {
+    
+    func fontSize(textStyle:TextStyleType) -> CGFloat {
+        
+        var fontSize:CGFloat
+        if let size = defaultTextSizes[textStyle] {
+            fontSize = size
+        } else {
+            TKLogError(self, function: __FUNCTION__, message: "No text size specified for text style \(textStyle.rawValue). Using defualt 17.0.")
+            fontSize = 17.0
+        }
+        
+        if let contentSize = UIContentSizeCategory(contentSize: UIApplication.sharedApplication().preferredContentSizeCategory),
+            let adjustment = textSizeAdjustments[contentSize] {
+                fontSize += adjustment
+        }
+        
+        return fontSize
+    }
+    
+    
+    func font(textStyle:TextStyleType) -> UIFont {
+        
+        let size = fontSize(textStyle)
+        guard let font = UIFont(name: fontName(textStyle), size: size) else {
+            TKLogError(self, function: __FUNCTION__, message: "No font specified for text style \(textStyle.rawValue). Using system font.")
+            return UIFont.systemFontOfSize(size)
+        }
+        
+        return font
+    }
+    
+    func colour(colourStyle:ColourStyleType) -> UIColor {
+
+        guard let colour = themeColours[colourStyle] else {
+            TKLogError(self, function: __FUNCTION__, message: "No colour specified for colour style \(colourStyle.rawValue). Using default Black.")
+            return UIColor.blackColor()
+        }
+        
+        return colour
+    }
+}
+
+/// Method to consistently print errors to the console.
+internal func TKLogError(from:Any, function:String, message:String) {
+    
+    print("[\(from), \(function)]: \(message)")
+}
+
+struct MaterialTheme: Theme {
+    
+    typealias TextStyleType = TextStyle // default
+    typealias ColourStyleType = ColourStyle // default
+    
+    let defaultTextSizes = MaterialTextSizes // default
+    let textSizeAdjustments = AppleFontAdjustments // default
+    
+    let themeColours = MaterialColours
     
     func fontName(textStye:TextStyle) -> String {
         
@@ -75,142 +161,51 @@ struct MaterialTheme {
             return "HelveticaNeue-Medium"
         }
     }
+}
+
+/// Enum to define content sizes for accessibility allowing for exhaustive switch statements. Accessibility Sizes are mapped to UIContentSizeCategoryExtraExtraLarge.
+enum UIContentSizeCategory:String {
     
-    func fontSize(textStyle:TextStyle) -> CGFloat {
-        
-        var fontSize:CGFloat
-        if let size = MaterialTextSizes[textStyle] {
-            fontSize = size
-        } else {
-            fontSize = 17.0
+    case ExtraSmall, Small, Medium, Large, ExtraLarge, ExtraExtraLarge, ExtraExtraExtraLarge
+    
+    /// Convenience initialiser to create the enum from a UIContentSizeCategory String from UIKit. Fails if the sting is not one of those.
+    init?(contentSize:String) {
+        switch contentSize {
+        case UIContentSizeCategoryExtraSmall:
+            self = .ExtraSmall
+        case UIContentSizeCategorySmall:
+            self = .Small
+        case UIContentSizeCategoryMedium:
+            self = .Medium
+        case UIContentSizeCategoryLarge:
+            self = .Large
+        case UIContentSizeCategoryExtraLarge:
+            self = .ExtraLarge
+        case UIContentSizeCategoryExtraExtraLarge:
+            self = .ExtraExtraLarge
+        case UIContentSizeCategoryExtraExtraExtraLarge,
+        UIContentSizeCategoryAccessibilityMedium,
+        UIContentSizeCategoryAccessibilityLarge,
+        UIContentSizeCategoryAccessibilityExtraLarge,
+        UIContentSizeCategoryAccessibilityExtraExtraLarge,
+        UIContentSizeCategoryAccessibilityExtraExtraExtraLarge:
+            self = .ExtraExtraExtraLarge
+        default:
+            return nil
         }
-        
-        if let adjustment = AppleFontAdjustments[UIApplication.sharedApplication().preferredContentSizeCategory] {
-            fontSize += adjustment
-        }
-        
-        return fontSize
-    }
-    
-    func font(textStyle:TextStyle) -> UIFont {
-        return UIFont(name: fontName(textStyle), size: fontSize(textStyle))!
-    }
-    
-    func colour(colourStyle:ColourStyle) -> UIColor? {
-        return MaterialColours[colourStyle]
     }
 }
 
-let AppleFontAdjustments:[String:CGFloat] = [
-    UIContentSizeCategoryExtraSmall: -3,
-    UIContentSizeCategorySmall: -2,
-    UIContentSizeCategoryMedium: -1,
-    UIContentSizeCategoryLarge: 0,
-    UIContentSizeCategoryExtraLarge: 1,
-    UIContentSizeCategoryExtraExtraLarge: 2,
-    UIContentSizeCategoryExtraExtraExtraLarge: 3,
+let AppleFontAdjustments:[UIContentSizeCategory:CGFloat] = [
+    .ExtraSmall: -3,
+    .Small: -2,
+    .Medium: -1,
+    .Large: 0,
+    .ExtraLarge: 1,
+    .ExtraExtraLarge: 2,
+    .ExtraExtraExtraLarge: 3,
 ]
 
-enum ColourType: String {
-    
-    case Primary = "Primary"
-    case Accent = "Accent"
-    
-}
-
-
-struct TKTheme {
-    
-    let colours:[ColourType:UIColor]
-    let fonts:[TextStyle:UIFont]
-    
-}
-
-/*
-protocol Themeable {
-    
-//    var theme:TKTheme { get set }
-    func theme() -> TKTheme?
-    var colourType:ColourType? { get set }
-    
-}
-
-protocol ThemeableText: Themeable {
-
-    var textColourType:ColourType { get set }
-    var fontType:TextStyle { get set }
-    
-}
-
-// themes for each state, which inheret from the Normal state
-protocol ThemeableControl {
-    
-}
-
-private var TKColourTypeKey = "TKColourType"
-private var TKFontTypeKey = "TKFontType"
-
-extension Themeable where Self: UIView {
-    
-
-}
-*/
-
-/*
-extension UIView: Themeable {
-    
-    func theme() -> TKTheme? {
-        print("getting theme: \(self)")
-        return superview?.theme()
-    }
-    
-    var fontType:FontType? {
-        get {
-            if let storedValue = objc_getAssociatedObject(self, &TKFontTypeKey) as? String,
-                type = FontType(rawValue:storedValue) {
-                    return type
-            } else {
-                return nil
-            }
-        }
-        set {
-            objc_setAssociatedObject(self, &TKColourTypeKey, newValue?.rawValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        }
-    }
-    
-    var colourType:ColourType? {
-        get {
-            if let storedValue = objc_getAssociatedObject(self, &TKColourTypeKey) as? String,
-                type = ColourType(rawValue:storedValue) {
-                    let size:CGFloat = 12
-                    UIFont.systemFontOfSize(size)
-                    return type
-            } else {
-                return nil
-            }
-        }
-        set {
-            objc_setAssociatedObject(self, &TKColourTypeKey, newValue?.rawValue, objc_AssociationPolicy.OBJC_ASSOCIATION_ASSIGN)
-        }
-    }
-    
-    @IBInspectable var colourTypeIB:String? {
-        get {
-            return colourType?.rawValue
-        }
-        set {
-            if let newTypeString = newValue {
-                if let newType = ColourType(rawValue: newTypeString) {
-                    self.colourType = newType
-                } else {
-                    print("Cannot set colour type from IBString \(newTypeString)")
-                }
-            }
-        }
-    }
-    
-}
-*/
 
 // -- Tester Classes --- \\
 
@@ -241,35 +236,49 @@ public class TestLabel: UILabel {
 }
 
 protocol Themeable {
-    func applyTheme()
+    
+//    func theme<ThemeType:Theme>() -> ThemeType
+    
+    func applyTheme<T:Theme>(theme:T)
 }
 
 extension Themeable {
-    func applyTheme() {
+    
+    func applyTheme<T:Theme>(theme:T) {
         
         if let textSelf = self as? ThemeableText {
-            textSelf.applyTextTheme()
+            textSelf.applyTextTheme(theme)
         }
     }
 }
 
-extension UIView : Themeable {
+extension UIView {
     
-    public override func awakeFromNib() {
+    override public func awakeFromNib() {
         super.awakeFromNib()
         
-        applyTheme()
+        let mat = MaterialTheme()
+        if let themeable = self as? Themeable {
+            themeable.applyTheme(mat)
+        }
     }
     
-    public override func prepareForInterfaceBuilder() {
+    override public func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         
-        applyTheme()
+        let mat = MaterialTheme()
+        if let themeable = self as? Themeable {
+            themeable.applyTheme(mat)
+        }
     }
 }
 
 @IBDesignable
-public class TKSwitch:UISwitch {
+public class TKSwitch:UISwitch, Themeable {
+    
+//    typealias ThemeType = MaterialTheme
+    
+//    var theme = MaterialTheme()
     
     // MARK: - Properties
     
@@ -302,7 +311,7 @@ public class TKSwitch:UISwitch {
     var onTintColourStyle:ColourStyle?
     var thumbTintColourStyle:ColourStyle?
     
-    func applyTheme() {
+    func applyTheme<T : Theme>(theme: T) {
         if let style = onTintColourStyle
             where style == .Accent {
                 onTintColor = UIColor.redColor()
@@ -315,6 +324,8 @@ public class TKSwitch:UISwitch {
         
     }
     
+    /*
+    // in order to remove this the protocol extension cannot fully define the protocol otherwise the methods are statically dispatched not dynamically dispatched. See (http://nomothetis.svbtle.com/the-ghost-of-swift-bugs-future) for more details
     public override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         
@@ -326,10 +337,12 @@ public class TKSwitch:UISwitch {
         
         applyTheme()
     }
+*/
 }
 
 @IBDesignable
 public class TKButton: UIButton {
+    
     
     @IBInspectable var tintColourId:String?
     @IBInspectable var textStyleId:String?
@@ -337,22 +350,22 @@ public class TKButton: UIButton {
     public override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         
-        applyTheme()
+        let mat = MaterialTheme()
+        applyTheme(mat)
     }
     
-    func applyTheme() {
+    func applyTheme<T:Theme where T.TextStyleType.RawValue == String>(theme:T) {
         fontDump()
         
         let theme = MaterialTheme()
         
         if let colourID = tintColourId,
-            let style = ColourStyle(rawValue: colourID),
-            let colour = theme.colour(style) {
-                self.tintColor = colour
+            let style = ColourStyle(rawValue: colourID) {
+                self.tintColor = theme.colour(style)
         }
         
         if let textStyleId = self.textStyleId,
-            let textStyle = TextStyle(rawValue: textStyleId) {
+            let textStyle = T.TextStyleType(rawValue: textStyleId) {
                 titleLabel?.font = theme.font(textStyle)
         }
     }
