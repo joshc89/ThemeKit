@@ -93,7 +93,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hMu-fW-Q1C" customClass="TKLabel" customModule="ThemeKit">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hMu-fW-Q1C" customClass="TestLabel" customModule="ThemeDemo" customModuleProvider="target">
                                 <rect key="frame" x="20" y="211" width="560" height="28"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -123,13 +123,13 @@
                                 <rect key="frame" x="0.0" y="116" width="600" height="75"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Headline Text Field" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="liv-ZG-Ssg" customClass="TKTextField" customModule="ThemeKit">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Headline Text Field" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="liv-ZG-Ssg" customClass="ThemeTextField" customModule="ThemeDemo" customModuleProvider="target">
                                 <rect key="frame" x="20" y="272" width="560" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="textColourStyleId" value="Text"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="textStyleId" value="Display1"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="textStyleId" value="Display2"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="textInsetsString" value="{2,40,2,20}"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
@@ -137,13 +137,12 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="fill" borderStyle="roundedRect" placeholder="Some Placeholoder" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xLQ-wb-DI9" customClass="TKTextField" customModule="ThemeKit">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="fill" borderStyle="roundedRect" placeholder="Some Placeholoder" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xLQ-wb-DI9" customClass="ThemeTextField" customModule="ThemeDemo" customModuleProvider="target">
                                 <rect key="frame" x="20" y="324" width="560" height="56"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="textInsetsString" value="{2,40,2,20}"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="textStyleId" value="Title"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholderTextStyleId" value="Display2"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>

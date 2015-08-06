@@ -7,13 +7,89 @@
 //
 
 import UIKit
+import ThemeKit
+
+@IBDesignable
+class ThemeLabel: TKLabel { }
+
+@IBDesignable
+class ThemeTextField: TKTextField { }
+
+
+class MaterialVendor: TKThemeVendor {
+    
+    private let _defaultTheme = MaterialTheme()
+    
+    override func defaultTheme() -> Theme? {
+        return _defaultTheme
+    }
+}
+
+extension TKThemeVendor {
+    override public class func initialize() {
+        _internalSharedVendor = MaterialVendor()
+    }
+}
+
+struct MaterialTheme: Theme {
+    
+    typealias TextStyleType = TextStyle // default
+    typealias ColourStyleType = ColourStyle // default
+    
+    let defaultTextSizes = MaterialTextSizes // default
+    let textSizeAdjustments = AppleFontAdjustments // default
+    
+    let themeColours = MaterialColours
+    
+    func fontName(textStye:TextStyle) -> String {
+        
+        switch textStye {
+        case .Display4:
+            return "HelveticaNeue-Light"
+        case .Display3, .Display2, .Display1, .Headline, .SubHeadline, .Body1, .Caption:
+            return "HelveticaNeue"
+        case .Title, .Body2, .Button:
+            return "HelveticaNeue-Medium"
+        }
+    }
+}
+
+let MaterialColours:[ColourStyle:UIColor] = [
+    .Accent: UIColor.redColor(),
+    .Main: UIColor.greenColor(),
+    .Text: UIColor.blackColor().colorWithAlphaComponent(0.87),
+    .SecondaryText: UIColor.blackColor().colorWithAlphaComponent(0.54),
+    .LightText: UIColor.whiteColor().colorWithAlphaComponent(0.87),
+    .SecondaryLightText: UIColor.whiteColor().colorWithAlphaComponent(0.54)
+]
+
+/*
+class MaterialThemedWindow:TKWindow {
+    
+    override class func themeType() -> Theme.Type {
+        return MaterialTheme.self
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame:frame)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+}
+*/
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
 
-
+    override init() {
+        
+//        window = MaterialThemedWindow(frame: UIScreen.mainScreen().bounds)
+    }
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         return true

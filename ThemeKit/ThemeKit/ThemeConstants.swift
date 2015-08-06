@@ -1,0 +1,97 @@
+//
+//  ThemeConstants.swift
+//  ThemeKit
+//
+//  Created by Josh Campion on 02/08/2015.
+//  Copyright © 2015 Josh Campion. All rights reserved.
+//
+
+import Foundation
+
+// MARK: - Constants
+
+/// Apple's default system font sizes for comparison to Material Design sizes.
+let AppleFontSizes:[String:CGFloat] = [UIFontTextStyleBody: 17.0,
+    UIFontTextStyleHeadline: 17.0,
+    UIFontTextStyleSubheadline: 15.0,
+    UIFontTextStyleCaption1: 12.0,
+    UIFontTextStyleCaption2: 11.0,
+    UIFontTextStyleFootnote: 13.0
+]
+
+/// The default text sizes for each text style as defined by Material Design.
+public let MaterialTextSizes:[TextStyle:CGFloat] = [
+    .Display4: 112.0,
+    .Display3: 56.0,
+    .Display2: 45.0,
+    .Display1: 34.0,
+    .Headline: 24.0,
+    .Title: 20.0,
+    .SubHeadline: 16.0,
+    .Body2: 14.0,
+    .Body1: 14.0,
+    .Caption: 12.0,
+    .Button: 14.0
+]
+
+/// The default font adjustments for each UIContentSizeCategory based on the changes in font size for Apple's system font.
+public let AppleFontAdjustments:[UIContentSizeCategory:CGFloat] = [
+    .ExtraSmall: -3,
+    .Small: -2,
+    .Medium: -1,
+    .Large: 0,
+    .ExtraLarge: 1,
+    .ExtraExtraLarge: 2,
+    .ExtraExtraExtraLarge: 3,
+]
+
+// MARK: - Enums
+
+/// Enum defining the available fonts types. Typically an app will only use ~6 types.
+public enum TextStyle:String {
+    case Display4, Display3, Display2, Display1
+    case Headline, Title, SubHeadline
+    case Body1, Body2
+    case Caption
+    case Button
+}
+
+/// Enum defining the available colour types.
+public enum ColourStyle:String {
+    case AccentLight, Accent, AccentDark
+    case MainLight, Main, MainDark
+    case Text, SecondaryText, LightText, SecondaryLightText
+}
+
+/// Enum to define content sizes for accessibility. This allows for exhaustive switch statements over using standard UIKit Strings. Accessibility Sizes are mapped to .ExtraExtraExtraLarge.
+public enum UIContentSizeCategory:String {
+    
+    case ExtraSmall, Small, Medium, Large, ExtraLarge, ExtraExtraLarge, ExtraExtraExtraLarge
+    
+    /// Convenience initialiser to create the enum from a UIContentSizeCategory String from UIKit. Fails if the sting is not one of those.
+    init?(contentSize:String) {
+        switch contentSize {
+        case UIContentSizeCategoryExtraSmall:
+            self = .ExtraSmall
+        case UIContentSizeCategorySmall:
+            self = .Small
+        case UIContentSizeCategoryMedium:
+            self = .Medium
+        case UIContentSizeCategoryLarge:
+            self = .Large
+        case UIContentSizeCategoryExtraLarge:
+            self = .ExtraLarge
+        case UIContentSizeCategoryExtraExtraLarge:
+            self = .ExtraExtraLarge
+        case UIContentSizeCategoryExtraExtraExtraLarge,
+        UIContentSizeCategoryAccessibilityMedium,
+        UIContentSizeCategoryAccessibilityLarge,
+        UIContentSizeCategoryAccessibilityExtraLarge,
+        UIContentSizeCategoryAccessibilityExtraExtraLarge,
+        UIContentSizeCategoryAccessibilityExtraExtraExtraLarge:
+            self = .ExtraExtraExtraLarge
+        default:
+            return nil
+        }
+    }
+}
