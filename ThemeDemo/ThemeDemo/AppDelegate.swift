@@ -10,11 +10,46 @@ import UIKit
 import ThemeKit
 
 @IBDesignable
+class ThemeView: TKView { }
+
+// --- Text Elements --- \\
+
+@IBDesignable
 class ThemeLabel: TKLabel { }
 
 @IBDesignable
 class ThemeTextField: TKTextField { }
 
+@IBDesignable
+class ThemeTextView: TKTextView { }
+
+// --- Controls --- \\
+
+@IBDesignable
+class ThemeButton: TKButton { }
+
+@IBDesignable
+class ThemeSwitch: TKSwitch { }
+
+@IBDesignable
+class ThemeSegmentedControl: TKSegmentedControl { }
+
+@IBDesignable
+class ThemeStepper: TKStepper { }
+
+// --- Navigation --- \\
+
+@IBDesignable
+class ThemeNavigationBar { }
+
+@IBDesignable
+class ThemeBarButtonItem { }
+
+//@IBDesignable
+//class ThemeTabBarItem { }
+//
+//@IBDesignable
+//class ThemeTabBar { } 
 
 class MaterialVendor: TKThemeVendor {
     
@@ -87,11 +122,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     override init() {
         
+        
 //        window = MaterialThemedWindow(frame: UIScreen.mainScreen().bounds)
     }
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        if let tabBarC = window?.rootViewController as? UITabBarController   {
+            
+            tabBarC.tabBar.tintColor = UIColor.greenColor()
+        }
+        
         return true
     }
 

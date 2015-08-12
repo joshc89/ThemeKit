@@ -46,9 +46,13 @@ class ViewController: UIViewController {
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
+
+        for sv in view.subviews where sv is UISegmentedControl {
+            let seg = sv as! UISegmentedControl
+            print("attribs: \(seg.titleTextAttributesForState(.Normal))")
+        }
 //        UILabel.appearance().font = UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
-//        
+//
 //        for sv in view.subviews {
 //            
 //            sv.tintColor = UIColor.redColor()

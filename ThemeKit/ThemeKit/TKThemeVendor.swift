@@ -22,6 +22,33 @@ public class TKThemeVendor: NSObject {
     }
 }
 
+@IBDesignable
+public class TKView: UIView, Themeable {
+    
+    public var backgroundColourStyle:ColourStyle?
+    
+    @IBInspectable public var backgroundColourStyleId:String? {
+        set {
+            if let idString = newValue,
+                let style = ColourStyle(rawValue:idString) {
+                    backgroundColourStyle = style
+            }
+        }
+        get {
+            return backgroundColourStyle?.rawValue
+        }
+    }
+    
+    func applyTheme(theme:Theme) {
+     
+        if let bgStyle = backgroundColourStyle {
+            backgroundColor = theme.colour(bgStyle)
+        } else {
+            backgroundColor = UIColor.whiteColor()
+        }
+    }
+}
+
 /*
 public class TKWindow: UIWindow {
 

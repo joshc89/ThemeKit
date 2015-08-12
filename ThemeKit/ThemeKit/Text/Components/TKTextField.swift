@@ -23,11 +23,13 @@ public class TKTextField: UITextField, ThemeableText {
         super.layoutSubviews()
         
         // TODO: This should be .Fill if there is no text and the placholderTextStyle != nil but .Center otherwise. There is still a bug when editting but no text is typed, so the placeholder is still visible
+        /*
         if let text = self.text where !text.isEmpty {
             contentVerticalAlignment = .Center
         } else {
             contentVerticalAlignment = .Fill
         }
+*/
     }
     
     private var _placeholderTextStyle:TextStyle?

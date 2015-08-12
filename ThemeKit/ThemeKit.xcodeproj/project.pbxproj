@@ -17,7 +17,11 @@
 		A505D53A1B6E164800AAD861 /* TKSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505D5391B6E164800AAD861 /* TKSwitch.swift */; };
 		A505D53C1B6E16B900AAD861 /* ThemeConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505D53B1B6E16B900AAD861 /* ThemeConstants.swift */; };
 		A505D53E1B6E1A5000AAD861 /* ThemeFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505D53D1B6E1A5000AAD861 /* ThemeFunctions.swift */; };
-		A505D5401B6E1E9400AAD861 /* TKWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505D53F1B6E1E9400AAD861 /* TKWindow.swift */; };
+		A505D5401B6E1E9400AAD861 /* TKThemeVendor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505D53F1B6E1E9400AAD861 /* TKThemeVendor.swift */; };
+		A5290AAF1B7B374A00A21730 /* TKSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5290AAE1B7B374A00A21730 /* TKSegmentedControl.swift */; };
+		A5290AB11B7B376B00A21730 /* TKNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5290AB01B7B376B00A21730 /* TKNavigationBar.swift */; };
+		A5290AB41B7B378800A21730 /* TKTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5290AB31B7B378800A21730 /* TKTabBar.swift */; };
+		A5290AB61B7B3F3500A21730 /* TKStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5290AB51B7B3F3500A21730 /* TKStepper.swift */; };
 		A59A6CC91B4AB9B100F708DC /* ThemeKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A59A6CC81B4AB9B100F708DC /* ThemeKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A59A6CD01B4AB9B100F708DC /* ThemeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59A6CC51B4AB9B100F708DC /* ThemeKit.framework */; };
 		A59A6CD51B4AB9B100F708DC /* ThemeKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59A6CD41B4AB9B100F708DC /* ThemeKitTests.swift */; };
@@ -45,7 +49,11 @@
 		A505D5391B6E164800AAD861 /* TKSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TKSwitch.swift; path = Controls/TKSwitch.swift; sourceTree = "<group>"; };
 		A505D53B1B6E16B900AAD861 /* ThemeConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeConstants.swift; sourceTree = "<group>"; };
 		A505D53D1B6E1A5000AAD861 /* ThemeFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeFunctions.swift; sourceTree = "<group>"; };
-		A505D53F1B6E1E9400AAD861 /* TKWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKWindow.swift; sourceTree = "<group>"; };
+		A505D53F1B6E1E9400AAD861 /* TKThemeVendor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKThemeVendor.swift; sourceTree = "<group>"; };
+		A5290AAE1B7B374A00A21730 /* TKSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TKSegmentedControl.swift; path = Controls/TKSegmentedControl.swift; sourceTree = "<group>"; };
+		A5290AB01B7B376B00A21730 /* TKNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TKNavigationBar.swift; path = Navigation/TKNavigationBar.swift; sourceTree = "<group>"; };
+		A5290AB31B7B378800A21730 /* TKTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TKTabBar.swift; path = Navigation/TKTabBar.swift; sourceTree = "<group>"; };
+		A5290AB51B7B3F3500A21730 /* TKStepper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TKStepper.swift; path = Controls/TKStepper.swift; sourceTree = "<group>"; };
 		A59A6CC51B4AB9B100F708DC /* ThemeKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ThemeKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A59A6CC81B4AB9B100F708DC /* ThemeKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThemeKit.h; sourceTree = "<group>"; };
 		A59A6CCA1B4AB9B100F708DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -79,6 +87,8 @@
 			children = (
 				A505D5371B6E162B00AAD861 /* TKButton.swift */,
 				A505D5391B6E164800AAD861 /* TKSwitch.swift */,
+				A5290AAE1B7B374A00A21730 /* TKSegmentedControl.swift */,
+				A5290AB51B7B3F3500A21730 /* TKStepper.swift */,
 			);
 			name = Controls;
 			sourceTree = "<group>";
@@ -111,6 +121,15 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		A5290AB21B7B376F00A21730 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				A5290AB01B7B376B00A21730 /* TKNavigationBar.swift */,
+				A5290AB31B7B378800A21730 /* TKTabBar.swift */,
+			);
+			name = Navigation;
+			sourceTree = "<group>";
+		};
 		A59A6CBB1B4AB9B100F708DC = {
 			isa = PBXGroup;
 			children = (
@@ -136,9 +155,10 @@
 				A505D53B1B6E16B900AAD861 /* ThemeConstants.swift */,
 				A505D53D1B6E1A5000AAD861 /* ThemeFunctions.swift */,
 				A59A6CFD1B4ABD4900F708DC /* Theme.swift */,
-				A505D53F1B6E1E9400AAD861 /* TKWindow.swift */,
+				A505D53F1B6E1E9400AAD861 /* TKThemeVendor.swift */,
 				A505D5281B6E151400AAD861 /* Extensions */,
 				A505D52D1B6E160600AAD861 /* Text */,
+				A5290AB21B7B376F00A21730 /* Navigation */,
 				A505D51F1B6E146400AAD861 /* Controls */,
 				A59A6CCA1B4AB9B100F708DC /* Info.plist */,
 			);
@@ -263,16 +283,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				A505D5351B6E160700AAD861 /* TKTextView.swift in Sources */,
+				A5290AB41B7B378800A21730 /* TKTabBar.swift in Sources */,
 				A505D53C1B6E16B900AAD861 /* ThemeConstants.swift in Sources */,
 				A59A6CFE1B4ABD4900F708DC /* Theme.swift in Sources */,
 				A505D53A1B6E164800AAD861 /* TKSwitch.swift in Sources */,
+				A5290AB11B7B376B00A21730 /* TKNavigationBar.swift in Sources */,
 				A505D5361B6E160700AAD861 /* ThemeableText.swift in Sources */,
 				A505D52C1B6E157600AAD861 /* UISearchBar+TKExtensions.swift in Sources */,
 				A505D53E1B6E1A5000AAD861 /* ThemeFunctions.swift in Sources */,
 				A505D5381B6E162B00AAD861 /* TKButton.swift in Sources */,
-				A505D5401B6E1E9400AAD861 /* TKWindow.swift in Sources */,
+				A505D5401B6E1E9400AAD861 /* TKThemeVendor.swift in Sources */,
 				A505D52A1B6E154E00AAD861 /* UIView+TKExtensions.swift in Sources */,
+				A5290AB61B7B3F3500A21730 /* TKStepper.swift in Sources */,
 				A505D5331B6E160700AAD861 /* TKLabel.swift in Sources */,
+				A5290AAF1B7B374A00A21730 /* TKSegmentedControl.swift in Sources */,
 				A505D5341B6E160700AAD861 /* TKTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

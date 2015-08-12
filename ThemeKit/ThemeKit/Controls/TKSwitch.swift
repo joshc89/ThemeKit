@@ -46,15 +46,14 @@ public class TKSwitch:UISwitch, Themeable {
     var onTintColourStyle:ColourStyle?
     var thumbTintColourStyle:ColourStyle?
     
-    func applyTheme<T : Theme>(theme: T) {
-        if let style = onTintColourStyle
-            where style == .Accent {
-                onTintColor = UIColor.redColor()
+    func applyTheme(theme: Theme) {
+        
+        if let style = onTintColourStyle {
+                onTintColor = theme.colour(style)
         }
         
-        if let style = thumbTintColourStyle
-            where style == .Accent {
-                thumbTintColor = UIColor.blackColor()
+        if let style = thumbTintColourStyle {
+                thumbTintColor = theme.colour(style)
         }
         
     }
