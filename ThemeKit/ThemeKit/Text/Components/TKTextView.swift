@@ -13,10 +13,29 @@ extension UITextView: Textable { }
 @IBDesignable
 public class TKTextView: UITextView, ThemeableText {
     
-    var textStyle:TextStyle?
-    var textColourStyle:ColourStyle?
+    // - initWithFrame(_:) support
+    public var createdFromNib:Bool = false
     
-    @IBInspectable var textStyleId:String? {
+    public override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        createdFromNib = true
+    }
+    
+     public override func didMoveToSuperview() {
+            super.didMoveToSuperview()
+        
+        if let theme = theme() where !createdFromNib {
+            applyTheme(theme)
+        }
+    }
+    
+    // --
+    
+    public var textStyle:TextStyle?
+    public var textColourStyle:ColourStyle?
+    
+    @IBInspectable public var textStyleId:String? {
         set {
             if let idString = newValue,
                 let style = TextStyle(rawValue:idString) {
@@ -28,7 +47,7 @@ public class TKTextView: UITextView, ThemeableText {
         }
     }
     
-    @IBInspectable var textColourStyleId:String? {
+    @IBInspectable public var textColourStyleId:String? {
         set {
             if let idString = newValue,
                 let style = ColourStyle(rawValue:idString) {

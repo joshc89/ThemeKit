@@ -15,8 +15,28 @@ extension UITextField: Textable { }
 @IBDesignable
 public class TKTextField: UITextField, ThemeableText {
     
-    var textStyle:TextStyle?
-    var textColourStyle:ColourStyle?
+    // - initWithFrame(_:) support
+    public var createdFromNib:Bool = false
+    
+    public override func awakeFromNib() {
+        
+        super.awakeFromNib()
+        
+        createdFromNib = true
+    }
+    
+     public override func didMoveToSuperview() {
+            super.didMoveToSuperview()
+        
+        if let theme = theme() where !createdFromNib {
+            applyTheme(theme)
+        }
+    }
+    
+    // --
+    
+    public var textStyle:TextStyle?
+    public var textColourStyle:ColourStyle?
     
     public override func layoutSubviews() {
         
@@ -35,7 +55,7 @@ public class TKTextField: UITextField, ThemeableText {
     private var _placeholderTextStyle:TextStyle?
     
     /// This can be set explicitly to configure the style of the placeholder text, otherwise it defaults to the textStyle property.
-    var placeholderTextStyle:TextStyle? {
+    public var placeholderTextStyle:TextStyle? {
         get {
             return _placeholderTextStyle ?? textStyle
         }
@@ -44,10 +64,10 @@ public class TKTextField: UITextField, ThemeableText {
         }
     }
     
-    var placeholderTextColourStyle:ColourStyle?
+    public var placeholderTextColourStyle:ColourStyle?
     
     /// can set to nil to return to set textInsets to the default value but will always return a value
-    @IBInspectable var textInsetsString:String! {
+    @IBInspectable public var textInsetsString:String! {
         get {
             return "{\(textInsets.top),\(textInsets.left),\(textInsets.bottom),\(textInsets.right)}"
         } set {
@@ -158,7 +178,7 @@ public class TKTextField: UITextField, ThemeableText {
         newBounds.size.width -= textInsets.left + textInsets.right
         newBounds.size.height -= textInsets.top + textInsets.bottom
         
-        print("\(text)/\(attributedPlaceholder): \(superRect) -> \(newBounds)")
+//        print("\(text)/\(attributedPlaceholder): \(superRect) -> \(newBounds)")
         
         return newBounds
     }
@@ -172,15 +192,15 @@ public class TKTextField: UITextField, ThemeableText {
         let superRect = super.placeholderRectForBounds(bounds)
         let textRect = textRectForBounds(bounds)
         
-        print("placeholder: \(superRect) -> \(textRect)")
+//        print("placeholder: \(superRect) -> \(textRect)")
         
         return superRect
     }
     
     
-    var textInsets:UIEdgeInsets = TKDefaultInsets
+    public var textInsets:UIEdgeInsets = TKDefaultInsets
     
-    @IBInspectable var textStyleId:String? {
+    @IBInspectable public var textStyleId:String? {
         set {
             if let idString = newValue,
                 let style = TextStyle(rawValue:idString) {
@@ -192,7 +212,7 @@ public class TKTextField: UITextField, ThemeableText {
         }
     }
     
-    @IBInspectable var textColourStyleId:String? {
+    @IBInspectable public var textColourStyleId:String? {
         set {
             if let idString = newValue,
                 let style = ColourStyle(rawValue:idString) {
@@ -204,7 +224,7 @@ public class TKTextField: UITextField, ThemeableText {
         }
     }
     
-    @IBInspectable var placeholderTextStyleId:String? {
+    @IBInspectable public var placeholderTextStyleId:String? {
         set {
             if let idString = newValue,
                 let style = TextStyle(rawValue:idString) {
@@ -216,7 +236,7 @@ public class TKTextField: UITextField, ThemeableText {
         }
     }
     
-    @IBInspectable var placeholderTextColourStyleId:String? {
+    @IBInspectable public var placeholderTextColourStyleId:String? {
         set {
             if let idString = newValue,
                 let style = ColourStyle(rawValue:idString) {
@@ -228,12 +248,12 @@ public class TKTextField: UITextField, ThemeableText {
         }
     }
     
-    func applyTextTheme<T : Theme>(theme: T) {
+    public func applyTextTheme<T : Theme>(theme: T) {
         
         applyDefaultTextTheme(theme)
         
         // confiure the placeholder
-        if let attributedPlaceholder = self.attributedPlaceholder {
+        if let attributedPlaceholder = self.attributedPlaceholder ?? (placeholder != nil ? NSAttributedString(string: placeholder!) : nil) {
             
             var attributes = attributedPlaceholder.attributesAtIndex(0, effectiveRange: nil)
             

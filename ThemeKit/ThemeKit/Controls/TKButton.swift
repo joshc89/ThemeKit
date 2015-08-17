@@ -11,10 +11,29 @@ import Foundation
 @IBDesignable
 public class TKButton: UIButton, Themeable {
     
-    var tintColourStyle:ColourStyle?
-    var textStyle:TextStyle?
+    // - initWithFrame(_:) support
+    public var createdFromNib:Bool = false
     
-    @IBInspectable var textStyleId:String? {
+    public override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        createdFromNib = true
+    }
+    
+     public override func didMoveToSuperview() {
+            super.didMoveToSuperview()
+        
+        if let theme = theme() where !createdFromNib {
+            applyTheme(theme)
+        }
+    }
+    
+    // --
+    
+    public var tintColourStyle:ColourStyle?
+    public var textStyle:TextStyle?
+    
+    @IBInspectable public var textStyleId:String? {
         set {
             if let idString = newValue,
                 let style = TextStyle(rawValue:idString) {
@@ -26,7 +45,7 @@ public class TKButton: UIButton, Themeable {
         }
     }
     
-    @IBInspectable var tintColourId:String? {
+    @IBInspectable public var tintColourId:String? {
         set {
             if let idString = newValue,
                 let style = ColourStyle(rawValue:idString) {
@@ -38,7 +57,7 @@ public class TKButton: UIButton, Themeable {
         }
     }
     
-    func applyTheme(theme:Theme) {
+    public func applyTheme(theme:Theme) {
         
         if let colour = tintColourStyle {
             tintColor = theme.colour(colour)

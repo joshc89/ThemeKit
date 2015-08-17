@@ -18,7 +18,7 @@ protocol Textable {
     
 }
 
-protocol ThemeableText: Themeable {
+public protocol ThemeableText: Themeable {
     
     var textStyle:TextStyle? { get set }
     var textStyleId:String? { get set }
@@ -30,7 +30,7 @@ protocol ThemeableText: Themeable {
 }
 
 // require self to be AnyObject as requiring mutating currently causes a compilation crash
-extension ThemeableText where Self:Textable, Self:AnyObject {
+public extension ThemeableText where Self:Textable, Self:AnyObject {
     
     func applyDefaultTextTheme(theme:Theme) {
         if let textStyle = self.textStyle {
@@ -48,7 +48,7 @@ extension ThemeableText where Self:Textable, Self:AnyObject {
 }
 
 // require self to be AnyObject as requiring mutating currently causes a compilation crash
-extension ThemeableText where Self:ImplicitTextable, Self: AnyObject {
+public extension ThemeableText where Self:ImplicitTextable, Self: AnyObject {
     
     func applyDefaultTextTheme(theme:Theme) {
         if let textStyle = self.textStyle {

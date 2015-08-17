@@ -10,9 +10,28 @@ import UIKit
 
 public class TKStepper: UIStepper, Themeable {
 
+    // - initWithFrame(_:) support
+    public var createdFromNib:Bool = false
+    
+    public override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        createdFromNib = true
+    }
+    
+     public override func didMoveToSuperview() {
+            super.didMoveToSuperview()
+        
+        if let theme = theme() where !createdFromNib {
+            applyTheme(theme)
+        }
+    }
+    
+    // --
+    
     public var tintColourStyle:ColourStyle?
     
-    @IBInspectable var tintColourId:String? {
+    @IBInspectable public var tintColourId:String? {
         set {
             if let idString = newValue,
                 let style = ColourStyle(rawValue:idString) {
@@ -24,7 +43,7 @@ public class TKStepper: UIStepper, Themeable {
         }
     }
     
-    func applyTheme(theme:Theme) {
+    public func applyTheme(theme:Theme) {
         
         if let colour = tintColourStyle {
             tintColor = theme.colour(colour)

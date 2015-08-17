@@ -11,14 +11,29 @@ import Foundation
 @IBDesignable
 public class TKSwitch:UISwitch, Themeable {
     
-    //    typealias ThemeType = MaterialTheme
+    // - initWithFrame(_:) support
+    public var createdFromNib:Bool = false
     
-    //    var theme = MaterialTheme()
+    public override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        createdFromNib = true
+    }
+    
+    public override func didMoveToSuperview() {
+            super.didMoveToSuperview()
+        
+        if let theme = theme() where !createdFromNib {
+            applyTheme(theme)
+        }
+    }
+    
+    // --
     
     // MARK: - Properties
     
     // MARK: IB Properties
-    @IBInspectable var onTintColourId:String? {
+    @IBInspectable public var onTintColourId:String? {
         set {
             if let idString = newValue,
                 let style = ColourStyle(rawValue: idString) {
@@ -30,7 +45,7 @@ public class TKSwitch:UISwitch, Themeable {
         }
     }
     
-    @IBInspectable var thumbTintColourId:String? {
+    @IBInspectable public var thumbTintColourId:String? {
         set {
             if let idString = newValue,
                 let style = ColourStyle(rawValue: idString) {
@@ -43,10 +58,10 @@ public class TKSwitch:UISwitch, Themeable {
     }
     
     // MARK: Theme Enums
-    var onTintColourStyle:ColourStyle?
-    var thumbTintColourStyle:ColourStyle?
+    public var onTintColourStyle:ColourStyle?
+    public var thumbTintColourStyle:ColourStyle?
     
-    func applyTheme(theme: Theme) {
+    public func applyTheme(theme: Theme) {
         
         if let style = onTintColourStyle {
                 onTintColor = theme.colour(style)

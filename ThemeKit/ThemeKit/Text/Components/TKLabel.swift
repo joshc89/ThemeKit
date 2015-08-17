@@ -13,6 +13,25 @@ extension UILabel: ImplicitTextable { }
 @IBDesignable
 public class TKLabel: UILabel, ThemeableText {
     
+    // - initWithFrame(_:) support
+    public var createdFromNib:Bool = false
+    
+    public override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        createdFromNib = true
+    }
+    
+     public override func didMoveToSuperview() {
+            super.didMoveToSuperview()
+        
+        if let theme = theme() where !createdFromNib {
+            applyTheme(theme)
+        }
+    }
+    
+    // --
+    
     public var textStyle:TextStyle?
     public var textColourStyle:ColourStyle?
     
@@ -38,29 +57,5 @@ public class TKLabel: UILabel, ThemeableText {
         get {
             return textColourStyle?.rawValue
         }
-    }
-    
-    public override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        print(__FUNCTION__)
-    }
-    
-    public override func prepareForInterfaceBuilder() {
-        super.prepareForInterfaceBuilder()
-        
-        print(__FUNCTION__)
-    }
-    
-    public override func didMoveToWindow() {
-        super.didMoveToWindow()
-        
-        
-    }
-    
-    public override func willMoveToSuperview(newSuperview: UIView?) {
-        super.willMoveToSuperview(newSuperview)
-        
-        print(__FUNCTION__)
     }
 }

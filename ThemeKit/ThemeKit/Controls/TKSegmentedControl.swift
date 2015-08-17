@@ -11,6 +11,25 @@ import UIKit
 @IBDesignable
 public class TKSegmentedControl: UISegmentedControl, Themeable {
 
+    // - initWithFrame(_:) support
+    public var createdFromNib:Bool = false
+    
+    public override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        createdFromNib = true
+    }
+    
+     public override func didMoveToSuperview() {
+            super.didMoveToSuperview()
+        
+        if let theme = theme() where !createdFromNib {
+            applyTheme(theme)
+        }
+    }
+    
+    // --
+    
     public var textStyle:TextStyle?
     public var tintColourStyle:ColourStyle?
     
@@ -38,7 +57,7 @@ public class TKSegmentedControl: UISegmentedControl, Themeable {
         }
     }
     
-    func applyTheme(theme:Theme) {
+    public func applyTheme(theme:Theme) {
         
         if let colour = tintColourStyle {
             tintColor = theme.colour(colour)

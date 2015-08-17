@@ -25,6 +25,25 @@ public class TKThemeVendor: NSObject {
 @IBDesignable
 public class TKView: UIView, Themeable {
     
+    // - initWithFrame(_:) support
+    public var createdFromNib:Bool = false
+    
+    public override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        createdFromNib = true
+    }
+    
+     public override func didMoveToSuperview() {
+            super.didMoveToSuperview()
+        
+        if let theme = theme() where !createdFromNib {
+            applyTheme(theme)
+        }
+    }
+    
+    // --
+    
     public var backgroundColourStyle:ColourStyle?
     
     @IBInspectable public var backgroundColourStyleId:String? {
@@ -39,7 +58,7 @@ public class TKView: UIView, Themeable {
         }
     }
     
-    func applyTheme(theme:Theme) {
+    public func applyTheme(theme:Theme) {
      
         if let bgStyle = backgroundColourStyle {
             backgroundColor = theme.colour(bgStyle)
