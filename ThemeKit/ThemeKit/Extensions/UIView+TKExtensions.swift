@@ -34,7 +34,6 @@ public extension UIView {
     override public func awakeFromNib() {
         super.awakeFromNib()
         
-        print("\(self): \(__FUNCTION__)")
         if let themeable = self as? Themeable,
             let theme = themeable.theme() {
             themeable.applyTheme(theme)

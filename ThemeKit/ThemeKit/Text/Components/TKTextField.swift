@@ -248,12 +248,25 @@ public class TKTextField: UITextField, ThemeableText {
         }
     }
     
-    public func applyTextTheme<T : Theme>(theme: T) {
+    override public var placeholder: String? {
+        didSet {
+            if let theme = theme() {
+                updatePlaceholder(theme)
+            }
+        }
+    }
+
+    public func applyTextTheme(theme: Theme) {
         
         applyDefaultTextTheme(theme)
         
-        // confiure the placeholder
+        updatePlaceholder(theme)
+    }
+    
+    func updatePlaceholder(theme:Theme) {
         if let attributedPlaceholder = self.attributedPlaceholder ?? (placeholder != nil ? NSAttributedString(string: placeholder!) : nil) {
+            
+            // confiure the placeholder
             
             var attributes = attributedPlaceholder.attributesAtIndex(0, effectiveRange: nil)
             
