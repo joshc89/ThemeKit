@@ -121,7 +121,7 @@ public class TKTextField: UITextField, ThemeableText {
                     context: nil).size.height
                 var height = textHeight
                 
-                print("\(text): \(textHeight)")
+//                print("\(text): \(textHeight)")
                 
                 let attributedPlaceholder:NSAttributedString?
                 if let setPlaceholder = self.attributedPlaceholder {
@@ -139,7 +139,7 @@ public class TKTextField: UITextField, ThemeableText {
                         options: NSStringDrawingOptions.UsesLineFragmentOrigin,
                         context: nil).size.height
                     
-                    print("\(attributed.string): \(placeholderHeight)")
+//                    print("\(attributed.string): \(placeholderHeight)")
                     
                     height = max(placeholderHeight, height)
                 }
