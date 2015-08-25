@@ -8,9 +8,9 @@
 
 import Foundation
 
-extension UIView {
+public extension UIView {
     
-    func iterateSubviews(condition: (UIView, inout stop:Bool) -> ()) {
+    public func iterateSubviews(condition: (UIView, inout stop:Bool) -> ()) {
         
         var shouldStop = false
         
