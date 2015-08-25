@@ -94,7 +94,7 @@ public extension Theme {
     }
 }
 
-public protocol Themeable {
+public protocol Themeable: class {
     
     var createdFromNib:Bool { get set }
     

@@ -76,14 +76,14 @@ public class TKTextField: UITextField, ThemeableText {
             if var insetString = newValue {
                 
                 let c0 = insetString[insetString.startIndex]
-                let c1 = insetString[advance(insetString.endIndex, -1)]
+                let c1 = insetString[insetString.endIndex.advancedBy(-1)]
                 
                 if c0 == "{" && c1 == "}"  {
                     
-                    let id1 = advance(insetString.startIndex, 1)
+                    let id1 = insetString.startIndex.advancedBy(1)
                     insetString = insetString.substringFromIndex(id1)
                     
-                    let idPen = advance(insetString.endIndex, -1)
+                    let idPen = insetString.endIndex.advancedBy(-1)
                     insetString = insetString.substringToIndex(idPen)
                     
                     let numbers = insetString.componentsSeparatedByString(",")

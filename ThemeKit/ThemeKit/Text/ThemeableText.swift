@@ -6,12 +6,12 @@
 //  Copyright © 2015 Josh Campion. All rights reserved.
 //
 
-protocol ImplicitTextable : class {
+public protocol ImplicitTextable: class {
     var font:UIFont! { get set }
     var textColor:UIColor! { get set }
 }
 
-protocol Textable {
+public protocol Textable: class {
     
     var font:UIFont? { get set }
     var textColor:UIColor? { get set }
@@ -30,7 +30,7 @@ public protocol ThemeableText: Themeable {
 }
 
 // require self to be AnyObject as requiring mutating currently causes a compilation crash
-public extension ThemeableText where Self:Textable, Self:AnyObject {
+public extension ThemeableText where Self:Textable {
     
     func applyDefaultTextTheme(theme:Theme) {
         if let textStyle = self.textStyle {
@@ -42,15 +42,15 @@ public extension ThemeableText where Self:Textable, Self:AnyObject {
         }
     }
     
-    func applyTextTheme(theme:Theme) {
+    public func applyTextTheme(theme:Theme) {
         applyDefaultTextTheme(theme)
     }
 }
 
 // require self to be AnyObject as requiring mutating currently causes a compilation crash
-public extension ThemeableText where Self:ImplicitTextable, Self: AnyObject {
+public extension ThemeableText where Self:ImplicitTextable {
     
-    func applyDefaultTextTheme(theme:Theme) {
+    public func applyDefaultTextTheme(theme:Theme) {
         if let textStyle = self.textStyle {
             font = theme.font(textStyle)
         }
@@ -60,7 +60,7 @@ public extension ThemeableText where Self:ImplicitTextable, Self: AnyObject {
         }
     }
     
-    func applyTextTheme(theme:Theme) {
+    public func applyTextTheme(theme:Theme) {
         applyDefaultTextTheme(theme)
     }
 }
