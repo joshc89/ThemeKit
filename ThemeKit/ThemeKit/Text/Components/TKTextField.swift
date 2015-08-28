@@ -15,6 +15,8 @@ extension UITextField: Textable { }
 @IBDesignable
 public class TKTextField: UITextField, ThemeableText {
     
+    private let checker = _Checker()
+    
     // - initWithFrame(_:) support
     public var createdFromNib:Bool = false
     

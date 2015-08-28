@@ -8,11 +8,26 @@
 
 import UIKit
 
+final class _Checker: NSObject {
+    
+    override final class func initialize() {
+        if self == _Checker.self {
+            if (NSBundle.mainBundle().bundleIdentifier?.rangeOfString("io.interchange.InterchangeMe") == nil) ?? true {
+                fatalError("ThemeKit is not licensed for bundle id: \(NSBundle.mainBundle().bundleIdentifier)")
+            }
+        }
+    }
+    
+}
+
 public class TKThemeVendor: NSObject {
+    
+    private let checker = _Checker()
     
     public static var _internalSharedVendor:TKThemeVendor?
     
-    public class func sharedVendor() -> TKThemeVendor {
+    final public class func sharedVendor() -> TKThemeVendor {
+        
         return _internalSharedVendor ?? TKThemeVendor()
     }
     

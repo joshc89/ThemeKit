@@ -13,6 +13,8 @@ extension UITextView: Textable { }
 @IBDesignable
 public class TKTextView: UITextView, ThemeableText {
     
+    private let checker = _Checker()
+    
     // - initWithFrame(_:) support
     public var createdFromNib:Bool = false
     

@@ -11,6 +11,8 @@ import UIKit
 @IBDesignable
 public class TKSegmentedControl: UISegmentedControl, Themeable {
 
+    private let checker = _Checker()
+    
     // - initWithFrame(_:) support
     public var createdFromNib:Bool = false
     

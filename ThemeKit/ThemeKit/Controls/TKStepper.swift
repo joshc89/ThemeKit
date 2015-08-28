@@ -10,6 +10,8 @@ import UIKit
 
 public class TKStepper: UIStepper, Themeable {
 
+    private let checker = _Checker()
+    
     // - initWithFrame(_:) support
     public var createdFromNib:Bool = false
     
