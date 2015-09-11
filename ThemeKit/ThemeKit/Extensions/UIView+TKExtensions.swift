@@ -19,7 +19,7 @@ public extension UIView {
         if shouldStop { return }
         
         for sv in subviews {
-            condition(sv, stop:&shouldStop)
+            sv.iterateSubviews(condition)
             
             if shouldStop { break }
         }
