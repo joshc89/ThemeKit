@@ -202,7 +202,10 @@ public class TKTextField: UITextField, ThemeableText {
     
     public var textInsets:UIEdgeInsets = TKDefaultInsets  {
         didSet {
-            setNeedsLayout()
+            if !UIEdgeInsetsEqualToEdgeInsets(textInsets, oldValue) {
+                invalidateIntrinsicContentSize()
+                setNeedsLayout()
+            }
         }
     }
     
