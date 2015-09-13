@@ -27,9 +27,33 @@ public class TKStepper: UIStepper, Themeable {
         }
     }
     
+    // -- setNeedsUpdateTheme() support
+    private var _needsUpdateTheme = true
+    
+    public func setNeedsUpdateTheme() {
+        _needsUpdateTheme = true
+        setNeedsLayout()
+    }
+    
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        if _needsUpdateTheme {
+            if let t = self.theme() {
+                self.applyTheme(t)
+            }
+        }
+    }
+    
     // --
     
-    public var tintColourStyle:ColourStyle?
+    public var tintColourStyle:ColourStyle?  {
+        didSet {
+            if oldValue != tintColourStyle {
+                setNeedsUpdateTheme()
+            }
+        }
+    }
     
     @IBInspectable public var tintColourId:String? {
         set {

@@ -101,6 +101,8 @@ public protocol Themeable: class {
     func theme() -> Theme?
     
     func applyTheme(theme:Theme)
+    
+    func setNeedsUpdateTheme()
 }
 
 public extension Themeable {

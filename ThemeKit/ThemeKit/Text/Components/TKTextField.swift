@@ -33,24 +33,44 @@ public class TKTextField: UITextField, ThemeableText {
         }
     }
     
-    // --
+    // -- setNeedsUpdateTheme() support
+    private var _needsUpdateTheme = true
     
-    public var textStyle:TextStyle?
-    public var textColourStyle:ColourStyle?
+    public func setNeedsUpdateTheme() {
+        _needsUpdateTheme = true
+        setNeedsLayout()
+    }
     
     public override func layoutSubviews() {
-        
         super.layoutSubviews()
         
+        if _needsUpdateTheme {
+            if let t = self.theme() {
+                self.applyTheme(t)
+            }
+        }
+        
         // TODO: This should be .Fill if there is no text and the placholderTextStyle != nil but .Center otherwise. There is still a bug when editting but no text is typed, so the placeholder is still visible
-        /*
+        
         if let text = self.text where !text.isEmpty {
             contentVerticalAlignment = .Center
         } else {
             contentVerticalAlignment = .Fill
         }
-*/
     }
+    
+    // --
+    
+    public var textStyle:TextStyle? {
+        didSet {
+            if oldValue != textStyle {
+                setNeedsUpdateTheme()
+            }
+        }
+    }
+    
+    public var textColourStyle:ColourStyle? 
+    
     
     private var _placeholderTextStyle:TextStyle?
     
@@ -61,46 +81,28 @@ public class TKTextField: UITextField, ThemeableText {
         }
         set {
             _placeholderTextStyle = newValue
+            if placeholderTextStyle != newValue {
+                setNeedsUpdateTheme()
+            }
         }
     }
     
-    public var placeholderTextColourStyle:ColourStyle?
+    public var placeholderTextColourStyle:ColourStyle?  {
+        didSet {
+            if oldValue != placeholderTextColourStyle {
+                setNeedsUpdateTheme()
+            }
+        }
+    }
     
     /// can set to nil to return to set textInsets to the default value but will always return a value
-    @IBInspectable public var textInsetsString:String! {
+    @IBInspectable public var textInsetsString:String? {
         get {
             return "{\(textInsets.top),\(textInsets.left),\(textInsets.bottom),\(textInsets.right)}"
         } set {
-            
-            
-            if var insetString = newValue {
-                
-                let c0 = insetString[insetString.startIndex]
-                let c1 = insetString[insetString.endIndex.advancedBy(-1)]
-                
-                if c0 == "{" && c1 == "}"  {
-                    
-                    let id1 = insetString.startIndex.advancedBy(1)
-                    insetString = insetString.substringFromIndex(id1)
-                    
-                    let idPen = insetString.endIndex.advancedBy(-1)
-                    insetString = insetString.substringToIndex(idPen)
-                    
-                    let numbers = insetString.componentsSeparatedByString(",")
-                    
-                    var vals = [CGFloat]()
-                    if numbers.count == 4 {
-                        for numberString in numbers {
-                            vals.append(CGFloat((numberString as NSString).floatValue))
-                        }
-                        
-                        textInsets = UIEdgeInsetsMake(vals[0], vals[1], vals[2], vals[3])
-                    }
-                }
-            } else {
-                textInsets = TKDefaultInsets
+            if let insetsString = newValue {
+                textInsets =  UIEdgeInsetsFromString(insetsString)
             }
-            
         }
     }
     
@@ -198,7 +200,11 @@ public class TKTextField: UITextField, ThemeableText {
     }
     
     
-    public var textInsets:UIEdgeInsets = TKDefaultInsets
+    public var textInsets:UIEdgeInsets = TKDefaultInsets  {
+        didSet {
+            setNeedsLayout()
+        }
+    }
     
     @IBInspectable public var textStyleId:String? {
         set {

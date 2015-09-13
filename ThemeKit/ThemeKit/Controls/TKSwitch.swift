@@ -28,6 +28,24 @@ public class TKSwitch:UISwitch, Themeable {
         }
     }
     
+    // -- setNeedsUpdateTheme() support
+    private var _needsUpdateTheme = true
+    
+    public func setNeedsUpdateTheme() {
+        _needsUpdateTheme = true
+        setNeedsLayout()
+    }
+    
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        if _needsUpdateTheme {
+            if let t = self.theme() {
+                self.applyTheme(t)
+            }
+        }
+    }
+    
     // --
     
     // MARK: - Properties
@@ -58,8 +76,21 @@ public class TKSwitch:UISwitch, Themeable {
     }
     
     // MARK: Theme Enums
-    public var onTintColourStyle:ColourStyle?
-    public var thumbTintColourStyle:ColourStyle?
+    public var onTintColourStyle:ColourStyle?  {
+        didSet {
+            if oldValue != onTintColourStyle {
+                setNeedsUpdateTheme()
+            }
+        }
+    }
+    
+    public var thumbTintColourStyle:ColourStyle?  {
+        didSet {
+            if oldValue != thumbTintColourStyle {
+                setNeedsUpdateTheme()
+            }
+        }
+    }
     
     public func applyTheme(theme: Theme) {
         

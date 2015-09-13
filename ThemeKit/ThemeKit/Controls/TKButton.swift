@@ -28,10 +28,41 @@ public class TKButton: UIButton, Themeable {
         }
     }
     
+    // -- setNeedsUpdateTheme() support
+    private var _needsUpdateTheme = true
+    
+    public func setNeedsUpdateTheme() {
+        _needsUpdateTheme = true
+        setNeedsLayout()
+    }
+    
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        if _needsUpdateTheme {
+            if let t = self.theme() {
+                self.applyTheme(t)
+            }
+        }
+    }
+    
     // --
     
-    public var tintColourStyle:ColourStyle?
-    public var textStyle:TextStyle?
+    public var tintColourStyle:ColourStyle?  {
+        didSet {
+            if oldValue != tintColourStyle {
+                setNeedsUpdateTheme()
+            }
+        }
+    }
+    
+    public var textStyle:TextStyle?  {
+        didSet {
+            if oldValue != textStyle {
+                setNeedsUpdateTheme()
+            }
+        }
+    }
     
     @IBInspectable public var textStyleId:String? {
         set {

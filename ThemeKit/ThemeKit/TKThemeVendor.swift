@@ -42,9 +42,32 @@ public class TKView: UIView, Themeable {
         }
     }
     
-    // --
+    // -- setNeedsUpdateTheme() support
+    private var _needsUpdateTheme = true
     
-    public var backgroundColourStyle:ColourStyle?
+    public func setNeedsUpdateTheme() {
+        _needsUpdateTheme = true
+        setNeedsLayout()
+    }
+    
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        if _needsUpdateTheme {
+            if let t = self.theme() {
+                self.applyTheme(t)
+            }
+        }
+    }
+    
+    // --
+    public var backgroundColourStyle:ColourStyle? {
+        didSet {
+            if oldValue != backgroundColourStyle {
+                setNeedsUpdateTheme()
+            }
+        }
+    }
     
     @IBInspectable public var backgroundColourStyleId:String? {
         set {

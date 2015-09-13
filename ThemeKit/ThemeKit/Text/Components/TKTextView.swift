@@ -30,10 +30,41 @@ public class TKTextView: UITextView, ThemeableText {
         }
     }
     
+    // -- setNeedsUpdateTheme() support
+    private var _needsUpdateTheme = true
+    
+    public func setNeedsUpdateTheme() {
+        _needsUpdateTheme = true
+        setNeedsLayout()
+    }
+    
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        if _needsUpdateTheme {
+            if let t = self.theme() {
+                self.applyTheme(t)
+            }
+        }
+    }
+    
     // --
     
-    public var textStyle:TextStyle?
-    public var textColourStyle:ColourStyle?
+    public var textStyle:TextStyle?  {
+        didSet {
+            if oldValue != textStyle {
+                setNeedsUpdateTheme()
+            }
+        }
+    }
+    
+    public var textColourStyle:ColourStyle?  {
+        didSet {
+            if oldValue != textColourStyle {
+                setNeedsUpdateTheme()
+            }
+        }
+    }
     
     @IBInspectable public var textStyleId:String? {
         set {
