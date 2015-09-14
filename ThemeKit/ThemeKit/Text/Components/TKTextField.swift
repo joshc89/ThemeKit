@@ -48,6 +48,7 @@ public class TKTextField: UITextField, ThemeableText {
             if let t = self.theme() {
                 self.applyTheme(t)
             }
+            _needsUpdateTheme = false
         }
         
         // TODO: This should be .Fill if there is no text and the placholderTextStyle != nil but .Center otherwise. There is still a bug when editting but no text is typed, so the placeholder is still visible

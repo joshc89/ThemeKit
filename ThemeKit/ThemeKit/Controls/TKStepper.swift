@@ -42,6 +42,7 @@ public class TKStepper: UIStepper, Themeable {
             if let t = self.theme() {
                 self.applyTheme(t)
             }
+            _needsUpdateTheme = false
         }
     }
     

@@ -43,6 +43,7 @@ public class TKButton: UIButton, Themeable {
             if let t = self.theme() {
                 self.applyTheme(t)
             }
+            _needsUpdateTheme = false
         }
     }
     

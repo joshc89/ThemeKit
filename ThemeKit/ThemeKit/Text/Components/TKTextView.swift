@@ -45,6 +45,7 @@ public class TKTextView: UITextView, ThemeableText {
             if let t = self.theme() {
                 self.applyTheme(t)
             }
+            _needsUpdateTheme = false
         }
     }
     
