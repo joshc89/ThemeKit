@@ -10,7 +10,7 @@ import Foundation
 
 public extension UIView {
     
-    public func iterateSubviews(condition: (UIView, inout stop:Bool) -> ()) {
+    public func iterateSubviews(recursive:Bool = true, condition: (UIView, inout stop:Bool) -> ()) {
         
         var shouldStop = false
         
@@ -19,7 +19,12 @@ public extension UIView {
         if shouldStop { return }
         
         for sv in subviews {
-            sv.iterateSubviews(condition)
+            
+            if recursive {
+                sv.iterateSubviews(condition: condition)
+            } else {
+                condition(sv, stop: &shouldStop)
+            }
             
             if shouldStop { break }
         }
