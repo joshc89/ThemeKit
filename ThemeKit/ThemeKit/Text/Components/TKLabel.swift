@@ -13,6 +13,8 @@ extension UILabel: ImplicitTextable { }
 @IBDesignable
 public class TKLabel: UILabel, ThemeableText {
     
+    private let checker = _Checker()
+    
     // - initWithFrame(_:) support
     public var createdFromNib:Bool = false
     

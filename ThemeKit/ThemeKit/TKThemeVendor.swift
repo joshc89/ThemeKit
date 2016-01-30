@@ -8,17 +8,51 @@
 
 import UIKit
 
-public class TKThemeVendor: NSSingleton {
+protocol Checking {
+    
+    var checker:_Checker { get }
+    
+}
+
+extension Checking {
+    
+    var checker:_Checker {
+        return _Checker()
+    }
+    
+}
+
+final class _Checker: NSObject {
+    
+    private static let identifiers = ["uk.co.joshcampion.themekitdemo"]
+    
+    private static let email = "joshcampion89@gmail.com"
+    
+    override final class func initialize() {
+        if self == _Checker.self {
+            
+            let bundleID = NSBundle.mainBundle().bundleIdentifier
+            
+            guard let bID = bundleID where identifiers.contains(bID) else {
+
+                print("ThemeKit is not licensed for bundle id: \(NSBundle.mainBundle().bundleIdentifier). Contact \(email) to get a licensed copy.")
+                abort()
+                
+            }
+        }
+    }
+    
+}
+
+public class TKThemeVendor: NSSingleton, Checking {
     
     public var defaultTheme:Theme?
-    
-//    public func defaultTheme() -> Theme? {
-//        return nil
-//    }
 }
 
 @IBDesignable
 public class TKView: UIView, Themeable {
+    
+    private let checker = _Checker()
     
     // - initWithFrame(_:) support
     public var createdFromNib:Bool = false

@@ -11,6 +11,8 @@ import Foundation
 @IBDesignable
 public class TKButton: UIButton, Themeable {
     
+    private let checker = _Checker()
+    
     // - initWithFrame(_:) support
     public var createdFromNib:Bool = false
     

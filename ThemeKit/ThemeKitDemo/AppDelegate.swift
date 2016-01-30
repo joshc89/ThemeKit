@@ -74,11 +74,11 @@ class MaterialVendor: TKThemeVendor {
 
 extension TKThemeVendor {
     
-//    override public class func initialize() {
-//        super.initialize()
-//        
-//        assert(MaterialVendor.shared().defaultTheme() != nil)
-//    }
+    override public class func initialize() {
+        super.initialize()
+        
+        assert(MaterialVendor.shared().defaultTheme != nil)
+    }
 }
 
 struct MaterialTheme: Theme {
@@ -113,43 +113,14 @@ let MaterialColours:[ColourStyle:UIColor] = [
     .SecondaryLightText: UIColor.whiteColor().colorWithAlphaComponent(0.54)
 ]
 
-/*
-class MaterialThemedWindow:TKWindow {
-    
-    override class func themeType() -> Theme.Type {
-        return MaterialTheme.self
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame:frame)
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-}
-*/
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-
-    override init() {
-        
-        
-//        window = MaterialThemedWindow(frame: UIScreen.mainScreen().bounds)
-    }
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+
         // Override point for customization after application launch.
-        
-        let _ = MaterialVendor.shared()
-        
-        if let tabBarC = window?.rootViewController as? UITabBarController   {
-            
-            tabBarC.tabBar.tintColor = UIColor.greenColor()
-        }
         
         return true
     }
