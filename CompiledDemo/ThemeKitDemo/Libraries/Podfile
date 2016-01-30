@@ -1,0 +1,17 @@
+# Uncomment this line to define a global platform for your project
+platform :ios, '8.0'
+
+# define 
+workspace '../ThemeKitDemo'
+xcodeproj '../ThemeKitDemo'
+
+inhibit_all_warnings!
+use_frameworks!
+
+target 'ThemeKitDemo' do
+
+xcodeproj '../ThemeKitDemo'
+
+pod 'ThemeKit', :path => 'ThemeKit'
+
+end

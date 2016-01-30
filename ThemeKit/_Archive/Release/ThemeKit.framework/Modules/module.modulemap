@@ -1,0 +1,10 @@
+framework module ThemeKit {
+  umbrella header "ThemeKit.h"
+
+  export *
+  module * { export * }
+}
+
+module ThemeKit.Swift {
+    header "ThemeKit-Swift.h"
+}
