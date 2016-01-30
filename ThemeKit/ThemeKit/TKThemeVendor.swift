@@ -34,14 +34,11 @@ final class _Checker: NSObject {
             let bundleID = NSBundle.mainBundle().bundleIdentifier
             
             guard let bID = bundleID where identifiers.contains(bID) else {
-
                 print("ThemeKit is not licensed for bundle id: \(NSBundle.mainBundle().bundleIdentifier). Contact \(email) to get a licensed copy.")
                 abort()
-                
             }
         }
     }
-    
 }
 
 public class TKThemeVendor: NSSingleton, Checking {
