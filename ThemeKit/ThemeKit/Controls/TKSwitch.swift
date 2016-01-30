@@ -105,6 +105,14 @@ public class TKSwitch:UISwitch, Themeable {
         
     }
     
+//    public override func prepareForInterfaceBuilder() {
+//        super.prepareForInterfaceBuilder()
+//        
+//        if let color = TKThemeVendor.shared().defaultTheme()?.colour(.Accent) where color == UIColor.redColor() {
+//            self.onTintColor = UIColor.redColor()
+//        }
+//    }
+    
     /*
     // in order to remove this the protocol extension cannot fully define the protocol otherwise the methods are statically dispatched not dynamically dispatched. See (http://nomothetis.svbtle.com/the-ghost-of-swift-bugs-future) for more details
     public override func prepareForInterfaceBuilder() {

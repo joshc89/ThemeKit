@@ -120,8 +120,8 @@ public extension Themeable where Self:UIView {
     func theme() -> Theme? {
         
         // TODO: Allow a UIView to have a theme, which overrides the window's theme
-        let vendor = TKThemeVendor.sharedVendor()
-        let theme = vendor.defaultTheme()
+        let vendor = TKThemeVendor.shared()
+        let theme = vendor.defaultTheme
         return theme
     }
     

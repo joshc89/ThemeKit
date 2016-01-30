@@ -103,9 +103,7 @@ public class TKSegmentedControl: UISegmentedControl, Themeable {
     public override func intrinsicContentSize() -> CGSize {
         let superSize = super.intrinsicContentSize()
         
-        if let theme = theme(),
-            let textStyle = self.textStyle {
-                let font = theme.font(textStyle)
+        if let font = titleTextAttributesForState(self.state)?[NSFontAttributeName] as? UIFont {
                 
                 let test:NSString = "Testing"
                 let boundingRect = test.boundingRectWithSize(CGSizeMake(CGFloat.max, CGFloat.max),

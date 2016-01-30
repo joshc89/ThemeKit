@@ -8,18 +8,13 @@
 
 import UIKit
 
-public class TKThemeVendor: NSObject {
+public class TKThemeVendor: NSSingleton {
     
-    public static var _internalSharedVendor:TKThemeVendor?
+    public var defaultTheme:Theme?
     
-    public class func sharedVendor() -> TKThemeVendor {
-        return _internalSharedVendor ?? TKThemeVendor()
-    }
-    
-    public func defaultTheme() -> Theme? {
-        
-        return nil
-    }
+//    public func defaultTheme() -> Theme? {
+//        return nil
+//    }
 }
 
 @IBDesignable

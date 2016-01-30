@@ -9,67 +9,82 @@
 import UIKit
 import ThemeKit
 
+extension IBThemeable {
+    
+    public func ibTheme() -> Theme? {
+        return MaterialTheme()
+    }
+}
+
 @IBDesignable
-class ThemeView: TKView { }
+class ThemeView: TKView, IBThemeable { }
 
 // --- Text Elements --- \\
 
 @IBDesignable
-class ThemeLabel: TKLabel { }
+class ThemeLabel: TKLabel, IBThemeable { }
 
 @IBDesignable
-class ThemeTextField: TKTextField { }
+class ThemeTextField: TKTextField, IBThemeable { }
 
 @IBDesignable
-class ThemeTextView: TKTextView { }
+class ThemeTextView: TKTextView, IBThemeable { }
 
 // --- Controls --- \\
 
 @IBDesignable
-class ThemeButton: TKButton { }
+class ThemeButton: TKButton, IBThemeable { }
 
 @IBDesignable
-class ThemeSwitch: TKSwitch { }
+class ThemeSwitch: TKSwitch, IBThemeable { }
 
 @IBDesignable
-class ThemeSegmentedControl: TKSegmentedControl { }
+class ThemeSegmentedControl: TKSegmentedControl, IBThemeable { }
 
 @IBDesignable
-class ThemeStepper: TKStepper { }
+class ThemeStepper: TKStepper, IBThemeable { }
 
 // --- Navigation --- \\
 
-@IBDesignable
-class ThemeNavigationBar { }
+// @IBDesignable
+// class ThemeNavigationBar { }
 
-@IBDesignable
-class ThemeBarButtonItem { }
+// @IBDesignable
+// class ThemeBarButtonItem { }
 
 //@IBDesignable
-//class ThemeTabBarItem { }
+// class ThemeTabBarItem { }
 //
 //@IBDesignable
-//class ThemeTabBar { } 
+// class ThemeTabBar { }
 
 class MaterialVendor: TKThemeVendor {
     
-    private let _defaultTheme = MaterialTheme()
+    private var _defaultTheme:Theme? = MaterialTheme()
     
-    override func defaultTheme() -> Theme? {
-        return _defaultTheme
+    override var defaultTheme:Theme? {
+        get {
+            return _defaultTheme
+        }
+        set {
+            _defaultTheme = newValue
+        }
     }
 }
 
 extension TKThemeVendor {
-    override public class func initialize() {
-        _internalSharedVendor = MaterialVendor()
-    }
+    
+//    override public class func initialize() {
+//        super.initialize()
+//        
+//        assert(MaterialVendor.shared().defaultTheme() != nil)
+//    }
 }
 
 struct MaterialTheme: Theme {
     
-    typealias TextStyleType = TextStyle // default
-    typealias ColourStyleType = ColourStyle // default
+//    typealias TextStyleType = TextStyle // default
+//    typealias ColourStyleType = ColourStyle // default
     
     let defaultTextSizes = MaterialTextSizes // default
     let textSizeAdjustments = AppleFontAdjustments // default
@@ -128,6 +143,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let _ = MaterialVendor.shared()
         
         if let tabBarC = window?.rootViewController as? UITabBarController   {
             

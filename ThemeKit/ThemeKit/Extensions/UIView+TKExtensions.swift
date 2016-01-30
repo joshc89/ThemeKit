@@ -31,6 +31,12 @@ public extension UIView {
     }
 }
 
+public protocol IBThemeable {
+    
+    func ibTheme() -> Theme?
+    
+}
+
 /// Extending UIView to apply the theme at the default times: awakeFromNib(), prepareForInterfaceBuilder(). The default implementations of these methods are empty so it is safe to override them.
 public extension UIView {
     
@@ -50,8 +56,9 @@ public extension UIView {
         super.prepareForInterfaceBuilder()
         
         if let themeable = self as? Themeable,
-            let theme = themeable.theme() {
-                themeable.applyTheme(theme)
+            let ibThemeable = self as? IBThemeable,
+            let thisTheme = ibThemeable.ibTheme() {
+                themeable.applyTheme(thisTheme)
         }
     }
 }
