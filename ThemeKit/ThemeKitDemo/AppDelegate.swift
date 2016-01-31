@@ -77,7 +77,9 @@ extension TKThemeVendor {
     override public class func initialize() {
         super.initialize()
         
-        assert(MaterialVendor.shared().defaultTheme != nil)
+        if self == TKThemeVendor.self {
+            assert(MaterialVendor.shared().defaultTheme != nil)
+        }
     }
 }
 

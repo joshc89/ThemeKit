@@ -13,9 +13,9 @@ let TKDefaultInsets = UIEdgeInsetsMake(2.0, 7.0, 2.0, 7.0)
 extension UITextField: Textable { }
 
 @IBDesignable
-public class TKTextField: UITextField, ThemeableText {
+public class TKTextField: UITextField, ThemeableText, Checking {
     
-    private let checker = _Checker()
+    let checker = _Checker()
     
     // - initWithFrame(_:) support
     public var createdFromNib:Bool = false
@@ -35,23 +35,10 @@ public class TKTextField: UITextField, ThemeableText {
         }
     }
     
-    // -- setNeedsUpdateTheme() support
-    private var _needsUpdateTheme = true
-    
-    public func setNeedsUpdateTheme() {
-        _needsUpdateTheme = true
-        setNeedsLayout()
-    }
-    
     public override func layoutSubviews() {
         super.layoutSubviews()
         
-        if _needsUpdateTheme {
-            if let t = self.theme() {
-                self.applyTheme(t)
-            }
-            _needsUpdateTheme = false
-        }
+        updateThemeIfNeeded()
         
         // TODO: This should be .Fill if there is no text and the placholderTextStyle != nil but .Center otherwise. There is still a bug when editting but no text is typed, so the placeholder is still visible
         

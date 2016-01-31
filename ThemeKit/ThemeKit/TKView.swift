@@ -1,14 +1,17 @@
 //
-//  TKStepper.swift
+//  TKView.swift
 //  ThemeKit
 //
-//  Created by Josh Campion on 12/08/2015.
-//  Copyright © 2015 Josh Campion. All rights reserved.
+//  Created by Josh Campion on 31/01/2016.
+//  Copyright © 2016 Josh Campion. All rights reserved.
 //
 
 import UIKit
 
-public class TKStepper: UIStepper, Themeable, Checking {
+@IBDesignable
+public class TKView: UIView, Themeable, Checking {
+    
+    let checker = _Checker()
     
     // - initWithFrame(_:) support
     public var createdFromNib:Bool = false
@@ -19,15 +22,15 @@ public class TKStepper: UIStepper, Themeable, Checking {
         createdFromNib = true
     }
     
-     public override func didMoveToSuperview() {
-            super.didMoveToSuperview()
+    public override func didMoveToSuperview() {
+        super.didMoveToSuperview()
         
         if let theme = theme() where !createdFromNib {
             applyTheme(theme)
         }
     }
     
-    // --
+    // -- setNeedsUpdateTheme() support
     
     public override func layoutSubviews() {
         super.layoutSubviews()
@@ -35,30 +38,36 @@ public class TKStepper: UIStepper, Themeable, Checking {
         updateThemeIfNeeded()
     }
     
-    public var tintColourStyle:ColourStyle?  {
+    // --
+    
+    
+    public var backgroundColourStyle:ColourStyle? {
         didSet {
-            if oldValue != tintColourStyle {
+            if oldValue != backgroundColourStyle {
                 setNeedsUpdateTheme()
             }
         }
     }
     
-    @IBInspectable public var tintColourId:String? {
+    @IBInspectable public var backgroundColourStyleId:String? {
         set {
             if let idString = newValue,
                 let style = ColourStyle(rawValue:idString) {
-                    tintColourStyle = style
+                    backgroundColourStyle = style
             }
         }
         get {
-            return tintColourStyle?.rawValue
+            return backgroundColourStyle?.rawValue
         }
     }
     
     public func applyTheme(theme:Theme) {
         
-        if let colour = tintColourStyle {
-            tintColor = theme.colour(colour)
+        if let bgStyle = backgroundColourStyle {
+            backgroundColor = theme.colour(bgStyle)
+        } else {
+            backgroundColor = UIColor.whiteColor()
         }
     }
 }
+

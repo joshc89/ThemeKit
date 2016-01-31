@@ -7,11 +7,6 @@
 //
 
 import Foundation
-import ObjectiveC
-
-// --- Non-Framework code --- \\
-
-// --- Framework Code --- \\
 
 /// Type specificatoin used only when Theme can specify types for TextStyle and ColourStyle. Currently this results in in a generic UILabel which can't be included in a Storyboard.
 public typealias RawRepresentableKey = protocol<RawRepresentable, Hashable>
@@ -92,37 +87,4 @@ public extension Theme {
         
         return colour
     }
-}
-
-public protocol Themeable: class {
-    
-    var createdFromNib:Bool { get set }
-    
-    func theme() -> Theme?
-    
-    func applyTheme(theme:Theme)
-    
-    func setNeedsUpdateTheme()
-}
-
-public extension Themeable {
-    
-    func applyTheme(theme:Theme) {
-        
-        if let textSelf = self as? ThemeableText {
-            textSelf.applyTextTheme(theme)
-        }
-    }
-}
-
-public extension Themeable where Self:UIView {
-    
-    func theme() -> Theme? {
-        
-        // TODO: Allow a UIView to have a theme, which overrides the window's theme
-        let vendor = TKThemeVendor.shared()
-        let theme = vendor.defaultTheme
-        return theme
-    }
-    
 }

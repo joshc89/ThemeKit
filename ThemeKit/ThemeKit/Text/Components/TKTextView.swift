@@ -11,9 +11,9 @@ import Foundation
 extension UITextView: Textable { }
 
 @IBDesignable
-public class TKTextView: UITextView, ThemeableText {
+public class TKTextView: UITextView, ThemeableText, Checking {
     
-    private let checker = _Checker()
+    let checker = _Checker()
     
     // - initWithFrame(_:) support
     public var createdFromNib:Bool = false
@@ -32,23 +32,10 @@ public class TKTextView: UITextView, ThemeableText {
         }
     }
     
-    // -- setNeedsUpdateTheme() support
-    private var _needsUpdateTheme = true
-    
-    public func setNeedsUpdateTheme() {
-        _needsUpdateTheme = true
-        setNeedsLayout()
-    }
-    
     public override func layoutSubviews() {
         super.layoutSubviews()
         
-        if _needsUpdateTheme {
-            if let t = self.theme() {
-                self.applyTheme(t)
-            }
-            _needsUpdateTheme = false
-        }
+        updateThemeIfNeeded()
     }
     
     // --

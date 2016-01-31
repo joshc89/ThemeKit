@@ -9,9 +9,9 @@
 import Foundation
 
 @IBDesignable
-public class TKSwitch:UISwitch, Themeable {
+public class TKSwitch:UISwitch, Themeable, Checking {
     
-    private let checker = _Checker()
+    let checker = _Checker()
     
     // - initWithFrame(_:) support
     public var createdFromNib:Bool = false
@@ -30,26 +30,13 @@ public class TKSwitch:UISwitch, Themeable {
         }
     }
     
-    // -- setNeedsUpdateTheme() support
-    private var _needsUpdateTheme = true
-    
-    public func setNeedsUpdateTheme() {
-        _needsUpdateTheme = true
-        setNeedsLayout()
-    }
+    // --
     
     public override func layoutSubviews() {
         super.layoutSubviews()
         
-        if _needsUpdateTheme {
-            if let t = self.theme() {
-                self.applyTheme(t)
-            }
-            _needsUpdateTheme = false
-        }
+        updateThemeIfNeeded()
     }
-    
-    // --
     
     // MARK: - Properties
     

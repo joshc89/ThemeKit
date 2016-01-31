@@ -9,9 +9,9 @@
 import Foundation
 
 @IBDesignable
-public class TKButton: UIButton, Themeable {
+public class TKButton: UIButton, Themeable, Checking {
     
-    private let checker = _Checker()
+    let checker = _Checker()
     
     // - initWithFrame(_:) support
     public var createdFromNib:Bool = false
@@ -30,26 +30,15 @@ public class TKButton: UIButton, Themeable {
         }
     }
     
-    // -- setNeedsUpdateTheme() support
-    private var _needsUpdateTheme = true
-    
-    public func setNeedsUpdateTheme() {
-        _needsUpdateTheme = true
-        setNeedsLayout()
-    }
+    // --
     
     public override func layoutSubviews() {
         super.layoutSubviews()
         
-        if _needsUpdateTheme {
-            if let t = self.theme() {
-                self.applyTheme(t)
-            }
-            _needsUpdateTheme = false
-        }
+        updateThemeIfNeeded()
     }
     
-    // --
+    
     
     public var tintColourStyle:ColourStyle?  {
         didSet {

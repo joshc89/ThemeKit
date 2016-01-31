@@ -9,9 +9,9 @@
 import UIKit
 
 @IBDesignable
-public class TKSegmentedControl: UISegmentedControl, Themeable {
-
-    private let checker = _Checker()
+public class TKSegmentedControl: UISegmentedControl, Themeable, Checking {
+    
+    let checker = _Checker()
     
     // - initWithFrame(_:) support
     public var createdFromNib:Bool = false
@@ -30,23 +30,10 @@ public class TKSegmentedControl: UISegmentedControl, Themeable {
         }
     }
     
-    // -- setNeedsUpdateTheme() support
-    private var _needsUpdateTheme = true
-    
-    public func setNeedsUpdateTheme() {
-        _needsUpdateTheme = true
-        setNeedsLayout()
-    }
-    
     public override func layoutSubviews() {
         super.layoutSubviews()
         
-        if _needsUpdateTheme {
-            if let t = self.theme() {
-                self.applyTheme(t)
-            }
-            _needsUpdateTheme = false
-        }
+        updateThemeIfNeeded()
     }
     
     // --

@@ -8,9 +8,9 @@
 
 import UIKit
 
-class TKTabBar: UITabBar {
-
-    private let checker = _Checker()
+class TKTabBar: UITabBar, Checking {
+    
+    let checker = _Checker()
     
     /*
     // Only override drawRect: if you perform custom drawing.

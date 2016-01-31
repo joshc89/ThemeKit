@@ -8,9 +8,9 @@
 
 import UIKit
 
-class TKNavigationBar: UINavigationBar {
-
-    private let checker = _Checker()
+class TKNavigationBar: UINavigationBar, Checking {
+    
+    let checker = _Checker()
     
     /*
     // Only override drawRect: if you perform custom drawing.
