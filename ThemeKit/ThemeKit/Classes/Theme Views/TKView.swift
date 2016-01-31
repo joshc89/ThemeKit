@@ -30,16 +30,13 @@ public class TKView: UIView, Themeable, Checking {
         }
     }
     
-    // -- setNeedsUpdateTheme() support
+    // --
     
     public override func layoutSubviews() {
         super.layoutSubviews()
         
         updateThemeIfNeeded()
     }
-    
-    // --
-    
     
     public var backgroundColourStyle:ColourStyle? {
         didSet {

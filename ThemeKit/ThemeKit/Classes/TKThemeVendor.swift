@@ -10,5 +10,7 @@ import UIKit
 
 public class TKThemeVendor: NSSingleton, Checking {
     
+    let checker = _Checker()
+    
     public var defaultTheme:Theme?
 }

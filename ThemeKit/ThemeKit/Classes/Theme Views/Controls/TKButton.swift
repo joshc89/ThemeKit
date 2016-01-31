@@ -1,14 +1,17 @@
 //
-//  TKStepper.swift
+//  TKButton.swift
 //  ThemeKit
 //
-//  Created by Josh Campion on 12/08/2015.
+//  Created by Josh Campion on 02/08/2015.
 //  Copyright © 2015 Josh Campion. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-public class TKStepper: UIStepper, Themeable, Checking {
+@IBDesignable
+public class TKButton: UIButton, Themeable, Checking {
+    
+    let checker = _Checker()
     
     // - initWithFrame(_:) support
     public var createdFromNib:Bool = false
@@ -43,6 +46,26 @@ public class TKStepper: UIStepper, Themeable, Checking {
         }
     }
     
+    public var textStyle:TextStyle?  {
+        didSet {
+            if oldValue != textStyle {
+                setNeedsUpdateTheme()
+            }
+        }
+    }
+    
+    @IBInspectable public var textStyleId:String? {
+        set {
+            if let idString = newValue,
+                let style = TextStyle(rawValue:idString) {
+                    textStyle = style
+            }
+        }
+        get {
+            return textStyle?.rawValue
+        }
+    }
+    
     @IBInspectable public var tintColourId:String? {
         set {
             if let idString = newValue,
@@ -59,6 +82,10 @@ public class TKStepper: UIStepper, Themeable, Checking {
         
         if let colour = tintColourStyle {
             tintColor = theme.colour(colour)
+        }
+        
+        if let text = textStyle {
+            titleLabel?.font = theme.font(text)
         }
     }
 }
