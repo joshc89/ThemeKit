@@ -38,6 +38,8 @@ public class TKButton: UIButton, Themeable, Checking {
         updateThemeIfNeeded()
     }
     
+    // MARK: - Themeable Properties
+    
     public var tintColourStyle:ColourStyle?  {
         didSet {
             if oldValue != tintColourStyle {

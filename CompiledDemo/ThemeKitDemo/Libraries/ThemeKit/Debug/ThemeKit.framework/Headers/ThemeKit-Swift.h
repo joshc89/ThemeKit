@@ -160,8 +160,8 @@ SWIFT_CLASS("_TtC8ThemeKit8TKSwitch")
 - (void)didMoveToSuperview;
 - (void)setNeedsUpdateTheme;
 - (void)layoutSubviews;
-@property (nonatomic, copy) NSString * __nullable onTintColourId;
-@property (nonatomic, copy) NSString * __nullable thumbTintColourId;
+@property (nonatomic, copy) IBInspectable NSString * __nullable onTintColourId;
+@property (nonatomic, copy) IBInspectable NSString * __nullable thumbTintColourId;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -182,11 +182,11 @@ SWIFT_CLASS("_TtC8ThemeKit11TKTextField")
 - (CGRect)editingRectForBounds:(CGRect)bounds;
 - (CGRect)placeholderRectForBounds:(CGRect)bounds;
 @property (nonatomic) UIEdgeInsets textInsets;
-@property (nonatomic, copy) NSString * __nullable textStyleId;
-@property (nonatomic, copy) NSString * __nullable textColourStyleId;
-@property (nonatomic, copy) NSString * __nullable placeholderTextStyleId;
-@property (nonatomic, copy) NSString * __nullable placeholderTextColourStyleId;
-@property (nonatomic, copy) NSString * __nullable placeholder;
+@property (nonatomic, copy) IBInspectable NSString * __nullable textStyleId;
+@property (nonatomic, copy) IBInspectable NSString * __nullable textColourStyleId;
+@property (nonatomic, copy) IBInspectable NSString * __nullable placeholderTextStyleId;
+@property (nonatomic, copy) IBInspectable NSString * __nullable placeholderTextColourStyleId;
+@property (nonatomic, copy) IBInspectable NSString * __nullable placeholder;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -200,8 +200,8 @@ SWIFT_CLASS("_TtC8ThemeKit10TKTextView")
 - (void)didMoveToSuperview;
 - (void)setNeedsUpdateTheme;
 - (void)layoutSubviews;
-@property (nonatomic, copy) NSString * __nullable textStyleId;
-@property (nonatomic, copy) NSString * __nullable textColourStyleId;
+@property (nonatomic, copy) IBInspectable NSString  * __nullable textStyleId;
+@property (nonatomic, copy) IBInspectable NSString * __nullable textColourStyleId;
 - (nonnull instancetype)initWithFrame:(CGRect)frame textContainer:(NSTextContainer * __nullable)textContainer OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -220,7 +220,7 @@ SWIFT_CLASS("_TtC8ThemeKit6TKView")
 - (void)didMoveToSuperview;
 - (void)setNeedsUpdateTheme;
 - (void)layoutSubviews;
-@property (nonatomic, copy) NSString * __nullable backgroundColourStyleId;
+@property (nonatomic, copy) IBInspectable NSString * __nullable backgroundColourStyleId;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end

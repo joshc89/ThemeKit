@@ -22,6 +22,7 @@ final class _Checker: NSObject {
     
     private static let email = "joshcampion89@gmail.com"
     
+    #if !TARGET_INTERFACE_BUILDER
     override final class func initialize() {
         if self == _Checker.self {
             
@@ -33,4 +34,5 @@ final class _Checker: NSObject {
             }
         }
     }
+    #endif
 }

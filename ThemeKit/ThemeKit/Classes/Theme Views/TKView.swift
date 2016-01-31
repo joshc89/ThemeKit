@@ -38,6 +38,8 @@ public class TKView: UIView, Themeable, Checking {
         updateThemeIfNeeded()
     }
     
+    // MARK: - Themeable Properties
+    
     public var backgroundColourStyle:ColourStyle? {
         didSet {
             if oldValue != backgroundColourStyle {

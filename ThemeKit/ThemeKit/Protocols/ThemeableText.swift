@@ -18,13 +18,23 @@ public protocol Textable: class {
     
 }
 
-public protocol ThemeableText: Themeable {
+public protocol ThemeableFont: Themeable {
+    
+    var textStyle:TextStyle? { get set }
+    var textStyleId:String? { get set }
+    
+}
+
+public protocol ThemeableTextColor: Themeable {
     
     var textStyle:TextStyle? { get set }
     var textStyleId:String? { get set }
     
     var textColourStyle:ColourStyle? { get set }
     var textColourStyleId:String? { get set }
+}
+
+public protocol ThemeableText: ThemeableFont, ThemeableTextColor {
     
     func applyTextTheme(theme:Theme)
 }

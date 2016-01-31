@@ -85,7 +85,9 @@ public class TKSegmentedControl: UISegmentedControl, Themeable, Checking {
         }
         
         if let text = textStyle {
-            setTitleTextAttributes([NSFontAttributeName: theme.font(text)], forState: .Normal)
+            var attributes = self.titleTextAttributesForState(.Normal) ?? [String:AnyObject]()
+            attributes[NSFontAttributeName] = theme.font(text)
+            setTitleTextAttributes(attributes, forState: .Normal)
         }
     }
     

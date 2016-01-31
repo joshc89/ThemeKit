@@ -46,17 +46,17 @@ class ThemeStepper: TKStepper, IBThemeable { }
 
 // --- Navigation --- \\
 
-// @IBDesignable
-// class ThemeNavigationBar { }
+ @IBDesignable
+class ThemeNavigationBar: TKNavigationBar, IBThemeable { }
 
-// @IBDesignable
-// class ThemeBarButtonItem { }
+ @IBDesignable
+class ThemeBarButtonItem: TKBarButtonItem, IBThemeable { }
 
-//@IBDesignable
-// class ThemeTabBarItem { }
-//
-//@IBDesignable
-// class ThemeTabBar { }
+@IBDesignable
+class ThemeTabBar: TKTabBar, IBThemeable { }
+
+@IBDesignable
+class ThemeTabBarItem: TKTabBarItem, IBThemeable { }
 
 class MaterialVendor: TKThemeVendor {
     

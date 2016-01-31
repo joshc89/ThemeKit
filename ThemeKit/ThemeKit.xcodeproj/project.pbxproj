@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		A505D52A1B6E154E00AAD861 /* UIView+TKExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505D5291B6E154E00AAD861 /* UIView+TKExtensions.swift */; };
 		A505D52C1B6E157600AAD861 /* UISearchBar+TKExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505D52B1B6E157600AAD861 /* UISearchBar+TKExtensions.swift */; };
+		A543191F1C5E6B1500713F3F /* TKBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A543191E1C5E6B1500713F3F /* TKBarButtonItem.swift */; };
+		A54319211C5E6CD400713F3F /* TKTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54319201C5E6CD400713F3F /* TKTabBarItem.swift */; };
 		A582E0D21C5CC3EB000F22AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A582E0D11C5CC3EB000F22AB /* AppDelegate.swift */; };
 		A582E0D41C5CC3EB000F22AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A582E0D31C5CC3EB000F22AB /* ViewController.swift */; };
 		A582E0D71C5CC3EB000F22AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A582E0D51C5CC3EB000F22AB /* Main.storyboard */; };
@@ -59,6 +61,8 @@
 /* Begin PBXFileReference section */
 		A505D5291B6E154E00AAD861 /* UIView+TKExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+TKExtensions.swift"; path = "Extensions/UIView+TKExtensions.swift"; sourceTree = "<group>"; };
 		A505D52B1B6E157600AAD861 /* UISearchBar+TKExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UISearchBar+TKExtensions.swift"; path = "Extensions/UISearchBar+TKExtensions.swift"; sourceTree = "<group>"; };
+		A543191E1C5E6B1500713F3F /* TKBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKBarButtonItem.swift; sourceTree = "<group>"; };
+		A54319201C5E6CD400713F3F /* TKTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKTabBarItem.swift; sourceTree = "<group>"; };
 		A582E0CF1C5CC3EB000F22AB /* ThemeKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThemeKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A582E0D11C5CC3EB000F22AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A582E0D31C5CC3EB000F22AB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -221,7 +225,9 @@
 			isa = PBXGroup;
 			children = (
 				A5C8C2F81C5E63330002855B /* TKNavigationBar.swift */,
+				A543191E1C5E6B1500713F3F /* TKBarButtonItem.swift */,
 				A5C8C2F91C5E63330002855B /* TKTabBar.swift */,
+				A54319201C5E6CD400713F3F /* TKTabBarItem.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -408,6 +414,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5C8C3071C5E63330002855B /* TKButton.swift in Sources */,
+				A54319211C5E6CD400713F3F /* TKTabBarItem.swift in Sources */,
 				A5C8C31A1C5E636F0002855B /* TKTextView.swift in Sources */,
 				A5C8C3111C5E63330002855B /* TKView.swift in Sources */,
 				A5C8C3181C5E636F0002855B /* TKLabel.swift in Sources */,
@@ -425,6 +432,7 @@
 				A5C8C3091C5E63330002855B /* TKStepper.swift in Sources */,
 				A5C8C3221C5E638B0002855B /* ThemeConstants.swift in Sources */,
 				A5C8C3211C5E638B0002855B /* LicenseChecker.swift in Sources */,
+				A543191F1C5E6B1500713F3F /* TKBarButtonItem.swift in Sources */,
 				A5C8C3121C5E63330002855B /* TKThemeVendor.swift in Sources */,
 				A505D52A1B6E154E00AAD861 /* UIView+TKExtensions.swift in Sources */,
 			);
@@ -480,7 +488,7 @@
 				INFOPLIST_FILE = ThemeKitDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = uk.co.joshcampion.ThemeKitDemo2;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.joshcampion.ThemeKitDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -492,7 +500,7 @@
 				INFOPLIST_FILE = ThemeKitDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = uk.co.joshcampion.ThemeKitDemo2;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.joshcampion.ThemeKitDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

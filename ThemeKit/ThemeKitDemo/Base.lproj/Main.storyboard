@@ -103,7 +103,11 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Controls" image="sw-sm-share" id="RZn-qg-9Af"/>
+                    <tabBarItem key="tabBarItem" title="Controls" image="sw-sm-share" id="RZn-qg-9Af" customClass="ThemeTabBarItem" customModule="ThemeKitDemo" customModuleProvider="target">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="textStyleId" value="Headline"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -224,8 +228,16 @@
                     </view>
                     <navigationItem key="navigationItem" id="Lxw-gl-jaL">
                         <rightBarButtonItems>
-                            <barButtonItem title="Item" id="5Dp-VF-AbZ"/>
-                            <barButtonItem title="Item" id="KAg-gH-w3h"/>
+                            <barButtonItem title="Item" id="5Dp-VF-AbZ" customClass="ThemeBarButtonItem" customModule="ThemeKitDemo" customModuleProvider="target">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="textStyleId" value="Caption"/>
+                                </userDefinedRuntimeAttributes>
+                            </barButtonItem>
+                            <barButtonItem title="Item" id="KAg-gH-w3h" customClass="ThemeBarButtonItem" customModule="ThemeKitDemo" customModuleProvider="target">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="textStyleId" value="Headline"/>
+                                </userDefinedRuntimeAttributes>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                 </viewController>
@@ -239,11 +251,15 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="wLN-eD-t5n" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="9ir-Iw-Alm">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="9ir-Iw-Alm" customClass="ThemeTabBar" customModule="ThemeKitDemo" customModuleProvider="target">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="barTintColourStyleId" value="Main"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="tintColourStyleId" value="Accent"/>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="5g5-QH-mJQ"/>
@@ -260,9 +276,13 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ahb-jP-Hij" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Text" image="sw-sm-share" id="Cqt-RM-qEx"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="k1j-Xe-qjb">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="k1j-Xe-qjb" customClass="ThemeNavigationBar" customModule="ThemeKitDemo" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="tintColourStyleId" value="Accent"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="barTintColourStyleId" value="Main"/>
+                        </userDefinedRuntimeAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
