@@ -11,6 +11,8 @@
 		A505D52C1B6E157600AAD861 /* UISearchBar+TKExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505D52B1B6E157600AAD861 /* UISearchBar+TKExtensions.swift */; };
 		A543191F1C5E6B1500713F3F /* TKBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A543191E1C5E6B1500713F3F /* TKBarButtonItem.swift */; };
 		A54319211C5E6CD400713F3F /* TKTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54319201C5E6CD400713F3F /* TKTabBarItem.swift */; };
+		A54319231C5F432A00713F3F /* ThemeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A59A6CC51B4AB9B100F708DC /* ThemeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A54319261C61427000713F3F /* TKImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54319251C61427000713F3F /* TKImageView.swift */; };
 		A582E0D21C5CC3EB000F22AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A582E0D11C5CC3EB000F22AB /* AppDelegate.swift */; };
 		A582E0D41C5CC3EB000F22AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A582E0D31C5CC3EB000F22AB /* ViewController.swift */; };
 		A582E0D71C5CC3EB000F22AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A582E0D51C5CC3EB000F22AB /* Main.storyboard */; };
@@ -58,11 +60,26 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A54319241C5F432A00713F3F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A54319231C5F432A00713F3F /* ThemeKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		A505D5291B6E154E00AAD861 /* UIView+TKExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+TKExtensions.swift"; path = "Extensions/UIView+TKExtensions.swift"; sourceTree = "<group>"; };
 		A505D52B1B6E157600AAD861 /* UISearchBar+TKExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UISearchBar+TKExtensions.swift"; path = "Extensions/UISearchBar+TKExtensions.swift"; sourceTree = "<group>"; };
 		A543191E1C5E6B1500713F3F /* TKBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKBarButtonItem.swift; sourceTree = "<group>"; };
 		A54319201C5E6CD400713F3F /* TKTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKTabBarItem.swift; sourceTree = "<group>"; };
+		A54319251C61427000713F3F /* TKImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKImageView.swift; sourceTree = "<group>"; };
 		A582E0CF1C5CC3EB000F22AB /* ThemeKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThemeKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A582E0D11C5CC3EB000F22AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A582E0D31C5CC3EB000F22AB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -203,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				A5C8C3001C5E63330002855B /* TKView.swift */,
+				A54319251C61427000713F3F /* TKImageView.swift */,
 				A5C8C2F21C5E63330002855B /* Controls */,
 				A5C8C2F71C5E63330002855B /* Navigation */,
 				A5C8C2FA1C5E63330002855B /* Text */,
@@ -284,6 +302,7 @@
 				A582E0CB1C5CC3EB000F22AB /* Sources */,
 				A582E0CC1C5CC3EB000F22AB /* Frameworks */,
 				A582E0CD1C5CC3EB000F22AB /* Resources */,
+				A54319241C5F432A00713F3F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -338,14 +357,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Josh Campion";
 				TargetAttributes = {
 					A582E0CE1C5CC3EB000F22AB = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = KHA7R7624Z;
 					};
 					A59A6CC41B4AB9B100F708DC = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = KHA7R7624Z;
 					};
 					A59A6CCE1B4AB9B100F708DC = {
 						CreatedOnToolsVersion = 7.0;
@@ -430,6 +451,7 @@
 				A5C8C3061C5E63330002855B /* NSSingleton.m in Sources */,
 				A5C8C3131C5E63330002855B /* Theme.swift in Sources */,
 				A5C8C3091C5E63330002855B /* TKStepper.swift in Sources */,
+				A54319261C61427000713F3F /* TKImageView.swift in Sources */,
 				A5C8C3221C5E638B0002855B /* ThemeConstants.swift in Sources */,
 				A5C8C3211C5E638B0002855B /* LicenseChecker.swift in Sources */,
 				A543191F1C5E6B1500713F3F /* TKBarButtonItem.swift in Sources */,
@@ -485,11 +507,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = ThemeKitDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "\"-DTARGET_INTERFACE_BUILDER\"";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.joshcampion.ThemeKitDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -497,11 +528,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = ThemeKitDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "\"-DTARGET_INTERFACE_BUILDER\"";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.joshcampion.ThemeKitDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -600,7 +636,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Josh Campion (C2CVJU9EK8)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -613,7 +650,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.joshcampion.ThemeKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "dcb9a937-9908-4b52-b874-e59f7971eef2";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VALID_ARCHS = "arm64 armv7 armv7s";
@@ -626,7 +663,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Josh Campion (C2CVJU9EK8)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -638,7 +676,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.joshcampion.ThemeKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "dcb9a937-9908-4b52-b874-e59f7971eef2";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};

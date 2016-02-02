@@ -39,7 +39,49 @@ public class TKNavigationBar: UINavigationBar, Themeable, Checking {
     
     // MARK: - Themeable Properties
     
+    /// Styles the font for this `UINavigationBar`'s `titleTextAttributes`.
+    public var textStyle:TextStyle?  {
+        didSet {
+            if oldValue != textStyle {
+                setNeedsUpdateTheme()
+            }
+        }
+    }
     
+    @IBInspectable public var textStyleId:String? {
+        set {
+            if let idString = newValue,
+                let style = TextStyle(rawValue:idString) {
+                    textStyle = style
+            }
+        }
+        get {
+            return textStyle?.rawValue
+        }
+    }
+    
+    /// Styles the font colour for this `UINavigationBar`'s `titleTextAttributes`.
+    public var textColourStyle:ColourStyle?  {
+        didSet {
+            if oldValue != textColourStyle {
+                setNeedsUpdateTheme()
+            }
+        }
+    }
+
+    @IBInspectable public var textColourStyleId:String? {
+        set {
+            if let idString = newValue,
+                let style = ColourStyle(rawValue:idString) {
+                    textColourStyle = style
+            }
+        }
+        get {
+            return textColourStyle?.rawValue
+        }
+    }
+    
+    /// Styles this `UINavigationBar`'s `tintColor`.
     public var tintColourStyle:ColourStyle?  {
         didSet {
             if oldValue != tintColourStyle {
@@ -60,6 +102,7 @@ public class TKNavigationBar: UINavigationBar, Themeable, Checking {
         }
     }
     
+    /// Styles this `UINavigationBar`'s `barTintColor`.
     public var barTintColourStyle:ColourStyle?  {
         didSet {
             if oldValue != barTintColourStyle {
@@ -82,6 +125,21 @@ public class TKNavigationBar: UINavigationBar, Themeable, Checking {
     
     public func applyTheme(theme:Theme) {
         
+        // apply the title text attributes
+        var attributes = self.titleTextAttributes ?? [String:AnyObject]()
+        
+        if let text = textStyle {
+            attributes[NSFontAttributeName] = theme.font(text)
+        }
+        
+        if let textColour = textColourStyle {
+            attributes[NSForegroundColorAttributeName] = theme.colour(textColour)
+        }
+        
+        titleTextAttributes = attributes
+        
+        // apply the tint colours
+        
         if let colour = tintColourStyle {
             tintColor = theme.colour(colour)
         }
@@ -89,7 +147,6 @@ public class TKNavigationBar: UINavigationBar, Themeable, Checking {
         if let colour = barTintColourStyle {
             barTintColor = theme.colour(colour)
         }
-        
         
         if let navItems = self.items {
             for item in navItems {

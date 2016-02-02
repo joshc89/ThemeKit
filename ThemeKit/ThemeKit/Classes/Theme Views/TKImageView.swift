@@ -1,46 +1,48 @@
 //
-//  TKView.swift
+//  TKImageView.swift
 //  ThemeKit
 //
-//  Created by Josh Campion on 31/01/2016.
+//  Created by Josh Campion on 02/02/2016.
 //  Copyright © 2016 Josh Campion. All rights reserved.
 //
 
 import UIKit
 
-public protocol BackgroundColourThemeable: Themeable {
+public protocol TintColourThemeable: Themeable {
     
-    var backgroundColourStyle:ColourStyle? { get set }
+    var tintColourStyle:ColourStyle? { get set }
     
-    var backgroundColourStyleId:String? { get set }
+    var tintColourStyleId:String? { get set }
     
-    func applyBackgroundTheme(theme:Theme)
+    func applyTintTheme(theme:Theme)
 }
 
-public extension BackgroundColourThemeable where Self:UIView {
+// TODO: Is this simplicity worth the performance decrease?
+
+public extension TintColourThemeable where Self:UIView {
     
-    public var backgroundColourStyle:ColourStyle? {
+    public var tintColourStyle:ColourStyle? {
         get {
-            if let str = backgroundColourStyleId {
+            if let str = tintColourStyleId {
                 return ColourStyle(rawValue: str)
             } else {
                 return nil
             }
         }
         set {
-            backgroundColourStyleId = newValue?.rawValue
+            tintColourStyleId = newValue?.rawValue
         }
     }
     
-    public func applyBackgroundTheme(theme: Theme) {
-        if let bgStyle = backgroundColourStyle {
-            backgroundColor = theme.colour(bgStyle)
+    public func applyTintTheme(theme: Theme) {
+        if let tintStyle = tintColourStyle {
+            tintColor = theme.colour(tintStyle)
         }
     }
 }
 
 @IBDesignable
-public class TKView: UIView, BackgroundColourThemeable, Checking {
+public class TKImageView: UIImageView, TintColourThemeable, BackgroundColourThemeable, Checking {
     
     let checker = _Checker()
     
@@ -69,7 +71,14 @@ public class TKView: UIView, BackgroundColourThemeable, Checking {
         updateThemeIfNeeded()
     }
     
-    // -- Theme Properties
+    // MARK: - Themeable Properties
+    @IBInspectable public var tintColourStyleId:String? {
+        didSet {
+            if tintColourStyleId != oldValue {
+                setNeedsUpdateTheme()
+            }
+        }
+    }
     
     @IBInspectable public var backgroundColourStyleId:String? {
         didSet {

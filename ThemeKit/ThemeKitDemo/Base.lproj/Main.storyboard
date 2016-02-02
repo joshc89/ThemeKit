@@ -68,6 +68,13 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="backgroundColourStyleId" value="Accent"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_check_circle" translatesAutoresizingMaskIntoConstraints="NO" id="EBk-x8-DdX" customClass="ThemeImageView" customModule="ThemeKitDemo" customModuleProvider="target">
+                                <rect key="frame" x="288" y="332" width="24" height="24"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="tintColourStyleId" value="Accent"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="backgroundColourStyleId" value="Main"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -81,6 +88,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="c3r-UQ-Jpb" secondAttribute="trailing" id="8vV-kD-CFF"/>
                             <constraint firstItem="6fT-eB-6ki" firstAttribute="top" secondItem="c3r-UQ-Jpb" secondAttribute="bottom" constant="8" id="DzK-tA-enb"/>
                             <constraint firstItem="rBg-9T-mJw" firstAttribute="top" secondItem="6fT-eB-6ki" secondAttribute="bottom" constant="8" id="E3s-f4-Fao"/>
+                            <constraint firstItem="EBk-x8-DdX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MmC-Ut-FWw"/>
                             <constraint firstItem="c3r-UQ-Jpb" firstAttribute="top" secondItem="jws-3b-NpU" secondAttribute="bottom" constant="8" id="MuQ-wK-rFO"/>
                             <constraint firstItem="rBg-9T-mJw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="QgF-tF-AQk"/>
                             <constraint firstItem="jws-3b-NpU" firstAttribute="top" secondItem="Aqc-1l-laL" secondAttribute="bottom" constant="8" id="WRq-ue-4Yl"/>
@@ -88,6 +96,7 @@
                             <constraint firstItem="c3r-UQ-Jpb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="a86-xR-hn0"/>
                             <constraint firstItem="aqz-ua-jxg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="b8Z-mO-RLW"/>
                             <constraint firstItem="6fT-eB-6ki" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fyI-Qc-eXL"/>
+                            <constraint firstItem="EBk-x8-DdX" firstAttribute="top" secondItem="rBg-9T-mJw" secondAttribute="bottom" constant="8" id="kty-Nc-xVD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Aqc-1l-laL" secondAttribute="trailing" id="lZU-R1-C0c"/>
                             <constraint firstItem="jws-3b-NpU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="sa6-Yz-1WM"/>
                             <constraint firstItem="juL-pV-nh3" firstAttribute="top" secondItem="aqz-ua-jxg" secondAttribute="bottom" constant="8" id="tkn-NP-4WA"/>
@@ -295,6 +304,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic_check_circle" width="24" height="24"/>
         <image name="sw-sm-share" width="20" height="20"/>
     </resources>
 </document>

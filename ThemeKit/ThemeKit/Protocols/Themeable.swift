@@ -27,6 +27,14 @@ public extension Themeable {
     
     func applyTheme(theme:Theme) {
         
+        if let backgroundSelf = self as? BackgroundColourThemeable {
+            backgroundSelf.applyBackgroundTheme(theme)
+        }
+        
+        if let tintSelf = self as? TintColourThemeable {
+            tintSelf.applyTintTheme(theme)
+        }
+        
         if let textSelf = self as? ThemeableText {
             textSelf.applyTextTheme(theme)
         }

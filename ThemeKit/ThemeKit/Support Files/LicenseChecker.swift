@@ -17,22 +17,24 @@ protocol Checking {
 final class _Checker: NSObject {
     
     private static let identifiers = [
-        "uk.co.joshcampion.ThemeKitDemo"
+        "uk.co.joshcampion.ThemeKitDemo",
+        "com.apple.InterfaceBuilder.IBCocoaTouchPlugin.IBCocoaTouchTool",
+        "uk.co.thedistance.PocketSEO",
+        "uk.co.thedistance.PocketSEOTests",
+        "uk.co.thedistance.PocketSEOUITests"
     ]
     
     private static let email = "joshcampion89@gmail.com"
     
-    #if !TARGET_INTERFACE_BUILDER
     override final class func initialize() {
         if self == _Checker.self {
             
             let bundleID = NSBundle.mainBundle().bundleIdentifier
             
-            guard let bID = bundleID where identifiers.contains(bID) else {
+            guard let bID = bundleID where (identifiers.contains(bID) || bID.isEmpty) else {
                 print("This version of ThemeKit is not licensed for bundle id: \(NSBundle.mainBundle().bundleIdentifier). Contact \(email) to get a licensed copy.")
                 abort()
             }
         }
     }
-    #endif
 }

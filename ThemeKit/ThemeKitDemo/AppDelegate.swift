@@ -19,6 +19,9 @@ extension IBThemeable {
 @IBDesignable
 class ThemeView: TKView, IBThemeable { }
 
+@IBDesignable
+class ThemeImageView: TKImageView, IBThemeable { }
+
 // --- Text Elements --- \\
 
 @IBDesignable
@@ -123,6 +126,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
         // Override point for customization after application launch.
+        
+        let v = ThemeView()
+        v.backgroundColourStyleId = "Accent"
         
         return true
     }
