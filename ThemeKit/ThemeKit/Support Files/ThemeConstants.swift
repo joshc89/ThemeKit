@@ -45,24 +45,6 @@ public let AppleFontAdjustments:[UIContentSizeCategory:CGFloat] = [
     .ExtraExtraExtraLarge: 3,
 ]
 
-// MARK: - Enums
-
-/// Enum defining the available fonts types. Typically an app will only use ~6 types.
-public enum TextStyle:String {
-    case Display4, Display3, Display2, Display1
-    case Headline, Title, SubHeadline
-    case Body1, Body2
-    case Caption
-    case Button
-}
-
-/// Enum defining the available colour types.
-public enum ColourStyle:String {
-    case AccentLight, Accent, AccentDark
-    case MainLight, Main, MainDark
-    case Text, SecondaryText, LightText, SecondaryLightText
-}
-
 /// Enum to define content sizes for accessibility. This allows for exhaustive switch statements over using standard UIKit Strings. Accessibility Sizes are mapped to .ExtraExtraExtraLarge.
 public enum UIContentSizeCategory:String {
     

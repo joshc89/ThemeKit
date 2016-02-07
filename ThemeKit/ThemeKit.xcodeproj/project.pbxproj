@@ -13,6 +13,8 @@
 		A54319211C5E6CD400713F3F /* TKTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54319201C5E6CD400713F3F /* TKTabBarItem.swift */; };
 		A54319231C5F432A00713F3F /* ThemeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A59A6CC51B4AB9B100F708DC /* ThemeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A54319261C61427000713F3F /* TKImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54319251C61427000713F3F /* TKImageView.swift */; };
+		A54319281C6745B500713F3F /* ColourStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54319271C6745B500713F3F /* ColourStyle.swift */; };
+		A543192A1C6745D400713F3F /* TextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54319291C6745D400713F3F /* TextStyle.swift */; };
 		A582E0D21C5CC3EB000F22AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A582E0D11C5CC3EB000F22AB /* AppDelegate.swift */; };
 		A582E0D41C5CC3EB000F22AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A582E0D31C5CC3EB000F22AB /* ViewController.swift */; };
 		A582E0D71C5CC3EB000F22AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A582E0D51C5CC3EB000F22AB /* Main.storyboard */; };
@@ -80,6 +82,8 @@
 		A543191E1C5E6B1500713F3F /* TKBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKBarButtonItem.swift; sourceTree = "<group>"; };
 		A54319201C5E6CD400713F3F /* TKTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKTabBarItem.swift; sourceTree = "<group>"; };
 		A54319251C61427000713F3F /* TKImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKImageView.swift; sourceTree = "<group>"; };
+		A54319271C6745B500713F3F /* ColourStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColourStyle.swift; sourceTree = "<group>"; };
+		A54319291C6745D400713F3F /* TextStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextStyle.swift; sourceTree = "<group>"; };
 		A582E0CF1C5CC3EB000F22AB /* ThemeKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThemeKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A582E0D11C5CC3EB000F22AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A582E0D31C5CC3EB000F22AB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -275,6 +279,8 @@
 			children = (
 				A5C8C31E1C5E638B0002855B /* LicenseChecker.swift */,
 				A5C8C31F1C5E638B0002855B /* ThemeConstants.swift */,
+				A54319271C6745B500713F3F /* ColourStyle.swift */,
+				A54319291C6745D400713F3F /* TextStyle.swift */,
 				A5C8C3201C5E638B0002855B /* ThemeFunctions.swift */,
 			);
 			path = "Support Files";
@@ -443,6 +449,8 @@
 				A5C8C31C1C5E637B0002855B /* ThemeableText.swift in Sources */,
 				A505D52C1B6E157600AAD861 /* UISearchBar+TKExtensions.swift in Sources */,
 				A5C8C3081C5E63330002855B /* TKSegmentedControl.swift in Sources */,
+				A54319281C6745B500713F3F /* ColourStyle.swift in Sources */,
+				A543192A1C6745D400713F3F /* TextStyle.swift in Sources */,
 				A5C8C3191C5E636F0002855B /* TKTextField.swift in Sources */,
 				A5C8C3141C5E63330002855B /* Themeable.swift in Sources */,
 				A5C8C30A1C5E63330002855B /* TKSwitch.swift in Sources */,

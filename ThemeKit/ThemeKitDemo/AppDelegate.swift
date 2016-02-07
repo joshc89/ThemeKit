@@ -20,7 +20,22 @@ extension IBThemeable {
 class ThemeView: TKView, IBThemeable { }
 
 @IBDesignable
-class ThemeImageView: TKImageView, IBThemeable { }
+public class ThemeImageView: TKImageView, IBThemeable {
+    
+    @IBInspectable
+    public var tintColourStyleId:String? {
+        get {
+            return tintColourStyle?.rawValue
+        }
+        set {
+            if let id = tintColourStyleId {
+                tintColourStyle = ColourStyle(rawValue: id)
+            } else {
+                tintColourStyle = nil
+            }
+        }
+    }
+}
 
 // --- Text Elements --- \\
 
@@ -96,15 +111,19 @@ struct MaterialTheme: Theme {
     
     let themeColours = MaterialColours
     
-    func fontName(textStye:TextStyle) -> String {
+    func fontName(textStyle:TextStyle) -> String {
         
-        switch textStye {
+        switch textStyle {
         case .Display4:
             return "HelveticaNeue-Light"
         case .Display3, .Display2, .Display1, .Headline, .SubHeadline, .Body1, .Caption:
             return "HelveticaNeue"
         case .Title, .Body2, .Button:
             return "HelveticaNeue-Medium"
+        default:
+            let defaultFontName = UIFont.preferredFontForTextStyle(UIFontTextStyleBody).fontName
+            print("No text name specified for text style \"\(textStyle.rawValue)\". Using default \"\(defaultFontName)\".")
+            return defaultFontName
         }
     }
 }
@@ -115,7 +134,8 @@ let MaterialColours:[ColourStyle:UIColor] = [
     .Text: UIColor.blackColor().colorWithAlphaComponent(0.87),
     .SecondaryText: UIColor.blackColor().colorWithAlphaComponent(0.54),
     .LightText: UIColor.whiteColor().colorWithAlphaComponent(0.87),
-    .SecondaryLightText: UIColor.whiteColor().colorWithAlphaComponent(0.54)
+    .SecondaryLightText: UIColor.whiteColor().colorWithAlphaComponent(0.54),
+    .Custom("Neutral"): UIColor.purpleColor()
 ]
 
 @UIApplicationMain

@@ -27,5 +27,5 @@ public func fontDump() {
 /// Method to consistently print errors to the console.
 internal func TKLogError(from:Any, function:String, message:String) {
     
-    print("[\(from), \(function)]: \(message)")
+    print("WARNING: [\(from.dynamicType), \(function)]: \(message)")
 }

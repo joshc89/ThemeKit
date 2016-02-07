@@ -12,7 +12,7 @@ public protocol TintColourThemeable: Themeable {
     
     var tintColourStyle:ColourStyle? { get set }
     
-    var tintColourStyleId:String? { get set }
+    // var tintColourStyleId:String? { get set }
     
     func applyTintTheme(theme:Theme)
 }
@@ -21,6 +21,7 @@ public protocol TintColourThemeable: Themeable {
 
 public extension TintColourThemeable where Self:UIView {
     
+/*
     public var tintColourStyle:ColourStyle? {
         get {
             if let str = tintColourStyleId {
@@ -33,7 +34,7 @@ public extension TintColourThemeable where Self:UIView {
             tintColourStyleId = newValue?.rawValue
         }
     }
-    
+  */
     public func applyTintTheme(theme: Theme) {
         if let tintStyle = tintColourStyle {
             tintColor = theme.colour(tintStyle)
@@ -71,14 +72,22 @@ public class TKImageView: UIImageView, TintColourThemeable, BackgroundColourThem
         updateThemeIfNeeded()
     }
     
-    // MARK: - Themeable Properties
-    @IBInspectable public var tintColourStyleId:String? {
+    public var tintColourStyle:ColourStyle? {
         didSet {
-            if tintColourStyleId != oldValue {
+            if tintColourStyle != oldValue {
                 setNeedsUpdateTheme()
             }
         }
     }
+    
+    // MARK: - Themeable Properties
+//    @IBInspectable public var tintColourStyleId:String? {
+//        didSet {
+//            if tintColourStyleId != oldValue {
+//                setNeedsUpdateTheme()
+//            }
+//        }
+//    }
     
     @IBInspectable public var backgroundColourStyleId:String? {
         didSet {
