@@ -6,7 +6,7 @@
 //  Copyright © 2015 Josh Campion. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 // MARK: - Constants
 

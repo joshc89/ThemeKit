@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import ThemeKit
+import ThemeKitCore
 
 class ViewController: UIViewController {
 

@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-public class TKBarButtonItem: UIBarButtonItem, Themeable, Checking {
+public class TKBarButtonItem: UIBarButtonItem, FontThemeable, TextColourThemeable, Checking {
     
     let checker = _Checker()
     
@@ -40,30 +40,13 @@ public class TKBarButtonItem: UIBarButtonItem, Themeable, Checking {
     
     public var textStyle:TextStyle?  {
         didSet {
-            if oldValue != textStyle {
-                setNeedsUpdateTheme()
-            }
+            checkAndUpdateTextStyle(oldValue, textStyle)
         }
     }
     
-    @IBInspectable public var textStyleId:String? {
-        set {
-            if let idString = newValue,
-                let style = TextStyle(rawValue:idString) {
-                    textStyle = style
-            }
-        }
-        get {
-            return textStyle?.rawValue
-        }
-    }
-    
-    public func applyTheme(theme:Theme) {
-
-        if let text = textStyle {
-            var attributes = self.titleTextAttributesForState(.Normal) ?? [String:AnyObject]()
-            attributes[NSFontAttributeName] = theme.font(text)
-            setTitleTextAttributes(attributes, forState: .Normal)
+    public var textColourStyle:ColourStyle?  {
+        didSet {
+            checkAndUpdateColourStyle(oldValue, textColourStyle)
         }
     }
 }

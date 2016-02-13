@@ -1,14 +1,14 @@
 //
-//  TKView.swift
+//  TKToolbar.swift
 //  ThemeKit
 //
-//  Created by Josh Campion on 31/01/2016.
+//  Created by Josh Campion on 07/02/2016.
 //  Copyright © 2016 Josh Campion. All rights reserved.
 //
 
 import UIKit
 
-public class TKView: UIView, BackgroundColourThemeable, TintColourThemeable, Checking {
+public class TKToolbar: UIToolbar, BarThemeable, Checking {
     
     let checker = _Checker()
     
@@ -37,18 +37,31 @@ public class TKView: UIView, BackgroundColourThemeable, TintColourThemeable, Che
         updateThemeIfNeeded()
     }
     
-    // MARK:- Theme Properties
+    // MARK: - Themeable Properties
     
-    public var backgroundColourStyle:ColourStyle? {
-        didSet {
-            checkAndUpdateColourStyle(oldValue, backgroundColourStyle)
-        }
-    }
     
-    public var tintColourStyle:ColourStyle? {
+    public var tintColourStyle:ColourStyle?  {
         didSet {
             checkAndUpdateColourStyle(oldValue, tintColourStyle)
         }
     }
+    
+    public var barTintColourStyle:ColourStyle?  {
+        didSet {
+            checkAndUpdateColourStyle(oldValue, barTintColourStyle)
+        }
+    }
+    
+    public func applyTheme(theme:Theme) {
+        
+        applyProtocolThemes(theme)
+        
+        if let tabItems = self.items {
+            for item in tabItems {
+                if let themedItem = item as? Themeable {
+                    themedItem.applyTheme(theme)
+                }
+            }
+        }
+    }
 }
-

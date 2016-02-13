@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class TKNavigationBar: UINavigationBar, Themeable, Checking {
+public class TKNavigationBar: UINavigationBar, BarThemeable, FontThemeable, TextColourThemeable, Checking {
     
     let checker = _Checker()
     
@@ -39,24 +39,16 @@ public class TKNavigationBar: UINavigationBar, Themeable, Checking {
     
     // MARK: - Themeable Properties
     
-    /// Styles the font for this `UINavigationBar`'s `titleTextAttributes`.
-    public var textStyle:TextStyle?  {
+    public var tintColourStyle:ColourStyle? {
         didSet {
-            if oldValue != textStyle {
-                setNeedsUpdateTheme()
-            }
+            checkAndUpdateColourStyle(oldValue, tintColourStyle)
         }
     }
     
-    @IBInspectable public var textStyleId:String? {
-        set {
-            if let idString = newValue,
-                let style = TextStyle(rawValue:idString) {
-                    textStyle = style
-            }
-        }
-        get {
-            return textStyle?.rawValue
+    /// Styles the font for this `UINavigationBar`'s `titleTextAttributes`.
+    public var textStyle:TextStyle?  {
+        didSet {
+            checkAndUpdateTextStyle(oldValue, textStyle)
         }
     }
     
@@ -66,39 +58,6 @@ public class TKNavigationBar: UINavigationBar, Themeable, Checking {
             if oldValue != textColourStyle {
                 setNeedsUpdateTheme()
             }
-        }
-    }
-
-    @IBInspectable public var textColourStyleId:String? {
-        set {
-            if let idString = newValue,
-                let style = ColourStyle(rawValue:idString) {
-                    textColourStyle = style
-            }
-        }
-        get {
-            return textColourStyle?.rawValue
-        }
-    }
-    
-    /// Styles this `UINavigationBar`'s `tintColor`.
-    public var tintColourStyle:ColourStyle?  {
-        didSet {
-            if oldValue != tintColourStyle {
-                setNeedsUpdateTheme()
-            }
-        }
-    }
-    
-    @IBInspectable public var tintColourStyleId:String? {
-        set {
-            if let idString = newValue,
-                let style = ColourStyle(rawValue:idString) {
-                    tintColourStyle = style
-            }
-        }
-        get {
-            return tintColourStyle?.rawValue
         }
     }
     
@@ -111,20 +70,7 @@ public class TKNavigationBar: UINavigationBar, Themeable, Checking {
         }
     }
     
-    @IBInspectable public var barTintColourStyleId:String? {
-        set {
-            if let idString = newValue,
-                let style = ColourStyle(rawValue:idString) {
-                    barTintColourStyle = style
-            }
-        }
-        get {
-            return barTintColourStyle?.rawValue
-        }
-    }
-    
-    public func applyTheme(theme:Theme) {
-        
+    public func applyFontTheme(theme: Theme) {
         // apply the title text attributes
         var attributes = self.titleTextAttributes ?? [String:AnyObject]()
         
@@ -132,22 +78,25 @@ public class TKNavigationBar: UINavigationBar, Themeable, Checking {
             attributes[NSFontAttributeName] = theme.font(text)
         }
         
+        titleTextAttributes = attributes
+    }
+    
+    public func applyTextColourTheme(theme: Theme) {
+        // apply the title text attributes
+        var attributes = self.titleTextAttributes ?? [String:AnyObject]()
+        
         if let textColour = textColourStyle {
             attributes[NSForegroundColorAttributeName] = theme.colour(textColour)
         }
         
         titleTextAttributes = attributes
+    }
+    
+    public func applyTheme(theme:Theme) {
         
-        // apply the tint colours
+        applyProtocolThemes(theme)
         
-        if let colour = tintColourStyle {
-            tintColor = theme.colour(colour)
-        }
-        
-        if let colour = barTintColourStyle {
-            barTintColor = theme.colour(colour)
-        }
-        
+        // apply the theme to the navigation items colours
         if let navItems = self.items {
             for item in navItems {
                 

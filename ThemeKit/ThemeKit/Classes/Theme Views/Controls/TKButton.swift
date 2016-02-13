@@ -6,10 +6,10 @@
 //  Copyright © 2015 Josh Campion. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 @IBDesignable
-public class TKButton: UIButton, Themeable, Checking {
+public class TKButton: UIButton, Themeable, TintColourThemeable, BackgroundColourThemeable, FontThemeable, Checking {
     
     let checker = _Checker()
     
@@ -40,52 +40,27 @@ public class TKButton: UIButton, Themeable, Checking {
     
     // MARK: - Themeable Properties
     
+    public var backgroundColourStyle:ColourStyle?  {
+        didSet {
+            checkAndUpdateColourStyle(oldValue, backgroundColourStyle)
+        }
+    }
+    
     public var tintColourStyle:ColourStyle?  {
         didSet {
-            if oldValue != tintColourStyle {
-                setNeedsUpdateTheme()
-            }
+            checkAndUpdateColourStyle(oldValue, tintColourStyle)
         }
     }
     
     public var textStyle:TextStyle?  {
         didSet {
-            if oldValue != textStyle {
-                setNeedsUpdateTheme()
-            }
+            checkAndUpdateTextStyle(oldValue, textStyle)
         }
     }
     
-    @IBInspectable public var textStyleId:String? {
-        set {
-            if let idString = newValue,
-                let style = TextStyle(rawValue:idString) {
-                    textStyle = style
-            }
-        }
-        get {
-            return textStyle?.rawValue
-        }
-    }
-    
-    @IBInspectable public var tintColourId:String? {
-        set {
-            if let idString = newValue,
-                let style = ColourStyle(rawValue:idString) {
-                    tintColourStyle = style
-            }
-        }
-        get {
-            return tintColourStyle?.rawValue
-        }
-    }
-    
-    public func applyTheme(theme:Theme) {
-        
-        if let colour = tintColourStyle {
-            tintColor = theme.colour(colour)
-        }
-        
+    // MARK: - Themeable Functions
+    public func applyFontTheme(theme: Theme) {
+        // apply the custom themes
         if let text = textStyle {
             titleLabel?.font = theme.font(text)
         }

@@ -6,7 +6,7 @@
 //  Copyright © 2016 Josh Campion. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 /// Protocol to ensure each class has a `_Checker` object associated with it.
 protocol Checking {
@@ -15,15 +15,7 @@ protocol Checking {
 
 /// Ensures the app identier of the running app matches that which this framework has been compiled for.
 final class _Checker: NSObject {
-    
-    private static let identifiers = [
-        "uk.co.joshcampion.ThemeKitDemo",
-        "com.apple.InterfaceBuilder.IBCocoaTouchPlugin.IBCocoaTouchTool",
-        "uk.co.thedistance.PocketSEO",
-        "uk.co.thedistance.PocketSEOTests",
-        "uk.co.thedistance.PocketSEOUITests"
-    ]
-    
+        
     private static let email = "joshcampion89@gmail.com"
     
     override final class func initialize() {
@@ -31,7 +23,7 @@ final class _Checker: NSObject {
             
             let bundleID = NSBundle.mainBundle().bundleIdentifier
             
-            guard let bID = bundleID where (identifiers.contains(bID) || bID.isEmpty) else {
+            guard let bID = bundleID where (licensedIdentifiers.contains(bID) || bID.isEmpty) else {
                 print("This version of ThemeKit is not licensed for bundle id: \(NSBundle.mainBundle().bundleIdentifier). Contact \(email) to get a licensed copy.")
                 abort()
             }

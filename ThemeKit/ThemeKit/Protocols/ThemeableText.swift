@@ -6,25 +6,7 @@
 //  Copyright © 2015 Josh Campion. All rights reserved.
 //
 
-public protocol ImplicitTextable: class {
-    var font:UIFont! { get set }
-    var textColor:UIColor! { get set }
-}
-
-public protocol Textable: class {
-    
-    var font:UIFont? { get set }
-    var textColor:UIColor? { get set }
-    
-}
-
-public protocol ThemeableFont: Themeable {
-    
-    var textStyle:TextStyle? { get set }
-    var textStyleId:String? { get set }
-    
-}
-
+/*
 public protocol ThemeableTextColor: Themeable {
     
     var textStyle:TextStyle? { get set }
@@ -74,3 +56,4 @@ public extension ThemeableText where Self:ImplicitTextable {
         applyDefaultTextTheme(theme)
     }
 }
+*/

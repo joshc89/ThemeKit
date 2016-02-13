@@ -3,15 +3,11 @@ Copyright (c) 2015-2016, Joshua Robert Campion
 Definitions:
 
 "Author" shall refer to Joshua Robert Campion.
-"Software" shall refer to all code, documentation, compiled frameworks and other content within "ThemeKit.framework" as defined by "ThemeKit.podspec".
+"Software" shall refer to all code, documentation, compiled frameworks and other content within "ThemeKit.framework", within which this file should be contained.
 
 License:
 
-Permission is hereby granted, free of charge, for use of the Software in, and only in, the iOS app 'Interchange' with Apple App Store Bundle Ids:
-
-* io.interchange.Interchange
-* io.interchange.InterchangeTests
-* io.interchange.InterchangeUITests
+Permission is hereby granted, free of charge, for use of the Software in, and only in, the iOS app defined in 'LicensedBundleIDs.txt', contained within 'ThemeKit.framework'.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,

@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class TKStepper: UIStepper, Themeable, Checking {
+public class TKStepper: UIStepper, BackgroundColourThemeable, TintColourThemeable, Checking {
     
     let checker = _Checker()
     
@@ -37,30 +37,17 @@ public class TKStepper: UIStepper, Themeable, Checking {
         updateThemeIfNeeded()
     }
     
+    // MARK:- Theme Properties
+    
+    public var backgroundColourStyle:ColourStyle? {
+        didSet {
+            checkAndUpdateColourStyle(oldValue, backgroundColourStyle)
+        }
+    }
+    
     public var tintColourStyle:ColourStyle?  {
         didSet {
-            if oldValue != tintColourStyle {
-                setNeedsUpdateTheme()
-            }
-        }
-    }
-    
-    @IBInspectable public var tintColourId:String? {
-        set {
-            if let idString = newValue,
-                let style = ColourStyle(rawValue:idString) {
-                    tintColourStyle = style
-            }
-        }
-        get {
-            return tintColourStyle?.rawValue
-        }
-    }
-    
-    public func applyTheme(theme:Theme) {
-        
-        if let colour = tintColourStyle {
-            tintColor = theme.colour(colour)
+            checkAndUpdateColourStyle(oldValue, tintColourStyle)
         }
     }
 }

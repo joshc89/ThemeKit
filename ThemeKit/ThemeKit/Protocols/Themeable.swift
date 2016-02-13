@@ -6,7 +6,7 @@
 //  Copyright © 2016 Josh Campion. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import ObjectiveC
 
 public protocol Themeable: class {
@@ -15,18 +15,19 @@ public protocol Themeable: class {
     
     func theme() -> Theme?
     
+    /// Sets properties based on *Themeable protocol properties. A default implementation is provided for `UIView`s.
     func applyTheme(theme:Theme)
-    
+
+    /// A default implementation is provided for `UIView`s.
     func setNeedsUpdateTheme()
     
+    /// A default implementation is provided for `UIView`s.
     func updateThemeIfNeeded()
-    
 }
 
 public extension Themeable {
     
-    func applyTheme(theme:Theme) {
-        
+    public func applyProtocolThemes(theme:Theme) {
         if let backgroundSelf = self as? BackgroundColourThemeable {
             backgroundSelf.applyBackgroundTheme(theme)
         }
@@ -35,8 +36,36 @@ public extension Themeable {
             tintSelf.applyTintTheme(theme)
         }
         
-        if let textSelf = self as? ThemeableText {
-            textSelf.applyTextTheme(theme)
+        if let fontSelf = self as? FontThemeable {
+            fontSelf.applyFontTheme(theme)
+        }
+        
+        if let textColourSelf = self as? TextColourThemeable {
+            textColourSelf.applyTextColourTheme(theme)
+        }
+        
+        if let thumbSelf = self as? ThumbTintColourThemeable {
+            thumbSelf.applyThumbTintTheme(theme)
+        }
+        
+        if let barSelf = self as? BarThemeable {
+            barSelf.applyBarTheme(theme)
+        }
+    }
+    
+    func applyTheme(theme:Theme) {
+        applyProtocolThemes(theme)
+    }
+    
+    func checkAndUpdateColourStyle(oldValue:ColourStyle?, _ newValue:ColourStyle?) {
+        if (oldValue != newValue) {
+            setNeedsUpdateTheme()
+        }
+    }
+    
+    func checkAndUpdateTextStyle(oldValue:TextStyle?, _ newValue:TextStyle?) {
+        if (oldValue != newValue) {
+            setNeedsUpdateTheme()
         }
     }
 }
@@ -47,7 +76,10 @@ public extension Themeable where Self:UIView {
     
     func theme() -> Theme? {
         
-        // TODO: Allow a UIView to have a theme, which overrides the window's theme
+        if let svTheme = (superview as? Themeable)?.theme() {
+            return svTheme
+        }
+        
         let vendor = TKThemeVendor.shared()
         let theme = vendor.defaultTheme
         return theme

@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-public class TKSegmentedControl: UISegmentedControl, Themeable, Checking {
+public class TKSegmentedControl: UISegmentedControl, BackgroundColourThemeable, TintColourThemeable, FontThemeable, TextColourThemeable, Checking {
     
     let checker = _Checker()
     
@@ -30,82 +30,56 @@ public class TKSegmentedControl: UISegmentedControl, Themeable, Checking {
         }
     }
     
+    // --
+    
     public override func layoutSubviews() {
         super.layoutSubviews()
         
         updateThemeIfNeeded()
     }
     
-    // --
-    
-    public var textStyle:TextStyle?  {
-        didSet {
-            if oldValue != textStyle {
-                setNeedsUpdateTheme()
-            }
-        }
-    }
-    
-    public var tintColourStyle:ColourStyle?  {
-        didSet {
-            if oldValue != tintColourStyle {
-                setNeedsUpdateTheme()
-            }
-        }
-    }
-    
-    @IBInspectable public var textStyleId:String? {
-        set {
-            if let idString = newValue,
-                let style = TextStyle(rawValue:idString) {
-                    textStyle = style
-            }
-        }
-        get {
-            return textStyle?.rawValue
-        }
-    }
-    
-    @IBInspectable public var tintColourId:String? {
-        set {
-            if let idString = newValue,
-                let style = ColourStyle(rawValue:idString) {
-                    tintColourStyle = style
-            }
-        }
-        get {
-            return tintColourStyle?.rawValue
-        }
-    }
-    
-    public func applyTheme(theme:Theme) {
-        
-        if let colour = tintColourStyle {
-            tintColor = theme.colour(colour)
-        }
-        
-        if let text = textStyle {
-            var attributes = self.titleTextAttributesForState(.Normal) ?? [String:AnyObject]()
-            attributes[NSFontAttributeName] = theme.font(text)
-            setTitleTextAttributes(attributes, forState: .Normal)
-        }
-    }
-    
+    // ensure the control fits a row of text in its themed font
     public override func intrinsicContentSize() -> CGSize {
         let superSize = super.intrinsicContentSize()
         
         if let font = titleTextAttributesForState(self.state)?[NSFontAttributeName] as? UIFont {
-                
-                let test:NSString = "Testing"
-                let boundingRect = test.boundingRectWithSize(CGSizeMake(CGFloat.max, CGFloat.max),
-                    options: NSStringDrawingOptions.UsesLineFragmentOrigin,
-                    attributes: [NSFontAttributeName: font],
-                    context: nil)
-                
-                return CGSizeMake(superSize.width, ceil(boundingRect.height) + 2.0 * 7.0)
+            
+            let test:NSString = "Testing"
+            let boundingRect = test.boundingRectWithSize(CGSizeMake(CGFloat.max, CGFloat.max),
+                options: NSStringDrawingOptions.UsesLineFragmentOrigin,
+                attributes: [NSFontAttributeName: font],
+                context: nil)
+            
+            return CGSizeMake(superSize.width, ceil(boundingRect.height) + 2.0 * 7.0)
         }
         
         return superSize
+    }
+    
+    // MARK: - Theme Properties
+    
+    public var backgroundColourStyle:ColourStyle? {
+        didSet {
+            checkAndUpdateColourStyle(oldValue, backgroundColourStyle)
+        }
+    }
+    
+    public var tintColourStyle:ColourStyle? {
+        didSet {
+            checkAndUpdateColourStyle(oldValue, tintColourStyle)
+        }
+    }
+    
+    public var textStyle:TextStyle?  {
+        didSet {
+            checkAndUpdateTextStyle(oldValue, textStyle)
+        }
+    }
+    
+    public var textColourStyle:ColourStyle? {
+        didSet {
+            checkAndUpdateColourStyle(oldValue, textColourStyle)
+        }
     }
 }
 

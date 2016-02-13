@@ -6,7 +6,7 @@
 //  Copyright © 2015 Josh Campion. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 /// Type specificatoin used only when Theme can specify types for TextStyle and ColourStyle. Currently this results in in a generic UILabel which can't be included in a Storyboard.
 public typealias RawRepresentableKey = protocol<RawRepresentable, Hashable>

@@ -6,7 +6,7 @@
 //  Copyright © 2015 Josh Campion. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 /// Prints the font name for each family of fonts installed in the app. This is useful for debugging fonts appearing incorrectly.
 public func fontDump() {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class TKTabBar: UITabBar, Themeable, Checking {
+public class TKTabBar: UITabBar, BarThemeable, Checking {
     
     let checker = _Checker()
     
@@ -42,53 +42,19 @@ public class TKTabBar: UITabBar, Themeable, Checking {
     
     public var tintColourStyle:ColourStyle?  {
         didSet {
-            if oldValue != tintColourStyle {
-                setNeedsUpdateTheme()
-            }
-        }
-    }
-    
-    @IBInspectable public var tintColourStyleId:String? {
-        set {
-            if let idString = newValue,
-                let style = ColourStyle(rawValue:idString) {
-                    tintColourStyle = style
-            }
-        }
-        get {
-            return tintColourStyle?.rawValue
+            checkAndUpdateColourStyle(oldValue, tintColourStyle)
         }
     }
     
     public var barTintColourStyle:ColourStyle?  {
         didSet {
-            if oldValue != barTintColourStyle {
-                setNeedsUpdateTheme()
-            }
-        }
-    }
-    
-    @IBInspectable public var barTintColourStyleId:String? {
-        set {
-            if let idString = newValue,
-                let style = ColourStyle(rawValue:idString) {
-                    barTintColourStyle = style
-            }
-        }
-        get {
-            return barTintColourStyle?.rawValue
+            checkAndUpdateColourStyle(oldValue, barTintColourStyle)
         }
     }
     
     public func applyTheme(theme:Theme) {
         
-        if let colour = tintColourStyle {
-            tintColor = theme.colour(colour)
-        }
-        
-        if let colour = barTintColourStyle {
-            barTintColor = theme.colour(colour)
-        }
+        applyProtocolThemes(theme)
         
         if let tabItems = self.items {
             for item in tabItems {

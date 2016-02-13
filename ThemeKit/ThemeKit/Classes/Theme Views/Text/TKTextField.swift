@@ -6,14 +6,12 @@
 //  Copyright © 2015 Josh Campion. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 let TKDefaultInsets = UIEdgeInsetsMake(2.0, 7.0, 2.0, 7.0)
 
-extension UITextField: Textable { }
-
 @IBDesignable
-public class TKTextField: UITextField, ThemeableText, Checking {
+public class TKTextField: UITextField, BackgroundColourThemeable, TintColourThemeable, FontThemeable, TextColourThemeable, Checking {
     
     let checker = _Checker()
     
@@ -51,15 +49,29 @@ public class TKTextField: UITextField, ThemeableText, Checking {
     
     // --
     
-    public var textStyle:TextStyle? {
+    public var backgroundColourStyle:ColourStyle? {
         didSet {
-            if oldValue != textStyle {
-                setNeedsUpdateTheme()
-            }
+            checkAndUpdateColourStyle(oldValue, backgroundColourStyle)
         }
     }
     
-    public var textColourStyle:ColourStyle? 
+    public var tintColourStyle:ColourStyle? {
+        didSet {
+            checkAndUpdateColourStyle(oldValue, tintColourStyle)
+        }
+    }
+    
+    public var textStyle:TextStyle? {
+        didSet {
+            checkAndUpdateTextStyle(oldValue, textStyle)
+        }
+    }
+    
+    public var textColourStyle:ColourStyle?  {
+        didSet {
+            checkAndUpdateColourStyle(oldValue, textColourStyle)
+        }
+    }
     
     
     private var _placeholderTextStyle:TextStyle?
@@ -154,7 +166,7 @@ public class TKTextField: UITextField, ThemeableText, Checking {
     
     override public func textRectForBounds(bounds: CGRect) -> CGRect {
         
-        let superRect = super.textRectForBounds(bounds)
+        // let superRect = super.textRectForBounds(bounds)
         
         let leftRect = leftViewRectForBounds(bounds)
         let rightRect = rightViewRectForBounds(bounds)
@@ -186,7 +198,7 @@ public class TKTextField: UITextField, ThemeableText, Checking {
         
 //        print("placeholder: \(superRect) -> \(textRect)")
         
-        return superRect
+        return textRect
     }
     
     
@@ -196,30 +208,6 @@ public class TKTextField: UITextField, ThemeableText, Checking {
                 invalidateIntrinsicContentSize()
                 setNeedsLayout()
             }
-        }
-    }
-    
-    @IBInspectable public var textStyleId:String? {
-        set {
-            if let idString = newValue,
-                let style = TextStyle(rawValue:idString) {
-                    textStyle = style
-            }
-        }
-        get {
-            return textStyle?.rawValue
-        }
-    }
-    
-    @IBInspectable public var textColourStyleId:String? {
-        set {
-            if let idString = newValue,
-                let style = ColourStyle(rawValue:idString) {
-                    textColourStyle = style
-            }
-        }
-        get {
-            return textColourStyle?.rawValue
         }
     }
     
@@ -255,9 +243,8 @@ public class TKTextField: UITextField, ThemeableText, Checking {
         }
     }
 
-    public func applyTextTheme(theme: Theme) {
-        
-        applyDefaultTextTheme(theme)
+    public func applyTheme(theme: Theme) {
+        applyProtocolThemes(theme)
         
         updatePlaceholder(theme)
     }

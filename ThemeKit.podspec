@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "ThemeKit"
-  s.version      = "0.1"
+  s.version      = "0.2"
   s.summary      = "Simple theming of apps for consistent design."
 
   s.description  = <<-DESC
@@ -16,6 +16,6 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "8.0"
   s.cocoapods_version = '>= 0.39'
   s.requires_arc = true
-  s.vendored_frameworks = 'ThemeKit.framework'
+  s.vendored_frameworks = 'ThemeKitCore.framework'
 
 end

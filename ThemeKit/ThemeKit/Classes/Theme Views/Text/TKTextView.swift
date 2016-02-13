@@ -6,12 +6,10 @@
 //  Copyright © 2015 Josh Campion. All rights reserved.
 //
 
-import Foundation
-
-extension UITextView: Textable { }
+import UIKit
 
 @IBDesignable
-public class TKTextView: UITextView, ThemeableText, Checking {
+public class TKTextView: UITextView, BackgroundColourThemeable, TintColourThemeable, FontThemeable, TextColourThemeable, Checking {
     
     let checker = _Checker()
     
@@ -32,51 +30,37 @@ public class TKTextView: UITextView, ThemeableText, Checking {
         }
     }
     
+    // --
+    
     public override func layoutSubviews() {
         super.layoutSubviews()
         
         updateThemeIfNeeded()
     }
     
-    // --
+    // MARK:- Theme Properties
+    
+    public var backgroundColourStyle:ColourStyle? {
+        didSet {
+            checkAndUpdateColourStyle(oldValue, backgroundColourStyle)
+        }
+    }
+    
+    public var tintColourStyle:ColourStyle? {
+        didSet {
+            checkAndUpdateColourStyle(oldValue, tintColourStyle)
+        }
+    }
     
     public var textStyle:TextStyle?  {
         didSet {
-            if oldValue != textStyle {
-                setNeedsUpdateTheme()
-            }
+            checkAndUpdateTextStyle(oldValue, textStyle)
         }
     }
     
     public var textColourStyle:ColourStyle?  {
         didSet {
-            if oldValue != textColourStyle {
-                setNeedsUpdateTheme()
-            }
-        }
-    }
-    
-    @IBInspectable public var textStyleId:String? {
-        set {
-            if let idString = newValue,
-                let style = TextStyle(rawValue:idString) {
-                    textStyle = style
-            }
-        }
-        get {
-            return textStyle?.rawValue
-        }
-    }
-    
-    @IBInspectable public var textColourStyleId:String? {
-        set {
-            if let idString = newValue,
-                let style = ColourStyle(rawValue:idString) {
-                    textColourStyle = style
-            }
-        }
-        get {
-            return textColourStyle?.rawValue
+            checkAndUpdateColourStyle(oldValue, textColourStyle)
         }
     }
 }

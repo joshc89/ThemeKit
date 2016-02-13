@@ -8,40 +8,6 @@
 
 import UIKit
 
-public protocol TintColourThemeable: Themeable {
-    
-    var tintColourStyle:ColourStyle? { get set }
-    
-    // var tintColourStyleId:String? { get set }
-    
-    func applyTintTheme(theme:Theme)
-}
-
-// TODO: Is this simplicity worth the performance decrease?
-
-public extension TintColourThemeable where Self:UIView {
-    
-/*
-    public var tintColourStyle:ColourStyle? {
-        get {
-            if let str = tintColourStyleId {
-                return ColourStyle(rawValue: str)
-            } else {
-                return nil
-            }
-        }
-        set {
-            tintColourStyleId = newValue?.rawValue
-        }
-    }
-  */
-    public func applyTintTheme(theme: Theme) {
-        if let tintStyle = tintColourStyle {
-            tintColor = theme.colour(tintStyle)
-        }
-    }
-}
-
 @IBDesignable
 public class TKImageView: UIImageView, TintColourThemeable, BackgroundColourThemeable, Checking {
     
@@ -72,28 +38,17 @@ public class TKImageView: UIImageView, TintColourThemeable, BackgroundColourThem
         updateThemeIfNeeded()
     }
     
+    // MARK: - Themeable Properties
+    
     public var tintColourStyle:ColourStyle? {
         didSet {
-            if tintColourStyle != oldValue {
-                setNeedsUpdateTheme()
-            }
+            checkAndUpdateColourStyle(oldValue, tintColourStyle)
         }
     }
     
-    // MARK: - Themeable Properties
-//    @IBInspectable public var tintColourStyleId:String? {
-//        didSet {
-//            if tintColourStyleId != oldValue {
-//                setNeedsUpdateTheme()
-//            }
-//        }
-//    }
-    
-    @IBInspectable public var backgroundColourStyleId:String? {
+    public var backgroundColourStyle:ColourStyle? {
         didSet {
-            if backgroundColourStyleId != oldValue {
-                setNeedsUpdateTheme()
-            }
+            checkAndUpdateColourStyle(oldValue, backgroundColourStyle)
         }
     }
 }

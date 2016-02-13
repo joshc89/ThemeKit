@@ -6,12 +6,9 @@
 //  Copyright © 2015 Josh Campion. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-extension UILabel: ImplicitTextable { }
-
-@IBDesignable
-public class TKLabel: UILabel, ThemeableText, Checking {
+public class TKLabel: UILabel, BackgroundColourThemeable, TintColourThemeable, FontThemeable, TextColourThemeable, Checking {
     
     let checker = _Checker()
     
@@ -40,43 +37,29 @@ public class TKLabel: UILabel, ThemeableText, Checking {
         updateThemeIfNeeded()
     }
     
+    // MARK:- Theme Properties
+    
     public var textStyle:TextStyle?  {
         didSet {
-            if oldValue != textStyle {
-                setNeedsUpdateTheme()
-            }
+            checkAndUpdateTextStyle(oldValue, textStyle)
         }
     }
     
     public var textColourStyle:ColourStyle?  {
         didSet {
-            if oldValue != textColourStyle {
-                setNeedsUpdateTheme()
-            }
+            checkAndUpdateColourStyle(oldValue, textColourStyle)
         }
     }
     
-    @IBInspectable public var textStyleId:String? {
-        set {
-            if let idString = newValue,
-                let style = TextStyle(rawValue:idString) {
-                    textStyle = style
-            }
-        }
-        get {
-            return textStyle?.rawValue
+    public var backgroundColourStyle:ColourStyle? {
+        didSet {
+            checkAndUpdateColourStyle(oldValue, backgroundColourStyle)
         }
     }
     
-    @IBInspectable public var textColourStyleId:String? {
-        set {
-            if let idString = newValue,
-                let style = ColourStyle(rawValue:idString) {
-                    textColourStyle = style
-            }
-        }
-        get {
-            return textColourStyle?.rawValue
+    public var tintColourStyle:ColourStyle? {
+        didSet {
+            checkAndUpdateColourStyle(oldValue, tintColourStyle)
         }
     }
 }

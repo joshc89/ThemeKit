@@ -1,15 +1,14 @@
 //
-//  TKSwitch.swift
+//  TKSlider.swift
 //  ThemeKit
 //
-//  Created by Josh Campion on 02/08/2015.
-//  Copyright © 2015 Josh Campion. All rights reserved.
+//  Created by Josh Campion on 07/02/2016.
+//  Copyright © 2016 Josh Campion. All rights reserved.
 //
 
 import UIKit
 
-@IBDesignable
-public class TKSwitch:UISwitch, Themeable, ThumbTintColourThemeable, Checking {
+public class TKSlider: UISlider, ThumbTintColourThemeable, Checking {
     
     let checker = _Checker()
     
@@ -23,7 +22,7 @@ public class TKSwitch:UISwitch, Themeable, ThumbTintColourThemeable, Checking {
     }
     
     public override func didMoveToSuperview() {
-            super.didMoveToSuperview()
+        super.didMoveToSuperview()
         
         if let theme = theme() where !createdFromNib {
             applyTheme(theme)
@@ -38,24 +37,25 @@ public class TKSwitch:UISwitch, Themeable, ThumbTintColourThemeable, Checking {
         updateThemeIfNeeded()
     }
     
-    // MARK: - Properties
-    
-    
     // MARK: - Theme Properties
     
-    public var thumbTintColourStyle:ColourStyle?  {
+    public var thumbTintColourStyle:ColourStyle? {
         didSet {
             checkAndUpdateColourStyle(oldValue, thumbTintColourStyle)
         }
     }
     
-    // MARK: Custom Theme Properties
+    // Mark: Custom Theme Properties
     
-    public var onTintColourStyle:ColourStyle?  {
+    public var minimumTrackTintColourStyle:ColourStyle? {
         didSet {
-            if oldValue != onTintColourStyle {
-                setNeedsUpdateTheme()
-            }
+            checkAndUpdateColourStyle(oldValue, minimumTrackTintColourStyle)
+        }
+    }
+    
+    public var maximumTrackTintColourStyle:ColourStyle? {
+        didSet {
+            checkAndUpdateColourStyle(oldValue, minimumTrackTintColourStyle)
         }
     }
     
@@ -63,10 +63,12 @@ public class TKSwitch:UISwitch, Themeable, ThumbTintColourThemeable, Checking {
         
         applyProtocolThemes(theme)
         
-        if let style = onTintColourStyle {
-                onTintColor = theme.colour(style)
+        if let style = minimumTrackTintColourStyle {
+            minimumTrackTintColor = theme.colour(style)
+        }
+        
+        if let style = maximumTrackTintColourStyle {
+            maximumTrackTintColor = theme.colour(style)
         }
     }
-    
-    
 }
