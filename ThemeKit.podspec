@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "ThemeKit"
-  s.version      = "0.2"
+  s.version      = "0.2.1"
   s.summary      = "Simple theming of apps for consistent design."
 
   s.description  = <<-DESC

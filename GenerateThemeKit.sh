@@ -13,6 +13,8 @@ declare -a ALWAYS_LICENSED=(
 "com.apple.InterfaceBuilder.IBCocoaTouchPlugin.IBCocoaTouchTool"
 )
 
+ID="CloseCallCapture"
+
 declare -a LICENSED_IDS=(
 "com.virgintrainseastcoast.CloseCallCapture"
 "com.virgintrainseastcoast.CloseCallCaptureTests"
@@ -36,8 +38,8 @@ echo "$LICENSE_SWIFT" > 'ThemeKit/ThemeKit/Support Files/LicenseIDs.swift'
 
 ## Create the complete framework
 
-COMPILED_PATH='ThemeKit.framework'
-mkdir $COMPILED_PATH
+COMPILED_PATH="Compiled/${ID}/ThemeKit"
+mkdir -p "${COMPILED_PATH}"
 
 ## Move the Archived files...
 
