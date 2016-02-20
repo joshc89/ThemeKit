@@ -13,12 +13,12 @@ declare -a ALWAYS_LICENSED=(
 "com.apple.InterfaceBuilder.IBCocoaTouchPlugin.IBCocoaTouchTool"
 )
 
-ID="CloseCallCapture"
+ID="PocketSEO"
 
 declare -a LICENSED_IDS=(
-"com.virgintrainseastcoast.CloseCallCapture"
-"com.virgintrainseastcoast.CloseCallCaptureTests"
-"com.virgintrainseastcoast.CloseCallCaptureUITests"
+"io.pocketseo"
+"io.pocketseoTests"
+"io.pocketseoUITests"
 )
 
 ALL_LICENSED=("${ALWAYS_LICENSED[@]}" "${LICENSED_IDS[@]}")
@@ -64,6 +64,7 @@ done
 
 cp -r 'ThemeKit/ThemeKitDemo/IBInspectable' $COMPILED_PATH
 cp 'LICENSE' $COMPILED_PATH
+cp 'ReadMe-Compiled.md' $COMPILED_PATH/ReadMe.md
 
 LICENSED_BUNDLE_ID_TEXT="ThemeKit is licensed as defined in 'LICENSE' for iOS apps with the following BundleIDs:\n"
 
