@@ -13,12 +13,23 @@ declare -a ALWAYS_LICENSED=(
 "com.apple.InterfaceBuilder.IBCocoaTouchPlugin.IBCocoaTouchTool"
 )
 
-ID="PocketSEO"
+ID="AppCommerce"
+
+# PocketSEO
+#declare -a LICENSED_IDS=(
+#"io.pocketseo"
+#"io.pocketseo.URLMetricsExtension"
+#"io.pocketseoTests"
+#"io.pocketseoUITests"
+#)
 
 declare -a LICENSED_IDS=(
-"io.pocketseo"
-"io.pocketseoTests"
-"io.pocketseoUITests"
+"uk.co.thedistance.AppCommerce"
+"uk.co.thedistance.AppCommerceTest"
+"uk.co.thedistance.AppCommerceUITests"
+"uk.co.thedistance.StaticAppCommerce"
+"uk.co.thedistance.StaticAppCommerceTests"
+"uk.co.thedistance.StaticAppCommerceUITests"
 )
 
 ALL_LICENSED=("${ALWAYS_LICENSED[@]}" "${LICENSED_IDS[@]}")
@@ -36,28 +47,21 @@ echo "$LICENSE_SWIFT" > 'ThemeKit/ThemeKit/Support Files/LicenseIDs.swift'
 
 ## Compile Xcode project to create the .framework
 
+carthage update
+
 ## Create the complete framework
 
 COMPILED_PATH="Compiled/${ID}/ThemeKit"
 mkdir -p "${COMPILED_PATH}"
+mkdir -p "${COMPILED_PATH}/Build/iOS"
 
-## Move the Archived files...
+## Copy the Archived files...
 
-cp -r 'ThemeKit/_Archive/Debug' $COMPILED_PATH
-cp -r 'ThemeKit/_Archive/Release' $COMPILED_PATH
+cp -r 'Carthage/Build/iOS/ThemeKitCore.framework' "${COMPILED_PATH}/Build/iOS"
 
-# rm 'ThemeKit/_Archive'
-
-## Copy the pod spec
-
-cp 'ThemeKit.podspec' "$COMPILED_PATH/Debug"
-cp 'ThemeKit.podspec' "$COMPILED_PATH/Release"
-
-## Copy the device compiled files into the DEBUG folder
-
-for comp in "$COMPILED_PATH/Release/ThemeKitCore.framework/Modules/ThemeKitCore.swiftmodule/*"
+for f in Carthage/Build/iOS/*.bcsymbolmap
 do
-cp $comp "$COMPILED_PATH/Debug/ThemeKitCore.framework/Modules/ThemeKitCore.swiftmodule/"
+cp -r "${f}" "${COMPILED_PATH}/Build/iOS"
 done
 
 ## Copy the licensed files
@@ -67,7 +71,6 @@ cp 'LICENSE' $COMPILED_PATH
 cp 'ReadMe-Compiled.md' $COMPILED_PATH/ReadMe.md
 
 LICENSED_BUNDLE_ID_TEXT="ThemeKit is licensed as defined in 'LICENSE' for iOS apps with the following BundleIDs:\n"
-
 
 ## now loop through the above array
 for i in "${LICENSED_IDS[@]}"
