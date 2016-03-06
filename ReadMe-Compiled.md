@@ -11,6 +11,7 @@ I hope you have a great time using ThemeKit.
 0. Copy the distributed ThemeKit directory into your project directory. These instructions assume the directory has been copied to a "Libraries" directory at the project root.
 0. Add `"$(PROJECT_DIR)/Libraries/ThemeKit/$(CONFIGURATION)"` to the **Runpath Search Paths** and **Framework Search Paths** in your target's **Build Settings**. (If your have multiple configurations, either copy the 'Debug' or 'Release' directory with ThemeKit and rename it to your configuration, or specify 'Debug' / 'Release' instead of `"${CONFIGURATION}"` for each configuration.) 
 0. Add 'ThemeKit.framework' from the 'Release' subdirectory of ThemeKit to your target's **Embedded Binaries** section. This should also add 'ThemeKit.framework' to the **Linked Frameworks and Libraries** section.
+0. If `"$(PROJECT_DIR)/Libraries/ThemeKit/Release` has been added to the **Framework Search Paths** Build Setting as a duplicate, remove it.
 
 At this point your app should build and run and you can configure your own Theme!
 
