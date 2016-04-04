@@ -13,21 +13,22 @@ declare -a ALWAYS_LICENSED=(
 "com.apple.InterfaceBuilder.IBCocoaTouchPlugin.IBCocoaTouchTool"
 )
 
-ID="My-Hiscox"
-
-# PocketSEO
-#declare -a LICENSED_IDS=(
-#"io.pocketseo"
-#"io.pocketseo.URLMetricsExtension"
-#"io.pocketseoTests"
-#"io.pocketseoUITests"
-#)
+ID="PSEO"
 
 declare -a LICENSED_IDS=(
-"uk.co.thedistance.My-Hiscox"
-"uk.co.thedistance.My-HiscoxTests"
-"uk.co.thedistance.My-HiscoxUITests"
+"io.pocketseo"
+"io.pocketseo.URLMetricsExtension"
+"io.pocketseoTests"
+"io.pocketseoUITests"
 )
+
+#ID="My-Hiscox"
+#
+#declare -a LICENSED_IDS=(
+#"uk.co.thedistance.My-Hiscox"
+#"uk.co.thedistance.My-HiscoxTests"
+#"uk.co.thedistance.My-HiscoxUITests"
+#)
 
 ALL_LICENSED=("${ALWAYS_LICENSED[@]}" "${LICENSED_IDS[@]}")
 
