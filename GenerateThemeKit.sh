@@ -54,7 +54,7 @@ echo "$LICENSE_SWIFT" > 'ThemeKit/ThemeKit/Support Files/LicenseIDs.swift'
 ## Compile Xcode project to allow carthage to create the .framework
 
 git add .
-git commit -m 'Updated License IDs for project ${ID}'
+git commit -m "Updated License IDs for project ${ID}"
 git tag "${LATEST_TAG}.1"
 
 ## make carthage use the local git file to compile the .framework with so the new branch doesn't have to be pushed
