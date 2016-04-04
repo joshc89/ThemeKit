@@ -175,3 +175,16 @@ Pods/
 # UNKNOWN: recommended by others, but I can't discover what these files are
 #
 # ...none. Everything is now explained.
+
+####
+# EXTRAS
+# ignore custom files for this project
+
+## Don't commit the files generated from the archive post action run script
+ThemeKit/_Archive/**/*
+
+## Don't commit the copied versions of the framework
+Compiled/**/*
+
+## Don't commit the built products created by Carthage
+Carthage/**/*

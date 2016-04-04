@@ -7,12 +7,79 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A59A6CC91B4AB9B100F708DC /* ThemeKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A59A6CC81B4AB9B100F708DC /* ThemeKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A59A6CD01B4AB9B100F708DC /* ThemeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59A6CC51B4AB9B100F708DC /* ThemeKit.framework */; };
+		A505D52A1B6E154E00AAD861 /* UIView+TKExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505D5291B6E154E00AAD861 /* UIView+TKExtensions.swift */; };
+		A505D52C1B6E157600AAD861 /* UISearchBar+TKExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505D52B1B6E157600AAD861 /* UISearchBar+TKExtensions.swift */; };
+		A543191F1C5E6B1500713F3F /* TKBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A543191E1C5E6B1500713F3F /* TKBarButtonItem.swift */; };
+		A54319211C5E6CD400713F3F /* TKTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54319201C5E6CD400713F3F /* TKTabBarItem.swift */; };
+		A54319231C5F432A00713F3F /* ThemeKitCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A59A6CC51B4AB9B100F708DC /* ThemeKitCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A54319261C61427000713F3F /* TKImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54319251C61427000713F3F /* TKImageView.swift */; };
+		A54319281C6745B500713F3F /* ColourStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54319271C6745B500713F3F /* ColourStyle.swift */; };
+		A543192A1C6745D400713F3F /* TextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54319291C6745D400713F3F /* TextStyle.swift */; };
+		A54319311C6752D300713F3F /* BackgroundColourThemeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54319301C6752D300713F3F /* BackgroundColourThemeable.swift */; };
+		A54319331C6752F700713F3F /* TintColourThemeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54319321C6752F700713F3F /* TintColourThemeable.swift */; };
+		A543193A1C6757FA00713F3F /* FontThemeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54319391C6757FA00713F3F /* FontThemeable.swift */; };
+		A543193C1C67598F00713F3F /* TextColourThemeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A543193B1C67598F00713F3F /* TextColourThemeable.swift */; };
+		A54319491C6762A000713F3F /* TKSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54319481C6762A000713F3F /* TKSlider.swift */; };
+		A543194B1C67631F00713F3F /* ThumbTintColourThemeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A543194A1C67631F00713F3F /* ThumbTintColourThemeable.swift */; };
+		A54319541C67730500713F3F /* BarThemeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54319531C67730500713F3F /* BarThemeable.swift */; };
+		A54319561C67738A00713F3F /* StateTitleTextThemeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54319551C67738A00713F3F /* StateTitleTextThemeable.swift */; };
+		A54319601C677A0000713F3F /* TKToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A543195F1C677A0000713F3F /* TKToolbar.swift */; };
+		A54319641C677AA200713F3F /* MyTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54319631C677AA200713F3F /* MyTheme.swift */; };
+		A56453591C70B8390098F1A9 /* UIColor+TKExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56453571C6F90730098F1A9 /* UIColor+TKExtensions.swift */; };
+		A582E0D21C5CC3EB000F22AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A582E0D11C5CC3EB000F22AB /* AppDelegate.swift */; };
+		A582E0D41C5CC3EB000F22AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A582E0D31C5CC3EB000F22AB /* ViewController.swift */; };
+		A582E0D71C5CC3EB000F22AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A582E0D51C5CC3EB000F22AB /* Main.storyboard */; };
+		A582E0D91C5CC3EB000F22AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A582E0D81C5CC3EB000F22AB /* Assets.xcassets */; };
+		A582E0DC1C5CC3EB000F22AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A582E0DA1C5CC3EB000F22AB /* LaunchScreen.storyboard */; };
+		A582E0E31C5CC401000F22AB /* ThemeKitCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59A6CC51B4AB9B100F708DC /* ThemeKitCore.framework */; };
+		A59A6CC91B4AB9B100F708DC /* ThemeKitCore.h in Headers */ = {isa = PBXBuildFile; fileRef = A59A6CC81B4AB9B100F708DC /* ThemeKitCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A59A6CD01B4AB9B100F708DC /* ThemeKitCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59A6CC51B4AB9B100F708DC /* ThemeKitCore.framework */; };
 		A59A6CD51B4AB9B100F708DC /* ThemeKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59A6CD41B4AB9B100F708DC /* ThemeKitTests.swift */; };
+		A5C8C3051C5E63330002855B /* NSSingleton.h in Headers */ = {isa = PBXBuildFile; fileRef = A5C8C2EF1C5E63330002855B /* NSSingleton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A5C8C3061C5E63330002855B /* NSSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C8C2F01C5E63330002855B /* NSSingleton.m */; };
+		A5C8C3071C5E63330002855B /* TKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C8C2F31C5E63330002855B /* TKButton.swift */; };
+		A5C8C3081C5E63330002855B /* TKSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C8C2F41C5E63330002855B /* TKSegmentedControl.swift */; };
+		A5C8C3091C5E63330002855B /* TKStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C8C2F51C5E63330002855B /* TKStepper.swift */; };
+		A5C8C30A1C5E63330002855B /* TKSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C8C2F61C5E63330002855B /* TKSwitch.swift */; };
+		A5C8C30B1C5E63330002855B /* TKNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C8C2F81C5E63330002855B /* TKNavigationBar.swift */; };
+		A5C8C30C1C5E63330002855B /* TKTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C8C2F91C5E63330002855B /* TKTabBar.swift */; };
+		A5C8C3111C5E63330002855B /* TKView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C8C3001C5E63330002855B /* TKView.swift */; };
+		A5C8C3121C5E63330002855B /* TKThemeVendor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C8C3011C5E63330002855B /* TKThemeVendor.swift */; };
+		A5C8C3131C5E63330002855B /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C8C3031C5E63330002855B /* Theme.swift */; };
+		A5C8C3141C5E63330002855B /* Themeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C8C3041C5E63330002855B /* Themeable.swift */; };
+		A5C8C3181C5E636F0002855B /* TKLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C8C3151C5E636F0002855B /* TKLabel.swift */; };
+		A5C8C3191C5E636F0002855B /* TKTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C8C3161C5E636F0002855B /* TKTextField.swift */; };
+		A5C8C31A1C5E636F0002855B /* TKTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C8C3171C5E636F0002855B /* TKTextView.swift */; };
+		A5C8C31C1C5E637B0002855B /* ThemeableText.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C8C31B1C5E637B0002855B /* ThemeableText.swift */; };
+		A5C8C3211C5E638B0002855B /* LicenseChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C8C31E1C5E638B0002855B /* LicenseChecker.swift */; };
+		A5C8C3221C5E638B0002855B /* ThemeConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C8C31F1C5E638B0002855B /* ThemeConstants.swift */; };
+		A5C8C3231C5E638B0002855B /* ThemeFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C8C3201C5E638B0002855B /* ThemeFunctions.swift */; };
+		A5FF88701C679D7C006B0985 /* ThemeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF885F1C679D7C006B0985 /* ThemeButton.swift */; };
+		A5FF88711C679D7C006B0985 /* ThemeSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF88601C679D7C006B0985 /* ThemeSegmentedControl.swift */; };
+		A5FF88721C679D7C006B0985 /* ThemeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF88611C679D7C006B0985 /* ThemeSlider.swift */; };
+		A5FF88731C679D7C006B0985 /* ThemeStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF88621C679D7C006B0985 /* ThemeStepper.swift */; };
+		A5FF88741C679D7C006B0985 /* ThemeSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF88631C679D7C006B0985 /* ThemeSwitch.swift */; };
+		A5FF88751C679D7C006B0985 /* ThemeBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF88651C679D7C006B0985 /* ThemeBarButtonItem.swift */; };
+		A5FF88761C679D7C006B0985 /* ThemeNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF88661C679D7C006B0985 /* ThemeNavigationBar.swift */; };
+		A5FF88771C679D7C006B0985 /* ThemeTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF88671C679D7C006B0985 /* ThemeTabBar.swift */; };
+		A5FF88781C679D7C006B0985 /* ThemeTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF88681C679D7C006B0985 /* ThemeTabBarItem.swift */; };
+		A5FF88791C679D7C006B0985 /* ThemeToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF88691C679D7C006B0985 /* ThemeToolbar.swift */; };
+		A5FF887A1C679D7C006B0985 /* ThemeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF886B1C679D7C006B0985 /* ThemeLabel.swift */; };
+		A5FF887B1C679D7C006B0985 /* ThemeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF886C1C679D7C006B0985 /* ThemeTextField.swift */; };
+		A5FF887C1C679D7C006B0985 /* ThemeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF886D1C679D7C006B0985 /* ThemeTextView.swift */; };
+		A5FF887D1C679D7C006B0985 /* ThemeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF886E1C679D7C006B0985 /* ThemeImageView.swift */; };
+		A5FF887E1C679D7C006B0985 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF886F1C679D7C006B0985 /* ThemeView.swift */; };
+		A5FF88801C67A59A006B0985 /* LicenseIDs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF887F1C67A59A006B0985 /* LicenseIDs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		A582E0E11C5CC3FB000F22AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A59A6CBC1B4AB9B100F708DC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A59A6CC41B4AB9B100F708DC;
+			remoteInfo = ThemeKit;
+		};
 		A59A6CD11B4AB9B100F708DC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A59A6CBC1B4AB9B100F708DC /* Project object */;
@@ -22,16 +89,98 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A54319241C5F432A00713F3F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A54319231C5F432A00713F3F /* ThemeKitCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		A59A6CC51B4AB9B100F708DC /* ThemeKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ThemeKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A59A6CC81B4AB9B100F708DC /* ThemeKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThemeKit.h; sourceTree = "<group>"; };
+		A505D5291B6E154E00AAD861 /* UIView+TKExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+TKExtensions.swift"; path = "Extensions/UIView+TKExtensions.swift"; sourceTree = "<group>"; };
+		A505D52B1B6E157600AAD861 /* UISearchBar+TKExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UISearchBar+TKExtensions.swift"; path = "Extensions/UISearchBar+TKExtensions.swift"; sourceTree = "<group>"; };
+		A543191E1C5E6B1500713F3F /* TKBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKBarButtonItem.swift; sourceTree = "<group>"; };
+		A54319201C5E6CD400713F3F /* TKTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKTabBarItem.swift; sourceTree = "<group>"; };
+		A54319251C61427000713F3F /* TKImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKImageView.swift; sourceTree = "<group>"; };
+		A54319271C6745B500713F3F /* ColourStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColourStyle.swift; sourceTree = "<group>"; };
+		A54319291C6745D400713F3F /* TextStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextStyle.swift; sourceTree = "<group>"; };
+		A54319301C6752D300713F3F /* BackgroundColourThemeable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundColourThemeable.swift; sourceTree = "<group>"; };
+		A54319321C6752F700713F3F /* TintColourThemeable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TintColourThemeable.swift; sourceTree = "<group>"; };
+		A54319391C6757FA00713F3F /* FontThemeable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontThemeable.swift; sourceTree = "<group>"; };
+		A543193B1C67598F00713F3F /* TextColourThemeable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextColourThemeable.swift; sourceTree = "<group>"; };
+		A54319481C6762A000713F3F /* TKSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKSlider.swift; sourceTree = "<group>"; };
+		A543194A1C67631F00713F3F /* ThumbTintColourThemeable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbTintColourThemeable.swift; sourceTree = "<group>"; };
+		A54319531C67730500713F3F /* BarThemeable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarThemeable.swift; sourceTree = "<group>"; };
+		A54319551C67738A00713F3F /* StateTitleTextThemeable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateTitleTextThemeable.swift; sourceTree = "<group>"; };
+		A543195F1C677A0000713F3F /* TKToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKToolbar.swift; sourceTree = "<group>"; };
+		A54319631C677AA200713F3F /* MyTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyTheme.swift; path = ../MyTheme.swift; sourceTree = "<group>"; };
+		A56453571C6F90730098F1A9 /* UIColor+TKExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+TKExtensions.swift"; path = "Extensions/UIColor+TKExtensions.swift"; sourceTree = "<group>"; };
+		A582E0CF1C5CC3EB000F22AB /* ThemeKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThemeKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A582E0D11C5CC3EB000F22AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A582E0D31C5CC3EB000F22AB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A582E0D61C5CC3EB000F22AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A582E0D81C5CC3EB000F22AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A582E0DB1C5CC3EB000F22AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A582E0DD1C5CC3EB000F22AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A59A6CC51B4AB9B100F708DC /* ThemeKitCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ThemeKitCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A59A6CC81B4AB9B100F708DC /* ThemeKitCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThemeKitCore.h; sourceTree = "<group>"; };
 		A59A6CCA1B4AB9B100F708DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A59A6CCF1B4AB9B100F708DC /* ThemeKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThemeKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A59A6CD41B4AB9B100F708DC /* ThemeKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeKitTests.swift; sourceTree = "<group>"; };
 		A59A6CD61B4AB9B100F708DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5C8C2EF1C5E63330002855B /* NSSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSSingleton.h; sourceTree = "<group>"; };
+		A5C8C2F01C5E63330002855B /* NSSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSSingleton.m; sourceTree = "<group>"; };
+		A5C8C2F31C5E63330002855B /* TKButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKButton.swift; sourceTree = "<group>"; };
+		A5C8C2F41C5E63330002855B /* TKSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKSegmentedControl.swift; sourceTree = "<group>"; };
+		A5C8C2F51C5E63330002855B /* TKStepper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKStepper.swift; sourceTree = "<group>"; };
+		A5C8C2F61C5E63330002855B /* TKSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKSwitch.swift; sourceTree = "<group>"; };
+		A5C8C2F81C5E63330002855B /* TKNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKNavigationBar.swift; sourceTree = "<group>"; };
+		A5C8C2F91C5E63330002855B /* TKTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKTabBar.swift; sourceTree = "<group>"; };
+		A5C8C3001C5E63330002855B /* TKView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKView.swift; sourceTree = "<group>"; };
+		A5C8C3011C5E63330002855B /* TKThemeVendor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKThemeVendor.swift; sourceTree = "<group>"; };
+		A5C8C3031C5E63330002855B /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		A5C8C3041C5E63330002855B /* Themeable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Themeable.swift; sourceTree = "<group>"; };
+		A5C8C3151C5E636F0002855B /* TKLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKLabel.swift; sourceTree = "<group>"; };
+		A5C8C3161C5E636F0002855B /* TKTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKTextField.swift; sourceTree = "<group>"; };
+		A5C8C3171C5E636F0002855B /* TKTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKTextView.swift; sourceTree = "<group>"; };
+		A5C8C31B1C5E637B0002855B /* ThemeableText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeableText.swift; sourceTree = "<group>"; };
+		A5C8C31E1C5E638B0002855B /* LicenseChecker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicenseChecker.swift; sourceTree = "<group>"; };
+		A5C8C31F1C5E638B0002855B /* ThemeConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeConstants.swift; sourceTree = "<group>"; };
+		A5C8C3201C5E638B0002855B /* ThemeFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeFunctions.swift; sourceTree = "<group>"; };
+		A5FF885F1C679D7C006B0985 /* ThemeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeButton.swift; sourceTree = "<group>"; };
+		A5FF88601C679D7C006B0985 /* ThemeSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeSegmentedControl.swift; sourceTree = "<group>"; };
+		A5FF88611C679D7C006B0985 /* ThemeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeSlider.swift; sourceTree = "<group>"; };
+		A5FF88621C679D7C006B0985 /* ThemeStepper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeStepper.swift; sourceTree = "<group>"; };
+		A5FF88631C679D7C006B0985 /* ThemeSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeSwitch.swift; sourceTree = "<group>"; };
+		A5FF88651C679D7C006B0985 /* ThemeBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeBarButtonItem.swift; sourceTree = "<group>"; };
+		A5FF88661C679D7C006B0985 /* ThemeNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeNavigationBar.swift; sourceTree = "<group>"; };
+		A5FF88671C679D7C006B0985 /* ThemeTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeTabBar.swift; sourceTree = "<group>"; };
+		A5FF88681C679D7C006B0985 /* ThemeTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeTabBarItem.swift; sourceTree = "<group>"; };
+		A5FF88691C679D7C006B0985 /* ThemeToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeToolbar.swift; sourceTree = "<group>"; };
+		A5FF886B1C679D7C006B0985 /* ThemeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeLabel.swift; sourceTree = "<group>"; };
+		A5FF886C1C679D7C006B0985 /* ThemeTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeTextField.swift; sourceTree = "<group>"; };
+		A5FF886D1C679D7C006B0985 /* ThemeTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeTextView.swift; sourceTree = "<group>"; };
+		A5FF886E1C679D7C006B0985 /* ThemeImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeImageView.swift; sourceTree = "<group>"; };
+		A5FF886F1C679D7C006B0985 /* ThemeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
+		A5FF887F1C67A59A006B0985 /* LicenseIDs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicenseIDs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A582E0CC1C5CC3EB000F22AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A582E0E31C5CC401000F22AB /* ThemeKitCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A59A6CC11B4AB9B100F708DC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -43,16 +192,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A59A6CD01B4AB9B100F708DC /* ThemeKit.framework in Frameworks */,
+				A59A6CD01B4AB9B100F708DC /* ThemeKitCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A505D5281B6E151400AAD861 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A505D5291B6E154E00AAD861 /* UIView+TKExtensions.swift */,
+				A505D52B1B6E157600AAD861 /* UISearchBar+TKExtensions.swift */,
+				A56453571C6F90730098F1A9 /* UIColor+TKExtensions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		A582E0D01C5CC3EB000F22AB /* ThemeKitDemo */ = {
+			isa = PBXGroup;
+			children = (
+				A582E0D11C5CC3EB000F22AB /* AppDelegate.swift */,
+				A582E0D31C5CC3EB000F22AB /* ViewController.swift */,
+				A5FF885D1C679D7C006B0985 /* IBInspectable */,
+				A582E0D51C5CC3EB000F22AB /* Main.storyboard */,
+				A582E0D81C5CC3EB000F22AB /* Assets.xcassets */,
+				A582E0DA1C5CC3EB000F22AB /* LaunchScreen.storyboard */,
+				A582E0DD1C5CC3EB000F22AB /* Info.plist */,
+			);
+			path = ThemeKitDemo;
+			sourceTree = "<group>";
+		};
 		A59A6CBB1B4AB9B100F708DC = {
 			isa = PBXGroup;
 			children = (
+				A582E0D01C5CC3EB000F22AB /* ThemeKitDemo */,
 				A59A6CC71B4AB9B100F708DC /* ThemeKit */,
 				A59A6CD31B4AB9B100F708DC /* ThemeKitTests */,
 				A59A6CC61B4AB9B100F708DC /* Products */,
@@ -62,8 +236,9 @@
 		A59A6CC61B4AB9B100F708DC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A59A6CC51B4AB9B100F708DC /* ThemeKit.framework */,
+				A59A6CC51B4AB9B100F708DC /* ThemeKitCore.framework */,
 				A59A6CCF1B4AB9B100F708DC /* ThemeKitTests.xctest */,
+				A582E0CF1C5CC3EB000F22AB /* ThemeKitDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -71,8 +246,12 @@
 		A59A6CC71B4AB9B100F708DC /* ThemeKit */ = {
 			isa = PBXGroup;
 			children = (
-				A59A6CC81B4AB9B100F708DC /* ThemeKit.h */,
 				A59A6CCA1B4AB9B100F708DC /* Info.plist */,
+				A59A6CC81B4AB9B100F708DC /* ThemeKitCore.h */,
+				A5C8C2EE1C5E63330002855B /* Classes */,
+				A5C8C3021C5E63330002855B /* Protocols */,
+				A505D5281B6E151400AAD861 /* Extensions */,
+				A5C8C31D1C5E638B0002855B /* Support Files */,
 			);
 			path = ThemeKit;
 			sourceTree = "<group>";
@@ -86,6 +265,140 @@
 			path = ThemeKitTests;
 			sourceTree = "<group>";
 		};
+		A5C8C2EE1C5E63330002855B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A5C8C2EF1C5E63330002855B /* NSSingleton.h */,
+				A5C8C2F01C5E63330002855B /* NSSingleton.m */,
+				A5C8C3011C5E63330002855B /* TKThemeVendor.swift */,
+				A5C8C2F11C5E63330002855B /* Theme Views */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		A5C8C2F11C5E63330002855B /* Theme Views */ = {
+			isa = PBXGroup;
+			children = (
+				A5C8C3001C5E63330002855B /* TKView.swift */,
+				A54319251C61427000713F3F /* TKImageView.swift */,
+				A5C8C2F21C5E63330002855B /* Controls */,
+				A5C8C2F71C5E63330002855B /* Navigation */,
+				A5C8C2FA1C5E63330002855B /* Text */,
+			);
+			path = "Theme Views";
+			sourceTree = "<group>";
+		};
+		A5C8C2F21C5E63330002855B /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				A5C8C2F31C5E63330002855B /* TKButton.swift */,
+				A5C8C2F51C5E63330002855B /* TKStepper.swift */,
+				A5C8C2F61C5E63330002855B /* TKSwitch.swift */,
+				A54319481C6762A000713F3F /* TKSlider.swift */,
+				A5C8C2F41C5E63330002855B /* TKSegmentedControl.swift */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
+		A5C8C2F71C5E63330002855B /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				A5C8C2F81C5E63330002855B /* TKNavigationBar.swift */,
+				A543191E1C5E6B1500713F3F /* TKBarButtonItem.swift */,
+				A5C8C2F91C5E63330002855B /* TKTabBar.swift */,
+				A54319201C5E6CD400713F3F /* TKTabBarItem.swift */,
+				A543195F1C677A0000713F3F /* TKToolbar.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		A5C8C2FA1C5E63330002855B /* Text */ = {
+			isa = PBXGroup;
+			children = (
+				A5C8C3151C5E636F0002855B /* TKLabel.swift */,
+				A5C8C3161C5E636F0002855B /* TKTextField.swift */,
+				A5C8C3171C5E636F0002855B /* TKTextView.swift */,
+			);
+			path = Text;
+			sourceTree = "<group>";
+		};
+		A5C8C3021C5E63330002855B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A5C8C3031C5E63330002855B /* Theme.swift */,
+				A5C8C3041C5E63330002855B /* Themeable.swift */,
+				A54319301C6752D300713F3F /* BackgroundColourThemeable.swift */,
+				A54319321C6752F700713F3F /* TintColourThemeable.swift */,
+				A54319391C6757FA00713F3F /* FontThemeable.swift */,
+				A543193B1C67598F00713F3F /* TextColourThemeable.swift */,
+				A543194A1C67631F00713F3F /* ThumbTintColourThemeable.swift */,
+				A54319531C67730500713F3F /* BarThemeable.swift */,
+				A54319551C67738A00713F3F /* StateTitleTextThemeable.swift */,
+				A5C8C31B1C5E637B0002855B /* ThemeableText.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		A5C8C31D1C5E638B0002855B /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A5C8C31E1C5E638B0002855B /* LicenseChecker.swift */,
+				A5FF887F1C67A59A006B0985 /* LicenseIDs.swift */,
+				A5C8C31F1C5E638B0002855B /* ThemeConstants.swift */,
+				A54319271C6745B500713F3F /* ColourStyle.swift */,
+				A54319291C6745D400713F3F /* TextStyle.swift */,
+				A5C8C3201C5E638B0002855B /* ThemeFunctions.swift */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		A5FF885D1C679D7C006B0985 /* IBInspectable */ = {
+			isa = PBXGroup;
+			children = (
+				A54319631C677AA200713F3F /* MyTheme.swift */,
+				A5FF886E1C679D7C006B0985 /* ThemeImageView.swift */,
+				A5FF886F1C679D7C006B0985 /* ThemeView.swift */,
+				A5FF885E1C679D7C006B0985 /* Controls */,
+				A5FF88641C679D7C006B0985 /* Navigation */,
+				A5FF886A1C679D7C006B0985 /* Text */,
+			);
+			path = IBInspectable;
+			sourceTree = "<group>";
+		};
+		A5FF885E1C679D7C006B0985 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				A5FF885F1C679D7C006B0985 /* ThemeButton.swift */,
+				A5FF88601C679D7C006B0985 /* ThemeSegmentedControl.swift */,
+				A5FF88611C679D7C006B0985 /* ThemeSlider.swift */,
+				A5FF88621C679D7C006B0985 /* ThemeStepper.swift */,
+				A5FF88631C679D7C006B0985 /* ThemeSwitch.swift */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
+		A5FF88641C679D7C006B0985 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				A5FF88651C679D7C006B0985 /* ThemeBarButtonItem.swift */,
+				A5FF88661C679D7C006B0985 /* ThemeNavigationBar.swift */,
+				A5FF88671C679D7C006B0985 /* ThemeTabBar.swift */,
+				A5FF88681C679D7C006B0985 /* ThemeTabBarItem.swift */,
+				A5FF88691C679D7C006B0985 /* ThemeToolbar.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		A5FF886A1C679D7C006B0985 /* Text */ = {
+			isa = PBXGroup;
+			children = (
+				A5FF886B1C679D7C006B0985 /* ThemeLabel.swift */,
+				A5FF886C1C679D7C006B0985 /* ThemeTextField.swift */,
+				A5FF886D1C679D7C006B0985 /* ThemeTextView.swift */,
+			);
+			path = Text;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -93,16 +406,36 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A59A6CC91B4AB9B100F708DC /* ThemeKit.h in Headers */,
+				A59A6CC91B4AB9B100F708DC /* ThemeKitCore.h in Headers */,
+				A5C8C3051C5E63330002855B /* NSSingleton.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		A59A6CC41B4AB9B100F708DC /* ThemeKit */ = {
+		A582E0CE1C5CC3EB000F22AB /* ThemeKitDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A59A6CD91B4AB9B100F708DC /* Build configuration list for PBXNativeTarget "ThemeKit" */;
+			buildConfigurationList = A582E0E01C5CC3EB000F22AB /* Build configuration list for PBXNativeTarget "ThemeKitDemo" */;
+			buildPhases = (
+				A582E0CB1C5CC3EB000F22AB /* Sources */,
+				A582E0CC1C5CC3EB000F22AB /* Frameworks */,
+				A582E0CD1C5CC3EB000F22AB /* Resources */,
+				A54319241C5F432A00713F3F /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A582E0E21C5CC3FB000F22AB /* PBXTargetDependency */,
+			);
+			name = ThemeKitDemo;
+			productName = ThemeKitDemo;
+			productReference = A582E0CF1C5CC3EB000F22AB /* ThemeKitDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A59A6CC41B4AB9B100F708DC /* ThemeKitCore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A59A6CD91B4AB9B100F708DC /* Build configuration list for PBXNativeTarget "ThemeKitCore" */;
 			buildPhases = (
 				A59A6CC01B4AB9B100F708DC /* Sources */,
 				A59A6CC11B4AB9B100F708DC /* Frameworks */,
@@ -113,9 +446,9 @@
 			);
 			dependencies = (
 			);
-			name = ThemeKit;
+			name = ThemeKitCore;
 			productName = ThemeKit;
-			productReference = A59A6CC51B4AB9B100F708DC /* ThemeKit.framework */;
+			productReference = A59A6CC51B4AB9B100F708DC /* ThemeKitCore.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		A59A6CCE1B4AB9B100F708DC /* ThemeKitTests */ = {
@@ -142,11 +475,17 @@
 		A59A6CBC1B4AB9B100F708DC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Josh Campion";
 				TargetAttributes = {
+					A582E0CE1C5CC3EB000F22AB = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = KHA7R7624Z;
+					};
 					A59A6CC41B4AB9B100F708DC = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = KHA7R7624Z;
 					};
 					A59A6CCE1B4AB9B100F708DC = {
 						CreatedOnToolsVersion = 7.0;
@@ -159,19 +498,31 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = A59A6CBB1B4AB9B100F708DC;
 			productRefGroup = A59A6CC61B4AB9B100F708DC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A59A6CC41B4AB9B100F708DC /* ThemeKit */,
+				A582E0CE1C5CC3EB000F22AB /* ThemeKitDemo */,
+				A59A6CC41B4AB9B100F708DC /* ThemeKitCore */,
 				A59A6CCE1B4AB9B100F708DC /* ThemeKitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A582E0CD1C5CC3EB000F22AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A582E0DC1C5CC3EB000F22AB /* LaunchScreen.storyboard in Resources */,
+				A582E0D91C5CC3EB000F22AB /* Assets.xcassets in Resources */,
+				A582E0D71C5CC3EB000F22AB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A59A6CC31B4AB9B100F708DC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -189,10 +540,71 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A582E0CB1C5CC3EB000F22AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5FF887A1C679D7C006B0985 /* ThemeLabel.swift in Sources */,
+				A5FF887C1C679D7C006B0985 /* ThemeTextView.swift in Sources */,
+				A5FF88751C679D7C006B0985 /* ThemeBarButtonItem.swift in Sources */,
+				A5FF88761C679D7C006B0985 /* ThemeNavigationBar.swift in Sources */,
+				A5FF88791C679D7C006B0985 /* ThemeToolbar.swift in Sources */,
+				A5FF887D1C679D7C006B0985 /* ThemeImageView.swift in Sources */,
+				A54319641C677AA200713F3F /* MyTheme.swift in Sources */,
+				A5FF88741C679D7C006B0985 /* ThemeSwitch.swift in Sources */,
+				A582E0D41C5CC3EB000F22AB /* ViewController.swift in Sources */,
+				A5FF88721C679D7C006B0985 /* ThemeSlider.swift in Sources */,
+				A5FF88731C679D7C006B0985 /* ThemeStepper.swift in Sources */,
+				A582E0D21C5CC3EB000F22AB /* AppDelegate.swift in Sources */,
+				A5FF88711C679D7C006B0985 /* ThemeSegmentedControl.swift in Sources */,
+				A5FF887B1C679D7C006B0985 /* ThemeTextField.swift in Sources */,
+				A5FF88701C679D7C006B0985 /* ThemeButton.swift in Sources */,
+				A5FF88781C679D7C006B0985 /* ThemeTabBarItem.swift in Sources */,
+				A5FF887E1C679D7C006B0985 /* ThemeView.swift in Sources */,
+				A5FF88771C679D7C006B0985 /* ThemeTabBar.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A59A6CC01B4AB9B100F708DC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5FF88801C67A59A006B0985 /* LicenseIDs.swift in Sources */,
+				A5C8C3071C5E63330002855B /* TKButton.swift in Sources */,
+				A54319211C5E6CD400713F3F /* TKTabBarItem.swift in Sources */,
+				A543193A1C6757FA00713F3F /* FontThemeable.swift in Sources */,
+				A54319541C67730500713F3F /* BarThemeable.swift in Sources */,
+				A5C8C31A1C5E636F0002855B /* TKTextView.swift in Sources */,
+				A5C8C3111C5E63330002855B /* TKView.swift in Sources */,
+				A5C8C3181C5E636F0002855B /* TKLabel.swift in Sources */,
+				A54319561C67738A00713F3F /* StateTitleTextThemeable.swift in Sources */,
+				A54319331C6752F700713F3F /* TintColourThemeable.swift in Sources */,
+				A5C8C30C1C5E63330002855B /* TKTabBar.swift in Sources */,
+				A5C8C31C1C5E637B0002855B /* ThemeableText.swift in Sources */,
+				A543194B1C67631F00713F3F /* ThumbTintColourThemeable.swift in Sources */,
+				A505D52C1B6E157600AAD861 /* UISearchBar+TKExtensions.swift in Sources */,
+				A5C8C3081C5E63330002855B /* TKSegmentedControl.swift in Sources */,
+				A54319281C6745B500713F3F /* ColourStyle.swift in Sources */,
+				A543192A1C6745D400713F3F /* TextStyle.swift in Sources */,
+				A5C8C3191C5E636F0002855B /* TKTextField.swift in Sources */,
+				A5C8C3141C5E63330002855B /* Themeable.swift in Sources */,
+				A5C8C30A1C5E63330002855B /* TKSwitch.swift in Sources */,
+				A56453591C70B8390098F1A9 /* UIColor+TKExtensions.swift in Sources */,
+				A5C8C3231C5E638B0002855B /* ThemeFunctions.swift in Sources */,
+				A54319601C677A0000713F3F /* TKToolbar.swift in Sources */,
+				A5C8C30B1C5E63330002855B /* TKNavigationBar.swift in Sources */,
+				A543193C1C67598F00713F3F /* TextColourThemeable.swift in Sources */,
+				A5C8C3061C5E63330002855B /* NSSingleton.m in Sources */,
+				A5C8C3131C5E63330002855B /* Theme.swift in Sources */,
+				A5C8C3091C5E63330002855B /* TKStepper.swift in Sources */,
+				A54319261C61427000713F3F /* TKImageView.swift in Sources */,
+				A54319491C6762A000713F3F /* TKSlider.swift in Sources */,
+				A54319311C6752D300713F3F /* BackgroundColourThemeable.swift in Sources */,
+				A5C8C3221C5E638B0002855B /* ThemeConstants.swift in Sources */,
+				A5C8C3211C5E638B0002855B /* LicenseChecker.swift in Sources */,
+				A543191F1C5E6B1500713F3F /* TKBarButtonItem.swift in Sources */,
+				A5C8C3121C5E63330002855B /* TKThemeVendor.swift in Sources */,
+				A505D52A1B6E154E00AAD861 /* UIView+TKExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,14 +619,76 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		A582E0E21C5CC3FB000F22AB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A59A6CC41B4AB9B100F708DC /* ThemeKitCore */;
+			targetProxy = A582E0E11C5CC3FB000F22AB /* PBXContainerItemProxy */;
+		};
 		A59A6CD21B4AB9B100F708DC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A59A6CC41B4AB9B100F708DC /* ThemeKit */;
+			target = A59A6CC41B4AB9B100F708DC /* ThemeKitCore */;
 			targetProxy = A59A6CD11B4AB9B100F708DC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		A582E0D51C5CC3EB000F22AB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A582E0D61C5CC3EB000F22AB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A582E0DA1C5CC3EB000F22AB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A582E0DB1C5CC3EB000F22AB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		A582E0DE1C5CC3EB000F22AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ThemeKitDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "\"-DTARGET_INTERFACE_BUILDER\"";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.joshcampion.ThemeKitDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		A582E0DF1C5CC3EB000F22AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = ThemeKitDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "\"-DTARGET_INTERFACE_BUILDER\"";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.joshcampion.ThemeKitDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
 		A59A6CD71B4AB9B100F708DC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -307,32 +781,52 @@
 		A59A6CDA1B4AB9B100F708DC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_OPTIMIZATION_LEVEL = s;
 				INFOPLIST_FILE = ThemeKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.josh-campion.ThemeKit";
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.joshcampion.ThemeKitCore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
 		};
 		A59A6CDB1B4AB9B100F708DC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_OPTIMIZATION_LEVEL = s;
 				INFOPLIST_FILE = ThemeKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.josh-campion.ThemeKit";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.joshcampion.ThemeKitCore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;
 		};
@@ -359,6 +853,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A582E0E01C5CC3EB000F22AB /* Build configuration list for PBXNativeTarget "ThemeKitDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A582E0DE1C5CC3EB000F22AB /* Debug */,
+				A582E0DF1C5CC3EB000F22AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A59A6CBF1B4AB9B100F708DC /* Build configuration list for PBXProject "ThemeKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -368,13 +871,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A59A6CD91B4AB9B100F708DC /* Build configuration list for PBXNativeTarget "ThemeKit" */ = {
+		A59A6CD91B4AB9B100F708DC /* Build configuration list for PBXNativeTarget "ThemeKitCore" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A59A6CDA1B4AB9B100F708DC /* Debug */,
 				A59A6CDB1B4AB9B100F708DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A59A6CDC1B4AB9B100F708DC /* Build configuration list for PBXNativeTarget "ThemeKitTests" */ = {
 			isa = XCConfigurationList;
@@ -383,6 +887,7 @@
 				A59A6CDE1B4AB9B100F708DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

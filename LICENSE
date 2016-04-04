@@ -1,0 +1,22 @@
+Copyright (c) 2015-2016, Joshua Robert Campion
+
+Definitions:
+
+"Author" shall refer to Joshua Robert Campion.
+"Software" shall refer to all code, documentation, compiled frameworks and other content within the distributed directory, "ThemeKit", within which this file should be contained including but not limited to all source code with the copyright notice 'Copyright © <year> Josh Campion. All rights reserved.' for any <year> and the contents of ThemeKit.framework.
+
+License:
+
+Permission is hereby granted for use of the Software in, and only in, the iOS app defined in 'LicensedBundleIDs.txt', contained within 'ThemeKit.framework'.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+All rights remain with the Author. Use in other projects and/or any of copying, modifying, merging, publishing, distributing, sublicensing, selling of the Software is not permitted.
+
+Use of this Software is acceptance of the terms in this License.
