@@ -25,11 +25,19 @@ ID="My-Hiscox"
 
 declare -a LICENSED_IDS=(
 "uk.co.thedistance.My-Hiscox"
-"uk.co.thedistance.My-HiscoxTest"
 "uk.co.thedistance.My-HiscoxTests"
+"uk.co.thedistance.My-HiscoxUITests"
 )
 
 ALL_LICENSED=("${ALWAYS_LICENSED[@]}" "${LICENSED_IDS[@]}")
+
+## Create a temporary branch to create this release for
+
+git checkout master
+
+LATEST_TAG=$(git describe --abbrev=0)
+
+git branch 'Compiled-${ID}'
 
 ## Create the swift file used to compile the framework with
 LICENSE_SWIFT="let licensedIdentifiers = [\n"
@@ -42,8 +50,15 @@ LICENSE_SWIFT+="]"
 
 echo "$LICENSE_SWIFT" > 'ThemeKit/ThemeKit/Support Files/LicenseIDs.swift'
 
-## Compile Xcode project to create the .framework
+## Compile Xcode project to allow carthage to create the .framework
 
+git commit -m 'Updated License IDs for project ${ID}'
+git tag "${LATEST_TAG}.1"
+
+## make carthage use the local git file to compile the .framework with so the new branch doesn't have to be pushed
+
+WD=$(pwd)
+echo 'ThemeKitCore "file://${WD}"'
 carthage update
 
 ## Create the complete framework
