@@ -37,7 +37,8 @@ git checkout master
 
 LATEST_TAG=$(git describe --abbrev=0)
 
-git branch 'Compiled-${ID}'
+git branch "Compiled-${ID}"
+git checkout "Compiled-${ID}"
 
 ## Create the swift file used to compile the framework with
 LICENSE_SWIFT="let licensedIdentifiers = [\n"
@@ -52,6 +53,7 @@ echo "$LICENSE_SWIFT" > 'ThemeKit/ThemeKit/Support Files/LicenseIDs.swift'
 
 ## Compile Xcode project to allow carthage to create the .framework
 
+git add .
 git commit -m 'Updated License IDs for project ${ID}'
 git tag "${LATEST_TAG}.1"
 
