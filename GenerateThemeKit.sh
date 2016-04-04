@@ -61,7 +61,7 @@ git tag "${LATEST_TAG}.1"
 ## make carthage use the local git file to compile the .framework with so the new branch doesn't have to be pushed
 
 WD=$(pwd)
-echo 'ThemeKitCore "file://${WD}"'
+echo "ThemeKitCore \"file://${WD}\"" > 'cartfile'
 carthage update
 
 ## Create the complete framework
