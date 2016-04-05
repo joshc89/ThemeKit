@@ -17,7 +17,10 @@ public extension UIColor {
             alpha:alpha);
     }
     
-    public convenience init?(var hexString:String, var alpha:CGFloat = 1.0) {
+    public convenience init?(hexString hex:String, alpha a:CGFloat = 1.0) {
+        
+        var hexString = hex
+        var alpha = a
         
         if ((hexString.characters.count == 8 || hexString.characters.count == 6) && hexString.characters.first != "#") {
             hexString = "#\(hexString)"

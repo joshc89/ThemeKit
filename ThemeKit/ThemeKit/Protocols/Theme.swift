@@ -43,7 +43,7 @@ public extension Theme {
         if let size = defaultTextSizes[textStyle] {
             fontSize = size
         } else {
-            TKLogError(self, function: __FUNCTION__, message: "No text size specified for text style \(textStyle.rawValue). Using defualt 17.0.")
+            TKLogError(self, function: #function, message: "No text size specified for text style \(textStyle.rawValue). Using defualt 17.0.")
             fontSize = 17.0
         }
         
@@ -60,7 +60,7 @@ public extension Theme {
         if let currentContentSize = UIContentSizeCategory(contentSize: preferredContentSize) {
             return currentContentSize
         } else {
-            TKLogError(self, function: __FUNCTION__, message: "Unknown current content size category: " + preferredContentSize)
+            TKLogError(self, function: #function, message: "Unknown current content size category: " + preferredContentSize)
             return .Large
         }
     }
@@ -71,7 +71,7 @@ public extension Theme {
         let size = fontSize(textStyle, sizeCategory: sizeCategory ?? currentContentSizeCategory())
         
         guard let font = UIFont(name: fontName(textStyle), size: size) else {
-            TKLogError(self, function: __FUNCTION__, message: "No font specified for text style \(textStyle.rawValue). Using system font.")
+            TKLogError(self, function: #function, message: "No font specified for text style \(textStyle.rawValue). Using system font.")
             return UIFont.systemFontOfSize(size)
         }
         
@@ -81,7 +81,7 @@ public extension Theme {
     public func colour(colourStyle:ColourStyle) -> UIColor {
 
         guard let colour = themeColours[colourStyle] else {
-            TKLogError(self, function: __FUNCTION__, message: "No colour specified for colour style \(colourStyle.rawValue). Using default Black.")
+            TKLogError(self, function: #function, message: "No colour specified for colour style \(colourStyle.rawValue). Using default Black.")
             return UIColor.blackColor()
         }
         
