@@ -52,29 +52,15 @@ enum HMACAlgorithm {
 }
 */
 
+let secret = "laSd23jC7dl8Gb"
+
 extension String {
     
-    func digestUsingAlgorithm(algorithm: HMACAlgorithm, key: String) -> String! {
-        let str = self.cStringUsingEncoding(NSUTF8StringEncoding)
-        //let strLen = Int(self.lengthOfBytesUsingEncoding(NSUTF8StringEncoding))
-        let digestLen = HMAC.digestLengthForAlgorithm(algorithm)
+    func digestUsingAlgorithm(algorithm: HMACAlgorithm, key: String = secret) -> String! {
         
-        let keyStr = key.cStringUsingEncoding(NSUTF8StringEncoding)
-        //let keyLen = Int(key.lengthOfBytesUsingEncoding(NSUTF8StringEncoding))
+        let hmacData = HMAC.hmac(self, withKey: key, usingAlgorithm: algorithm)
         
-        let hmacData = HMAC.calculateWithAlgorithm(algorithm, forKey: keyStr!, andData: str!)
-        
-        let result = UnsafeMutablePointer<CUnsignedChar>.alloc(digestLen)
-        hmacData.getBytes(result, length: hmacData.length)
-        
-        let hash = NSMutableString()
-        for i in 0..<digestLen {
-            hash.appendFormat("%02x", result[i])
-        }
-        
-        result.destroy()
-        
-        return String(hash)
+        return hmacData.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
     }
     
 }

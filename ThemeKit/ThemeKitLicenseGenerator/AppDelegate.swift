@@ -1,34 +1,21 @@
 //
 //  AppDelegate.swift
-//  ThemeDemo
+//  ThemeKitLicenseGenerator
 //
-//  Created by Josh Campion on 06/07/2015.
-//  Copyright © 2015 Josh Campion. All rights reserved.
+//  Created by Josh Campion on 19/04/2016.
+//  Copyright © 2016 Josh Campion. All rights reserved.
 //
 
 import UIKit
-import ThemeKitCore
 
 @UIApplicationMain
-
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
-    var window: UIWindow?
-    
-    func application(application: UIApplication, willFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
-        
-        ThemeKit.setLicenseKey(ThemeKitLicense)
-        let _ = MyVendor.shared()
-        
-        // Override point for customization after application launch.
-        
-        return true
-    }
-    
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
+    var window: UIWindow?
+
+
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        
         return true
     }
 

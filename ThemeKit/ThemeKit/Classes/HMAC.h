@@ -21,7 +21,7 @@ typedef NS_ENUM(NSInteger, HMACAlgorithm)
 
 @interface HMAC : NSObject
 
-+ (NSData *)calculateWithAlgorithm:(HMACAlgorithm)algorithm forKey:(const void *)key andData:(const void *)data;
++ (NSData *)hmac:(NSString *)input withKey:(NSString *)key usingAlgorithm:(HMACAlgorithm) algorithm;
 + (NSInteger)digestLengthForAlgorithm:(HMACAlgorithm)algorithm;
 
 @end

@@ -11,6 +11,8 @@ import ThemeKitCore
 
 // Define your app specific theme
 
+let ThemeKitLicense = "Simulator"
+
 struct MyTheme: Theme {
     
     let defaultTextSizes = MaterialTextSizes // default
@@ -65,7 +67,7 @@ extension TKThemeVendor {
         
         
         if self == TKThemeVendor.self {
-            ThemeKit.setLicenseKey("Demo")
+            ThemeKit.setLicenseKey(ThemeKitLicense)
             assert(MyVendor.shared().defaultTheme != nil)
         }
         

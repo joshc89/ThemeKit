@@ -10,7 +10,7 @@ import UIKit
 
 public class TKTabBar: UITabBar, BarThemeable, Checking {
     
-    let checker = _Checker()
+    // let checker = _Checker()
     
     // - initWithFrame(_:) support
     public var createdFromNib:Bool = false

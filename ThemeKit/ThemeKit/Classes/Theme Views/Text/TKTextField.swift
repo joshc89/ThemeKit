@@ -13,7 +13,7 @@ let TKDefaultInsets = UIEdgeInsetsMake(2.0, 7.0, 2.0, 7.0)
 @IBDesignable
 public class TKTextField: UITextField, BackgroundColourThemeable, TintColourThemeable, FontThemeable, TextColourThemeable, Checking {
     
-    let checker = _Checker()
+    // let checker = _Checker()
     
     // - initWithFrame(_:) support
     public var createdFromNib:Bool = false

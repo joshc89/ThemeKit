@@ -75,10 +75,11 @@ private var ThemeableNeedsUpdateThemeKey:UInt8 = 0
 public extension Themeable where Self:UIView {
     
     func theme() -> Theme? {
-        
-        if let svTheme = (superview as? Themeable)?.theme() {
-            return svTheme
-        }
+
+        // to re-add when allowing multiple themes.
+//        if let svTheme = (superview as? Themeable)?.theme() {
+//            return svTheme
+//        }
         
         let vendor = TKThemeVendor.shared()
         let theme = vendor.defaultTheme

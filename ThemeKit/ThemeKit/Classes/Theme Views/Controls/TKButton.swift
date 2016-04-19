@@ -11,7 +11,7 @@ import UIKit
 @IBDesignable
 public class TKButton: UIButton, Themeable, TintColourThemeable, BackgroundColourThemeable, FontThemeable, Checking {
     
-    let checker = _Checker()
+    // let checker = _Checker()
     
     // - initWithFrame(_:) support
     public var createdFromNib:Bool = false

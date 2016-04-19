@@ -12,15 +12,19 @@
 @implementation HMAC
 
 // Class methods here
-+ (NSData *)calculateWithAlgorithm:(HMACAlgorithm)algorithm forKey:(const void *)key andData:(const void *)data
-{
-    NSInteger digestLength = [self digestLengthForAlgorithm:algorithm];
-    unsigned char hmac[digestLength];
+
++ (NSData *)hmac:(NSString *)input withKey:(NSString *)key usingAlgorithm:(HMACAlgorithm) algorithm {
     
-    CCHmac(algorithm, &key, strlen(key), &data, strlen(data), &hmac);
+    NSStringEncoding encoding = NSASCIIStringEncoding;
+    const char *cstrInput = [input cStringUsingEncoding:encoding];
+    NSUInteger inputLength = [input lengthOfBytesUsingEncoding:encoding];
+    const char *cstrKey = [key cStringUsingEncoding:encoding];
+    NSUInteger keyLength = [key lengthOfBytesUsingEncoding:encoding];
     
-    NSData *hmacBytes = [NSData dataWithBytes:hmac length:sizeof(hmac)];
-    return hmacBytes;
+    unsigned char chmac[[HMAC digestLengthForAlgorithm:algorithm]];
+    CCHmac(kCCHmacAlgSHA1, cstrKey, keyLength, cstrInput, inputLength, &chmac);
+    
+    return [[NSData alloc] initWithBytes:chmac length:sizeof(chmac)];
 }
 
 + (NSInteger)digestLengthForAlgorithm:(HMACAlgorithm)algorithm
