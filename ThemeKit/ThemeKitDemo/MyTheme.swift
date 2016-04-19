@@ -62,11 +62,14 @@ class MyVendor: TKThemeVendor {
 extension TKThemeVendor {
     
     override public class func initialize() {
-        super.initialize()
+        
         
         if self == TKThemeVendor.self {
+            ThemeKit.setLicenseKey("Demo")
             assert(MyVendor.shared().defaultTheme != nil)
         }
+        
+        super.initialize()
     }
 }
 

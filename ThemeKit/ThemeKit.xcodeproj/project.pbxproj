@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		A505D52A1B6E154E00AAD861 /* UIView+TKExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505D5291B6E154E00AAD861 /* UIView+TKExtensions.swift */; };
 		A505D52C1B6E157600AAD861 /* UISearchBar+TKExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505D52B1B6E157600AAD861 /* UISearchBar+TKExtensions.swift */; };
+		A5105AF41CC6024600ED38CB /* Encryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5105AF21CC21F6200ED38CB /* Encryption.swift */; };
+		A5105AF91CC603E500ED38CB /* HMAC.h in Headers */ = {isa = PBXBuildFile; fileRef = A5105AF71CC603E500ED38CB /* HMAC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A5105AFA1CC603E500ED38CB /* HMAC.m in Sources */ = {isa = PBXBuildFile; fileRef = A5105AF81CC603E500ED38CB /* HMAC.m */; };
 		A543191F1C5E6B1500713F3F /* TKBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A543191E1C5E6B1500713F3F /* TKBarButtonItem.swift */; };
 		A54319211C5E6CD400713F3F /* TKTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54319201C5E6CD400713F3F /* TKTabBarItem.swift */; };
 		A54319231C5F432A00713F3F /* ThemeKitCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A59A6CC51B4AB9B100F708DC /* ThemeKitCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -106,6 +109,9 @@
 /* Begin PBXFileReference section */
 		A505D5291B6E154E00AAD861 /* UIView+TKExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+TKExtensions.swift"; path = "Extensions/UIView+TKExtensions.swift"; sourceTree = "<group>"; };
 		A505D52B1B6E157600AAD861 /* UISearchBar+TKExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UISearchBar+TKExtensions.swift"; path = "Extensions/UISearchBar+TKExtensions.swift"; sourceTree = "<group>"; };
+		A5105AF21CC21F6200ED38CB /* Encryption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Encryption.swift; sourceTree = "<group>"; };
+		A5105AF71CC603E500ED38CB /* HMAC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMAC.h; sourceTree = "<group>"; };
+		A5105AF81CC603E500ED38CB /* HMAC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMAC.m; sourceTree = "<group>"; };
 		A543191E1C5E6B1500713F3F /* TKBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKBarButtonItem.swift; sourceTree = "<group>"; };
 		A54319201C5E6CD400713F3F /* TKTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKTabBarItem.swift; sourceTree = "<group>"; };
 		A54319251C61427000713F3F /* TKImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKImageView.swift; sourceTree = "<group>"; };
@@ -270,6 +276,8 @@
 			children = (
 				A5C8C2EF1C5E63330002855B /* NSSingleton.h */,
 				A5C8C2F01C5E63330002855B /* NSSingleton.m */,
+				A5105AF71CC603E500ED38CB /* HMAC.h */,
+				A5105AF81CC603E500ED38CB /* HMAC.m */,
 				A5C8C3011C5E63330002855B /* TKThemeVendor.swift */,
 				A5C8C2F11C5E63330002855B /* Theme Views */,
 			);
@@ -343,6 +351,7 @@
 			isa = PBXGroup;
 			children = (
 				A5C8C31E1C5E638B0002855B /* LicenseChecker.swift */,
+				A5105AF21CC21F6200ED38CB /* Encryption.swift */,
 				A5FF887F1C67A59A006B0985 /* LicenseIDs.swift */,
 				A5C8C31F1C5E638B0002855B /* ThemeConstants.swift */,
 				A54319271C6745B500713F3F /* ColourStyle.swift */,
@@ -407,6 +416,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A59A6CC91B4AB9B100F708DC /* ThemeKitCore.h in Headers */,
+				A5105AF91CC603E500ED38CB /* HMAC.h in Headers */,
 				A5C8C3051C5E63330002855B /* NSSingleton.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -579,6 +589,7 @@
 				A5C8C3181C5E636F0002855B /* TKLabel.swift in Sources */,
 				A54319561C67738A00713F3F /* StateTitleTextThemeable.swift in Sources */,
 				A54319331C6752F700713F3F /* TintColourThemeable.swift in Sources */,
+				A5105AFA1CC603E500ED38CB /* HMAC.m in Sources */,
 				A5C8C30C1C5E63330002855B /* TKTabBar.swift in Sources */,
 				A5C8C31C1C5E637B0002855B /* ThemeableText.swift in Sources */,
 				A543194B1C67631F00713F3F /* ThumbTintColourThemeable.swift in Sources */,
@@ -597,6 +608,7 @@
 				A5C8C3061C5E63330002855B /* NSSingleton.m in Sources */,
 				A5C8C3131C5E63330002855B /* Theme.swift in Sources */,
 				A5C8C3091C5E63330002855B /* TKStepper.swift in Sources */,
+				A5105AF41CC6024600ED38CB /* Encryption.swift in Sources */,
 				A54319261C61427000713F3F /* TKImageView.swift in Sources */,
 				A54319491C6762A000713F3F /* TKSlider.swift in Sources */,
 				A54319311C6752D300713F3F /* BackgroundColourThemeable.swift in Sources */,

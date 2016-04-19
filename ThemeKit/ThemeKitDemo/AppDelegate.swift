@@ -7,11 +7,22 @@
 //
 
 import UIKit
+import ThemeKitCore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
+    
+    func application(application: UIApplication, willFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
+        
+        ThemeKit.setLicenseKey("Demo")
+        let _ = MyVendor.shared()
+        
+        // Override point for customization after application launch.
+        
+        return true
+    }
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
