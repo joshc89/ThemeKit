@@ -47,6 +47,7 @@
 		A59A6CC91B4AB9B100F708DC /* ThemeKitCore.h in Headers */ = {isa = PBXBuildFile; fileRef = A59A6CC81B4AB9B100F708DC /* ThemeKitCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A59A6CD01B4AB9B100F708DC /* ThemeKitCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59A6CC51B4AB9B100F708DC /* ThemeKitCore.framework */; };
 		A59A6CD51B4AB9B100F708DC /* ThemeKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59A6CD41B4AB9B100F708DC /* ThemeKitTests.swift */; };
+		A5BE37B21CC7573400EB809E /* NSAttributedString+TKExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BE37B11CC7573400EB809E /* NSAttributedString+TKExtensions.swift */; };
 		A5C8C3051C5E63330002855B /* NSSingleton.h in Headers */ = {isa = PBXBuildFile; fileRef = A5C8C2EF1C5E63330002855B /* NSSingleton.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A5C8C3061C5E63330002855B /* NSSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C8C2F01C5E63330002855B /* NSSingleton.m */; };
 		A5C8C3071C5E63330002855B /* TKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C8C2F31C5E63330002855B /* TKButton.swift */; };
@@ -158,6 +159,7 @@
 		A59A6CCF1B4AB9B100F708DC /* ThemeKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThemeKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A59A6CD41B4AB9B100F708DC /* ThemeKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeKitTests.swift; sourceTree = "<group>"; };
 		A59A6CD61B4AB9B100F708DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5BE37B11CC7573400EB809E /* NSAttributedString+TKExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+TKExtensions.swift"; sourceTree = "<group>"; };
 		A5C8C2EF1C5E63330002855B /* NSSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSSingleton.h; sourceTree = "<group>"; };
 		A5C8C2F01C5E63330002855B /* NSSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSSingleton.m; sourceTree = "<group>"; };
 		A5C8C2F31C5E63330002855B /* TKButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKButton.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 				A505D5291B6E154E00AAD861 /* UIView+TKExtensions.swift */,
 				A505D52B1B6E157600AAD861 /* UISearchBar+TKExtensions.swift */,
 				A56453571C6F90730098F1A9 /* UIColor+TKExtensions.swift */,
+				A5BE37B11CC7573400EB809E /* NSAttributedString+TKExtensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -674,6 +677,7 @@
 				A5FF88801C67A59A006B0985 /* LicenseIDs.swift in Sources */,
 				A5C8C3071C5E63330002855B /* TKButton.swift in Sources */,
 				A54319211C5E6CD400713F3F /* TKTabBarItem.swift in Sources */,
+				A5BE37B21CC7573400EB809E /* NSAttributedString+TKExtensions.swift in Sources */,
 				A543193A1C6757FA00713F3F /* FontThemeable.swift in Sources */,
 				A54319541C67730500713F3F /* BarThemeable.swift in Sources */,
 				A5C8C31A1C5E636F0002855B /* TKTextView.swift in Sources */,
@@ -1008,6 +1012,7 @@
 				A5105B101CC6C12D00ED38CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A582E0E01C5CC3EB000F22AB /* Build configuration list for PBXNativeTarget "ThemeKitDemo" */ = {
 			isa = XCConfigurationList;
