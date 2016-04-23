@@ -40,7 +40,6 @@ public protocol IBThemeable {
 /// Extending UIView to apply the theme at the default times: awakeFromNib(), prepareForInterfaceBuilder(). The default implementations of these methods are empty so it is safe to override them.
 public extension UIView {
     
-    
     // move to will move to window.
     override public func awakeFromNib() {
         super.awakeFromNib()

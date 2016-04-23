@@ -29,8 +29,7 @@
 		A543192A1C6745D400713F3F /* TextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54319291C6745D400713F3F /* TextStyle.swift */; };
 		A54319311C6752D300713F3F /* BackgroundColourThemeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54319301C6752D300713F3F /* BackgroundColourThemeable.swift */; };
 		A54319331C6752F700713F3F /* TintColourThemeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54319321C6752F700713F3F /* TintColourThemeable.swift */; };
-		A543193A1C6757FA00713F3F /* FontThemeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54319391C6757FA00713F3F /* FontThemeable.swift */; };
-		A543193C1C67598F00713F3F /* TextColourThemeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A543193B1C67598F00713F3F /* TextColourThemeable.swift */; };
+		A543193A1C6757FA00713F3F /* TextThemeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54319391C6757FA00713F3F /* TextThemeable.swift */; };
 		A54319491C6762A000713F3F /* TKSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54319481C6762A000713F3F /* TKSlider.swift */; };
 		A543194B1C67631F00713F3F /* ThumbTintColourThemeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A543194A1C67631F00713F3F /* ThumbTintColourThemeable.swift */; };
 		A54319541C67730500713F3F /* BarThemeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54319531C67730500713F3F /* BarThemeable.swift */; };
@@ -63,7 +62,6 @@
 		A5C8C3181C5E636F0002855B /* TKLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C8C3151C5E636F0002855B /* TKLabel.swift */; };
 		A5C8C3191C5E636F0002855B /* TKTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C8C3161C5E636F0002855B /* TKTextField.swift */; };
 		A5C8C31A1C5E636F0002855B /* TKTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C8C3171C5E636F0002855B /* TKTextView.swift */; };
-		A5C8C31C1C5E637B0002855B /* ThemeableText.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C8C31B1C5E637B0002855B /* ThemeableText.swift */; };
 		A5C8C3211C5E638B0002855B /* LicenseChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C8C31E1C5E638B0002855B /* LicenseChecker.swift */; };
 		A5C8C3221C5E638B0002855B /* ThemeConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C8C31F1C5E638B0002855B /* ThemeConstants.swift */; };
 		A5C8C3231C5E638B0002855B /* ThemeFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C8C3201C5E638B0002855B /* ThemeFunctions.swift */; };
@@ -80,9 +78,7 @@
 		A5FF887A1C679D7C006B0985 /* ThemeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF886B1C679D7C006B0985 /* ThemeLabel.swift */; };
 		A5FF887B1C679D7C006B0985 /* ThemeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF886C1C679D7C006B0985 /* ThemeTextField.swift */; };
 		A5FF887C1C679D7C006B0985 /* ThemeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF886D1C679D7C006B0985 /* ThemeTextView.swift */; };
-		A5FF887D1C679D7C006B0985 /* ThemeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF886E1C679D7C006B0985 /* ThemeImageView.swift */; };
-		A5FF887E1C679D7C006B0985 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF886F1C679D7C006B0985 /* ThemeView.swift */; };
-		A5FF88801C67A59A006B0985 /* LicenseIDs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF887F1C67A59A006B0985 /* LicenseIDs.swift */; };
+		A5FF887E1C679D7C006B0985 /* IBInspectableViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF886F1C679D7C006B0985 /* IBInspectableViews.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,8 +133,7 @@
 		A54319291C6745D400713F3F /* TextStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextStyle.swift; sourceTree = "<group>"; };
 		A54319301C6752D300713F3F /* BackgroundColourThemeable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundColourThemeable.swift; sourceTree = "<group>"; };
 		A54319321C6752F700713F3F /* TintColourThemeable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TintColourThemeable.swift; sourceTree = "<group>"; };
-		A54319391C6757FA00713F3F /* FontThemeable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontThemeable.swift; sourceTree = "<group>"; };
-		A543193B1C67598F00713F3F /* TextColourThemeable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextColourThemeable.swift; sourceTree = "<group>"; };
+		A54319391C6757FA00713F3F /* TextThemeable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextThemeable.swift; sourceTree = "<group>"; };
 		A54319481C6762A000713F3F /* TKSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKSlider.swift; sourceTree = "<group>"; };
 		A543194A1C67631F00713F3F /* ThumbTintColourThemeable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbTintColourThemeable.swift; sourceTree = "<group>"; };
 		A54319531C67730500713F3F /* BarThemeable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarThemeable.swift; sourceTree = "<group>"; };
@@ -175,7 +170,6 @@
 		A5C8C3151C5E636F0002855B /* TKLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKLabel.swift; sourceTree = "<group>"; };
 		A5C8C3161C5E636F0002855B /* TKTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKTextField.swift; sourceTree = "<group>"; };
 		A5C8C3171C5E636F0002855B /* TKTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKTextView.swift; sourceTree = "<group>"; };
-		A5C8C31B1C5E637B0002855B /* ThemeableText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeableText.swift; sourceTree = "<group>"; };
 		A5C8C31E1C5E638B0002855B /* LicenseChecker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicenseChecker.swift; sourceTree = "<group>"; };
 		A5C8C31F1C5E638B0002855B /* ThemeConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeConstants.swift; sourceTree = "<group>"; };
 		A5C8C3201C5E638B0002855B /* ThemeFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeFunctions.swift; sourceTree = "<group>"; };
@@ -192,9 +186,7 @@
 		A5FF886B1C679D7C006B0985 /* ThemeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeLabel.swift; sourceTree = "<group>"; };
 		A5FF886C1C679D7C006B0985 /* ThemeTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeTextField.swift; sourceTree = "<group>"; };
 		A5FF886D1C679D7C006B0985 /* ThemeTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeTextView.swift; sourceTree = "<group>"; };
-		A5FF886E1C679D7C006B0985 /* ThemeImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeImageView.swift; sourceTree = "<group>"; };
-		A5FF886F1C679D7C006B0985 /* ThemeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
-		A5FF887F1C67A59A006B0985 /* LicenseIDs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicenseIDs.swift; sourceTree = "<group>"; };
+		A5FF886F1C679D7C006B0985 /* IBInspectableViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBInspectableViews.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -380,12 +372,10 @@
 				A5C8C3041C5E63330002855B /* Themeable.swift */,
 				A54319301C6752D300713F3F /* BackgroundColourThemeable.swift */,
 				A54319321C6752F700713F3F /* TintColourThemeable.swift */,
-				A54319391C6757FA00713F3F /* FontThemeable.swift */,
-				A543193B1C67598F00713F3F /* TextColourThemeable.swift */,
+				A54319391C6757FA00713F3F /* TextThemeable.swift */,
 				A543194A1C67631F00713F3F /* ThumbTintColourThemeable.swift */,
 				A54319531C67730500713F3F /* BarThemeable.swift */,
 				A54319551C67738A00713F3F /* StateTitleTextThemeable.swift */,
-				A5C8C31B1C5E637B0002855B /* ThemeableText.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -395,7 +385,6 @@
 			children = (
 				A5C8C31E1C5E638B0002855B /* LicenseChecker.swift */,
 				A5105AF21CC21F6200ED38CB /* Encryption.swift */,
-				A5FF887F1C67A59A006B0985 /* LicenseIDs.swift */,
 				A5C8C31F1C5E638B0002855B /* ThemeConstants.swift */,
 				A54319271C6745B500713F3F /* ColourStyle.swift */,
 				A54319291C6745D400713F3F /* TextStyle.swift */,
@@ -408,8 +397,7 @@
 			isa = PBXGroup;
 			children = (
 				A54319631C677AA200713F3F /* MyTheme.swift */,
-				A5FF886E1C679D7C006B0985 /* ThemeImageView.swift */,
-				A5FF886F1C679D7C006B0985 /* ThemeView.swift */,
+				A5FF886F1C679D7C006B0985 /* IBInspectableViews.swift */,
 				A5FF885E1C679D7C006B0985 /* Controls */,
 				A5FF88641C679D7C006B0985 /* Navigation */,
 				A5FF886A1C679D7C006B0985 /* Text */,
@@ -654,7 +642,6 @@
 				A5FF88751C679D7C006B0985 /* ThemeBarButtonItem.swift in Sources */,
 				A5FF88761C679D7C006B0985 /* ThemeNavigationBar.swift in Sources */,
 				A5FF88791C679D7C006B0985 /* ThemeToolbar.swift in Sources */,
-				A5FF887D1C679D7C006B0985 /* ThemeImageView.swift in Sources */,
 				A54319641C677AA200713F3F /* MyTheme.swift in Sources */,
 				A5FF88741C679D7C006B0985 /* ThemeSwitch.swift in Sources */,
 				A582E0D41C5CC3EB000F22AB /* ViewController.swift in Sources */,
@@ -665,7 +652,7 @@
 				A5FF887B1C679D7C006B0985 /* ThemeTextField.swift in Sources */,
 				A5FF88701C679D7C006B0985 /* ThemeButton.swift in Sources */,
 				A5FF88781C679D7C006B0985 /* ThemeTabBarItem.swift in Sources */,
-				A5FF887E1C679D7C006B0985 /* ThemeView.swift in Sources */,
+				A5FF887E1C679D7C006B0985 /* IBInspectableViews.swift in Sources */,
 				A5FF88771C679D7C006B0985 /* ThemeTabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -674,11 +661,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5FF88801C67A59A006B0985 /* LicenseIDs.swift in Sources */,
 				A5C8C3071C5E63330002855B /* TKButton.swift in Sources */,
 				A54319211C5E6CD400713F3F /* TKTabBarItem.swift in Sources */,
 				A5BE37B21CC7573400EB809E /* NSAttributedString+TKExtensions.swift in Sources */,
-				A543193A1C6757FA00713F3F /* FontThemeable.swift in Sources */,
+				A543193A1C6757FA00713F3F /* TextThemeable.swift in Sources */,
 				A54319541C67730500713F3F /* BarThemeable.swift in Sources */,
 				A5C8C31A1C5E636F0002855B /* TKTextView.swift in Sources */,
 				A5C8C3111C5E63330002855B /* TKView.swift in Sources */,
@@ -687,7 +673,6 @@
 				A54319331C6752F700713F3F /* TintColourThemeable.swift in Sources */,
 				A5105AFA1CC603E500ED38CB /* HMAC.m in Sources */,
 				A5C8C30C1C5E63330002855B /* TKTabBar.swift in Sources */,
-				A5C8C31C1C5E637B0002855B /* ThemeableText.swift in Sources */,
 				A543194B1C67631F00713F3F /* ThumbTintColourThemeable.swift in Sources */,
 				A505D52C1B6E157600AAD861 /* UISearchBar+TKExtensions.swift in Sources */,
 				A5C8C3081C5E63330002855B /* TKSegmentedControl.swift in Sources */,
@@ -700,7 +685,6 @@
 				A5C8C3231C5E638B0002855B /* ThemeFunctions.swift in Sources */,
 				A54319601C677A0000713F3F /* TKToolbar.swift in Sources */,
 				A5C8C30B1C5E63330002855B /* TKNavigationBar.swift in Sources */,
-				A543193C1C67598F00713F3F /* TextColourThemeable.swift in Sources */,
 				A5C8C3061C5E63330002855B /* NSSingleton.m in Sources */,
 				A5C8C3131C5E63330002855B /* Theme.swift in Sources */,
 				A5C8C3091C5E63330002855B /* TKStepper.swift in Sources */,

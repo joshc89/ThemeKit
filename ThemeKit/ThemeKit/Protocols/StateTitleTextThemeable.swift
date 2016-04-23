@@ -25,13 +25,12 @@ public protocol StateObjectTitleTextAttributes {
 }
 
 extension UISegmentedControl: StateObjectTitleTextAttributes { }
-
 extension UITabBarItem: StateTitleTextAttributes { }
 extension UIBarButtonItem: StateTitleTextAttributes { }
 
-public extension FontThemeable where Self: StateTitleTextAttributes {
+public extension TextThemeable where Self: StateTitleTextAttributes {
     
-    public func applyFontTheme(theme: Theme) {
+    public func applyTextTheme(theme: Theme) {
         
         // theme the state dependent title text attributes
         var attributes = self.titleTextAttributesForState(.Normal) ?? [String:AnyObject]()
@@ -39,19 +38,7 @@ public extension FontThemeable where Self: StateTitleTextAttributes {
         if let style = textStyle {
             attributes[NSFontAttributeName] = theme.font(style)
         }
-        
-        setTitleTextAttributes(attributes, forState: .Normal)
-    }
     
-}
-
-public extension TextColourThemeable where Self: StateTitleTextAttributes {
-    
-    public func applyTextColourTheme(theme: Theme) {
-        
-        // theme the state dependent title text attributes
-        var attributes = self.titleTextAttributesForState(.Normal) ?? [String:AnyObject]()
-        
         if let style = textColourStyle {
             attributes[NSForegroundColorAttributeName] = theme.colour(style)
         }
@@ -61,9 +48,9 @@ public extension TextColourThemeable where Self: StateTitleTextAttributes {
     
 }
 
-public extension FontThemeable where Self: StateObjectTitleTextAttributes {
+public extension TextThemeable where Self: StateObjectTitleTextAttributes {
     
-    public func applyFontTheme(theme: Theme) {
+    public func applyTextTheme(theme: Theme) {
         
         // theme the state dependent title text attributes
         var attributes = self.titleTextAttributesForState(.Normal) ?? [String:AnyObject]()
@@ -71,18 +58,6 @@ public extension FontThemeable where Self: StateObjectTitleTextAttributes {
         if let style = textStyle {
             attributes[NSFontAttributeName] = theme.font(style)
         }
-        
-        setTitleTextAttributes(attributes, forState: .Normal)
-    }
-    
-}
-
-public extension TextColourThemeable where Self: StateObjectTitleTextAttributes {
-    
-    public func applyTextColourTheme(theme: Theme) {
-        
-        // theme the state dependent title text attributes
-        var attributes = self.titleTextAttributesForState(.Normal) ?? [String:AnyObject]()
         
         if let style = textColourStyle {
             attributes[NSForegroundColorAttributeName] = theme.colour(style)

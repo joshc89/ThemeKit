@@ -11,6 +11,7 @@ import UIKit
 public protocol BackgroundColourThemeable: Themeable {
     
     var backgroundColourStyle:ColourStyle? { get set }
+    var backgroundColourStyleId:String? { get set }
     
     func applyBackgroundTheme(theme:Theme)
 }
@@ -22,10 +23,4 @@ public extension BackgroundColourThemeable where Self:UIView {
             backgroundColor = theme.colour(bgStyle)
         }
     }
-}
-
-public protocol BackgroundColourInspectable: BackgroundColourThemeable {
-    
-    var backgroundColourStyleId:String? { get set }
-    
 }

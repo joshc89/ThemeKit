@@ -10,41 +10,11 @@ import UIKit
 import ThemeKitCore
 
 @IBDesignable
-public class ThemeSlider: TKSlider, ThumbTintColourInspectable, IBThemeable {
+public class ThemeSlider: TKSlider, IBThemeable {
     
-    @IBInspectable public var thumbTintColourStyleId:String? {
-        set {
-            if let idString = newValue,
-                let style = ColourStyle(rawValue: idString) {
-                    thumbTintColourStyle = style
-            }
-        }
-        get {
-            return thumbTintColourStyle?.rawValue
-        }
-    }
+    @IBInspectable override public var thumbTintColourStyleId:String? { didSet { }    }
     
-    @IBInspectable public var minimumTrackTintColourStyleId:String? {
-        set {
-            if let idString = newValue,
-                let style = ColourStyle(rawValue: idString) {
-                    minimumTrackTintColourStyle = style
-            }
-        }
-        get {
-            return minimumTrackTintColourStyle?.rawValue
-        }
-    }
+    @IBInspectable override public var minimumTrackTintColourStyleId:String? { didSet { }    }
     
-    @IBInspectable public var maximumTrackTintColourStyleId:String? {
-        set {
-            if let idString = newValue,
-                let style = ColourStyle(rawValue: idString) {
-                    maximumTrackTintColourStyle = style
-            }
-        }
-        get {
-            return maximumTrackTintColourStyle?.rawValue
-        }
-    }
+    @IBInspectable override public var maximumTrackTintColourStyleId:String? { didSet { }    }
 }

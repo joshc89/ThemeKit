@@ -45,7 +45,7 @@ public class TKSlider: UISlider, ThumbTintColourThemeable, Checking {
         }
     }
     
-    // Mark: Custom Theme Properties
+    // MARK: Custom Theme Properties
     
     public var minimumTrackTintColourStyle:ColourStyle? {
         didSet {
@@ -58,6 +58,47 @@ public class TKSlider: UISlider, ThumbTintColourThemeable, Checking {
             checkAndUpdateColourStyle(oldValue, minimumTrackTintColourStyle)
         }
     }
+    
+    // MARK: Inspectable Properties
+    
+    public var thumbTintColourStyleId:String? {
+        set {
+            if let idString = newValue,
+                let style = ColourStyle(rawValue: idString) {
+                thumbTintColourStyle = style
+            }
+        }
+        get {
+            return thumbTintColourStyle?.rawValue
+        }
+    }
+    
+    public var minimumTrackTintColourStyleId:String? {
+        set {
+            if let idString = newValue,
+                let style = ColourStyle(rawValue: idString) {
+                minimumTrackTintColourStyle = style
+            }
+        }
+        get {
+            return minimumTrackTintColourStyle?.rawValue
+        }
+    }
+    
+    public var maximumTrackTintColourStyleId:String? {
+        set {
+            if let idString = newValue,
+                let style = ColourStyle(rawValue: idString) {
+                maximumTrackTintColourStyle = style
+            }
+        }
+        get {
+            return maximumTrackTintColourStyle?.rawValue
+        }
+    }
+
+    
+    // MARK: Custom Apply Theme
     
     public func applyTheme(theme: Theme) {
         

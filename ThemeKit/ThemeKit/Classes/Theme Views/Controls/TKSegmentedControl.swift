@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-public class TKSegmentedControl: UISegmentedControl, BackgroundColourThemeable, TintColourThemeable, FontThemeable, TextColourThemeable, Checking {
+public class TKSegmentedControl: UISegmentedControl, BackgroundColourThemeable, TintColourThemeable, TextThemeable, Checking {
     
     // let checker = _Checker()
     
@@ -81,5 +81,60 @@ public class TKSegmentedControl: UISegmentedControl, BackgroundColourThemeable, 
             checkAndUpdateColourStyle(oldValue, textColourStyle)
         }
     }
+    
+    // MARK: Inspectable Properties
+    
+    public var backgroundColourStyleId:String? {
+        get {
+            return backgroundColourStyle?.rawValue
+        }
+        set {
+            if let rawValue = newValue,
+                let style = ColourStyle(rawValue: rawValue) {
+                backgroundColourStyle = style
+            } else {
+                backgroundColourStyle = nil
+            }
+        }
+    }
+
+    public var tintColourStyleId:String? {
+        get {
+            return tintColourStyle?.rawValue
+        }
+        set {
+            if let rawValue = newValue,
+                let style = ColourStyle(rawValue: rawValue) {
+                tintColourStyle = style
+            } else {
+                tintColourStyle = nil
+            }
+        }
+    }
+
+    public var textStyleId:String? {
+        set {
+            if let idString = newValue,
+                let style = TextStyle(rawValue:idString) {
+                textStyle = style
+            }
+        }
+        get {
+            return textStyle?.rawValue
+        }
+    }
+    
+    public var textColourStyleId:String? {
+        set {
+            if let idString = newValue,
+                let style = ColourStyle(rawValue:idString) {
+                textColourStyle = style
+            }
+        }
+        get {
+            return textColourStyle?.rawValue
+        }
+    }
+
 }
 

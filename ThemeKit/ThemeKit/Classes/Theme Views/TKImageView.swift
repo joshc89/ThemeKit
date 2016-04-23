@@ -8,8 +8,7 @@
 
 import UIKit
 
-@IBDesignable
-public class TKImageView: UIImageView, TintColourThemeable, BackgroundColourThemeable, Checking {
+public class TKImageView: UIImageView, BackgroundColourThemeable, TintColourThemeable, Checking {
     
     // let checker = _Checker()
     
@@ -38,7 +37,7 @@ public class TKImageView: UIImageView, TintColourThemeable, BackgroundColourThem
         updateThemeIfNeeded()
     }
     
-    // MARK: - Themeable Properties
+    // MARK: Themeable Properties
     
     public var tintColourStyle:ColourStyle? {
         didSet {
@@ -51,5 +50,36 @@ public class TKImageView: UIImageView, TintColourThemeable, BackgroundColourThem
             checkAndUpdateColourStyle(oldValue, backgroundColourStyle)
         }
     }
+    
+    // MARK: Inspectable Properties
+    
+    public var backgroundColourStyleId:String? {
+        get {
+            return backgroundColourStyle?.rawValue
+        }
+        set {
+            if let rawValue = newValue,
+                let style = ColourStyle(rawValue: rawValue) {
+                backgroundColourStyle = style
+            } else {
+                backgroundColourStyle = nil
+            }
+        }
+    }
+
+    public var tintColourStyleId:String? {
+        get {
+            return tintColourStyle?.rawValue
+        }
+        set {
+            if let rawValue = newValue,
+                let style = ColourStyle(rawValue: rawValue) {
+                tintColourStyle = style
+            } else {
+                tintColourStyle = nil
+            }
+        }
+    }
+
 }
 

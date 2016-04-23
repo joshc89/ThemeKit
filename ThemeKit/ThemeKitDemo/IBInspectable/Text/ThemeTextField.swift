@@ -10,66 +10,23 @@ import UIKit
 import ThemeKitCore
 
 @IBDesignable
-public class ThemeTextField: TKTextField, BackgroundColourInspectable, TintColourInspectable, FontInspectable, TextColourInspectable, IBThemeable {
+public class ThemeTextField: TKTextField, IBThemeable {
     
-    
-    // Only instance properties can be declared IBInspectable
     @IBInspectable
-    public var backgroundColourStyleId:String? {
-        get {
-            return backgroundColourStyle?.rawValue
-        }
-        set {
-            if let rawValue = newValue,
-                let style = ColourStyle(rawValue: rawValue) {
-                    backgroundColourStyle = style
-            } else {
-                backgroundColourStyle = nil
-            }
-        }
-    }
+    override public var backgroundColourStyleId:String? { didSet { } }
     
-    // Only instance properties can be declared IBInspectable
     @IBInspectable
-    public var tintColourStyleId:String? {
-        get {
-            return tintColourStyle?.rawValue
-        }
-        set {
-            if let rawValue = newValue,
-                let style = ColourStyle(rawValue: rawValue) {
-                    tintColourStyle = style
-            } else {
-                tintColourStyle = nil
-            }
-        }
-    }
+    override public var tintColourStyleId:String? { didSet { } }
     
-    // Only instance properties can be declared IBInspectable
     @IBInspectable
-    public var textStyleId:String? {
-        set {
-            if let idString = newValue,
-                let style = TextStyle(rawValue:idString) {
-                    textStyle = style
-            }
-        }
-        get {
-            return textStyle?.rawValue
-        }
-    }
+    override public var textStyleId:String?  { didSet { } }
     
-    // Only instance properties can be declared IBInspectable
     @IBInspectable
-    public var textColourStyleId:String? {
-        set {
-            if let idString = newValue,
-                let style = ColourStyle(rawValue:idString) {
-                    textColourStyle = style
-            }
-        }
-        get {
-            return textColourStyle?.rawValue
-        }
-    }
+    override public var textColourStyleId:String? { didSet { } }
+    
+    @IBInspectable
+    override public var placeholderTextStyleId:String?  { didSet { } }
+    
+    @IBInspectable
+    override public var placeholderTextColourStyleId:String? { didSet { } }
 }

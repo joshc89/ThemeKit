@@ -37,7 +37,7 @@ public class TKView: UIView, BackgroundColourThemeable, TintColourThemeable, Che
         updateThemeIfNeeded()
     }
     
-    // MARK:- Theme Properties
+    // MARK: Theme Properties
     
     public var backgroundColourStyle:ColourStyle? {
         didSet {
@@ -50,5 +50,36 @@ public class TKView: UIView, BackgroundColourThemeable, TintColourThemeable, Che
             checkAndUpdateColourStyle(oldValue, tintColourStyle)
         }
     }
+    
+    // MARK: Inspectable Properties
+    
+    public var backgroundColourStyleId:String? {
+        get {
+            return backgroundColourStyle?.rawValue
+        }
+        set {
+            if let rawValue = newValue,
+                let style = ColourStyle(rawValue: rawValue) {
+                backgroundColourStyle = style
+            } else {
+                backgroundColourStyle = nil
+            }
+        }
+    }
+
+    public var tintColourStyleId:String? {
+        get {
+            return tintColourStyle?.rawValue
+        }
+        set {
+            if let rawValue = newValue,
+                let style = ColourStyle(rawValue: rawValue) {
+                tintColourStyle = style
+            } else {
+                tintColourStyle = nil
+            }
+        }
+    }
+
 }
 

@@ -10,63 +10,21 @@ import UIKit
 import ThemeKitCore
 
 @IBDesignable
-public class ThemeNavigationBar: TKNavigationBar, BarInspectable, FontInspectable, TextColourInspectable, IBThemeable {
+public class ThemeNavigationBar: TKNavigationBar, IBThemeable {
     
     // Only instance properties can be declared IBInspectable
     @IBInspectable
-    public var tintColourStyleId:String? {
-        get {
-            return tintColourStyle?.rawValue
-        }
-        set {
-            if let rawValue = newValue,
-                let style = ColourStyle(rawValue: rawValue) {
-                    tintColourStyle = style
-            } else {
-                tintColourStyle = nil
-            }
-        }
-    }
+    override public var tintColourStyleId:String? { didSet { } }
     
     // Only instance properties can be declared IBInspectable
     @IBInspectable
-    public var textStyleId:String? {
-        set {
-            if let idString = newValue,
-                let style = TextStyle(rawValue:idString) {
-                    textStyle = style
-            }
-        }
-        get {
-            return textStyle?.rawValue
-        }
-    }
+    override public var textStyleId:String? { didSet { } }
     
     // Only instance properties can be declared IBInspectable
     @IBInspectable
-    public var textColourStyleId:String? {
-        set {
-            if let idString = newValue,
-                let style = ColourStyle(rawValue:idString) {
-                    textColourStyle = style
-            }
-        }
-        get {
-            return textColourStyle?.rawValue
-        }
-    }
+    override public var textColourStyleId:String? { didSet { } }
     
     // Only instance properties can be declared IBInspectable
     @IBInspectable
-    public var barTintColourStyleId:String? {
-        set {
-            if let idString = newValue,
-                let style = ColourStyle(rawValue:idString) {
-                    barTintColourStyle = style
-            }
-        }
-        get {
-            return barTintColourStyle?.rawValue
-        }
-    }
+    override public var barTintColourStyleId:String? { didSet { } }
 }

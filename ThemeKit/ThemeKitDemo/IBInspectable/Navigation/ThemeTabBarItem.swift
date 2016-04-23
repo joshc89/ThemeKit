@@ -10,33 +10,13 @@ import UIKit
 import ThemeKitCore
 
 @IBDesignable
-public class ThemeTabBarItem: TKTabBarItem, FontInspectable, TextColourInspectable, IBThemeable {
+public class ThemeTabBarItem: TKTabBarItem, IBThemeable {
     
     // Only instance properties can be declared IBInspectable
     @IBInspectable
-    public var textStyleId:String? {
-        set {
-            if let idString = newValue,
-                let style = TextStyle(rawValue:idString) {
-                    textStyle = style
-            }
-        }
-        get {
-            return textStyle?.rawValue
-        }
-    }
+    override public var textStyleId:String? { didSet { } }
     
     // Only instance properties can be declared IBInspectable
     @IBInspectable
-    public var textColourStyleId:String? {
-        set {
-            if let idString = newValue,
-                let style = ColourStyle(rawValue:idString) {
-                    textColourStyle = style
-            }
-        }
-        get {
-            return textColourStyle?.rawValue
-        }
-    }
+    override public var textColourStyleId:String? { didSet { } }
 }

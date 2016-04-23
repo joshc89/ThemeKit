@@ -21,9 +21,10 @@ extension UIToolbar: Bar { }
 public protocol BarThemeable: TintColourThemeable {
     
     var barTintColourStyle:ColourStyle? { get set }
-    
+    var barTintColourStyleId:String? { get set }
     func applyBarTheme(theme:Theme)
 }
+
 
 public extension BarThemeable where Self:Bar {
     
@@ -33,10 +34,4 @@ public extension BarThemeable where Self:Bar {
         }
     }
     
-}
-
-public protocol BarInspectable: BarThemeable {
-    
-    var barTintColourStyleId:String? { get set }
-
 }

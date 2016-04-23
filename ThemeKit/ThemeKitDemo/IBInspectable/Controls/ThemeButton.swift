@@ -10,53 +10,17 @@ import UIKit
 import ThemeKitCore
 
 @IBDesignable
-public class ThemeButton: TKButton, BackgroundColourInspectable, TintColourInspectable, FontInspectable, IBThemeable {
+public class ThemeButton: TKButton, IBThemeable {
     
-    // Only instance properties can be declared IBInspectable
     @IBInspectable
-    public var backgroundColourStyleId:String? {
-        get {
-            return backgroundColourStyle?.rawValue
-        }
-        set {
-            if let rawValue = newValue,
-                let style = ColourStyle(rawValue: rawValue) {
-                    backgroundColourStyle = style
-            } else {
-                backgroundColourStyle = nil
-            }
-        }
-    }
+    override public var backgroundColourStyleId:String? { didSet { } }
     
-    // Only instance properties can be declared IBInspectable
     @IBInspectable
-    public var tintColourStyleId:String? {
-        get {
-            return tintColourStyle?.rawValue
-        }
-        set {
-            if let rawValue = newValue,
-                let style = ColourStyle(rawValue: rawValue) {
-                    tintColourStyle = style
-            } else {
-                tintColourStyle = nil
-            }
-        }
-    }
+    override public var tintColourStyleId:String? { didSet { } }
     
-    // Only instance properties can be declared IBInspectable
     @IBInspectable
-    public var textStyleId:String? {
-        get {
-            return textStyle?.rawValue
-        }
-        set {
-            if let rawValue = newValue,
-                let style = TextStyle(rawValue: rawValue) {
-                    textStyle = style
-            } else {
-                textStyle = nil
-            }
-        }
-    }
+    override public var textStyleId:String? { didSet { } }
+    
+    @IBInspectable
+    override public var textColourStyleId:String? { didSet { } }
 }
