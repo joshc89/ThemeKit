@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let _ = MyVendor.shared()
         
         // Override point for customization after application launch.
+        // ThemeView.appearance().backgroundColourStyleId = "Accent"
         
         return true
     }

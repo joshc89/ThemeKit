@@ -239,15 +239,25 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="onTintColourId" value="Accent"/>
                                 </userDefinedRuntimeAttributes>
                             </switch>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lap-Cv-xpl" customClass="ThemeView" customModule="ThemeKitDemo" customModuleProvider="target">
+                                <rect key="frame" x="20" y="151" width="560" height="64"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="AHA-ya-aZj"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="lap-Cv-xpl" secondAttribute="trailing" id="3at-2D-c5d"/>
                             <constraint firstItem="0bd-RZ-jEN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5Yc-9F-Ywj"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3oX-PY-aNZ" secondAttribute="trailing" id="7Ij-av-edS"/>
                             <constraint firstItem="3oX-PY-aNZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="J1u-eB-nTD"/>
                             <constraint firstItem="Mla-uZ-yCH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="VuV-Re-xN8"/>
+                            <constraint firstItem="lap-Cv-xpl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="WSl-t1-mhS"/>
                             <constraint firstItem="0bd-RZ-jEN" firstAttribute="top" secondItem="3oX-PY-aNZ" secondAttribute="bottom" constant="8" id="Wjg-6B-s95"/>
                             <constraint firstItem="3oX-PY-aNZ" firstAttribute="top" secondItem="Mla-uZ-yCH" secondAttribute="bottom" constant="8" id="YKF-vD-3b8"/>
+                            <constraint firstItem="lap-Cv-xpl" firstAttribute="top" secondItem="0bd-RZ-jEN" secondAttribute="bottom" constant="8" id="hFC-5F-bj5"/>
                             <constraint firstItem="Mla-uZ-yCH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="jAQ-vs-Kad"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Mla-uZ-yCH" secondAttribute="trailing" id="mqq-M4-bwJ"/>
                         </constraints>
