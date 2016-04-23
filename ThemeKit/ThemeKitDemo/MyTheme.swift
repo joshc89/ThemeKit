@@ -11,35 +11,62 @@ import ThemeKitCore
 
 // Define your app specific theme
 
-let ThemeKitLicense = "Simulator"
+let ThemeKitLicense =  "AEsLR3FVdiRa5qHzrD1sEXXHvrQ=" // "Simulator"
 
 struct MyTheme: Theme {
+    
+    let thinSFFont = ".SFUIText-Light"
+    let normalSFFont = ".SFUIText-Regular"
+    let mediumSFFont = ".SFUIText-Semibold"
+    
+    let thinHFont = "HelveticaNeue-Light"
+    let normalHFont = "HelveticaNeue"
+    let mediumHFont = "HelveticaNeue-Medium"
     
     let defaultTextSizes = MaterialTextSizes // default
     let textSizeAdjustments = AppleFontAdjustments // default
     
-    let themeColours:[ColourStyle:UIColor] = [
-        .Accent: UIColor.yellowColor(),
-        .Main: UIColor.redColor(),
-        .Text: UIColor.blackColor().colorWithAlphaComponent(0.87),
-        .SecondaryText: UIColor.blackColor().colorWithAlphaComponent(0.54),
-        .LightText: UIColor.whiteColor().colorWithAlphaComponent(0.87),
-        .SecondaryLightText: UIColor.whiteColor().colorWithAlphaComponent(0.54),
-    ]
+    let themeColours:[ColourStyle:UIColor] = [.Accent: UIColor.yellowColor(),
+                                              .Main: UIColor.redColor(),
+                                              .Text: UIColor.blackColor().colorWithAlphaComponent(0.87),
+                                              .SecondaryText: UIColor.blackColor().colorWithAlphaComponent(0.54),
+                                              .LightText: UIColor.whiteColor().colorWithAlphaComponent(0.87),
+                                              .SecondaryLightText: UIColor.whiteColor().colorWithAlphaComponent(0.54),
+                                              ]
     
-    func fontName(textStyle:TextStyle) -> String {
+    func fontName(textStye:TextStyle) -> String {
         
-        switch textStyle {
+        let thinFont:String
+        let normalFont:String
+        let mediumFont:String
+        
+        if #available(iOS 9, * ) {
+            thinFont = thinSFFont
+            normalFont = normalSFFont
+            mediumFont = mediumSFFont
+        } else {
+            thinFont = thinHFont
+            normalFont = normalHFont
+            mediumFont = mediumHFont
+        }
+        
+        switch textStye {
         case .Display4:
-            return "HelveticaNeue-Light"
-        case .Display3, .Display2, .Display1, .Headline, .SubHeadline, .Body1, .Caption:
-            return "HelveticaNeue"
-        case .Title, .Body2, .Button:
-            return "HelveticaNeue-Medium"
-        default:
-            let defaultFontName = UIFont.preferredFontForTextStyle(UIFontTextStyleBody).fontName
-            print("No text name specified for text style \"\(textStyle.rawValue)\". Using default \"\(defaultFontName)\".")
-            return defaultFontName
+            return thinFont
+        case .Display3, .Display2, .Display1:
+            return thinFont
+        case .Headline:
+            return normalFont
+        case .Title:
+            return mediumFont
+        case .SubHeadline:
+            return normalFont
+        case .Body2, .Button:
+            return mediumFont
+        case .Body1, .Custom(_):
+            return thinFont
+        case .Caption:
+            return normalFont
         }
     }
 }
@@ -64,7 +91,6 @@ class MyVendor: TKThemeVendor {
 extension TKThemeVendor {
     
     override public class func initialize() {
-        
         
         if self == TKThemeVendor.self {
             ThemeKit.setLicenseKey(ThemeKitLicense)
