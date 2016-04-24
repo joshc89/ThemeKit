@@ -24,23 +24,25 @@ private let ButtonRaw = "Button"
 
 /**
  
- Enum defining the available fonts types. An app may only use a subset of these.
+ Enum defining the available fonts types. An app will likely only use a subset of these.
  
  The goal of the `TextStyle` is to ensure fonts used throughout the application are consistent and appropriate for the context they are used in. All `UITableView` and `UICollectionView` cells will likely have the same font styles for titles and details even if they are representing different model objects.
  
- The `TextStyle` also allows different fonts to be trialled in the event of an app design refresh. White labelled apps can each have a unique `Theme` but each view in an app can be reused without modification - even those in Storyboards.
+ The `TextStyle` also allows different fonts to be trialled in the event of an app design refresh. White labelled apps can each have a unique value for each `TextStyle` but each view in an app can be reused without modification - even those in Storyboards.
  
- The values are taken from the [Google Material Design guidelines for typography](https://www.google.com/design/spec/style/typography.html#typography-styles). For more details on which styles are appropriate in different situations the documentation there is the recommended source.
+ The enum cases are taken from the [Google Material Design guidelines for typography](https://www.google.com/design/spec/style/typography.html#typography-styles). For more details on which styles are appropriate in different situations the documentation there is the recommended source.
  
- There may be times when this selection of font styles is not appropriate or sufficient. In these situations the `.Custom(String)` enum `case` can be used to specify any `String` not matching one of the other enum cases. This custom `TextStyle` can be referenced from a Storyboard using the `String` value, and in code by defining a global variable:
+ There may be times when this selection of font styles is not appropriate or sufficient. In these situations the `.Custom(String)` case can be used to specify any `String` not matching one of the other enum cases. This custom `TextStyle` can be referenced from a Storyboard using the `String` value, and in code by defining a global variable:
  
- let myTextStyle = TextStyle.Custom("MyOwnStyle")
+        let myTextStyle = TextStyle.Custom("MyOwnStyle")
  
  */
 public enum TextStyle: Hashable, RawRepresentable {
     
     /// The `RawRepresentable` type for `TextStyle`.
     public typealias RawValue = String
+    
+    // MARK: Cases
     
     /// Display Text Styles: Typically used for large titles, results, or main data labels. Size increase with number i.e.. `Display4` > `Display3`.
     case Display4, Display3, Display2, Display1
@@ -68,6 +70,8 @@ public enum TextStyle: Hashable, RawRepresentable {
     
     /// A unique style defined by the programmer in circumstances where the default [Google Material Design](https://www.google.com/design/spec/style/typography.html#typography-styles) selection is insufficient.
     case Custom(String)
+    
+    // MARK: Initialisers
     
     /**
      
@@ -104,6 +108,8 @@ public enum TextStyle: Hashable, RawRepresentable {
             self = .Custom(rawValue)
         }
     }
+    
+    // MARK: Protocol Conformance
     
     /**
      
@@ -147,7 +153,7 @@ public enum TextStyle: Hashable, RawRepresentable {
     }
 }
 
-/// Equatable conformance. Equality is determined by the equality of the `rawValue`. 
+/// `TextStyle: Equatable` conformance. Equality is determined by the equality of the `rawValue`.
 public func ==(t1:TextStyle, t2:TextStyle) -> Bool {
     return t1.hashValue == t2.hashValue
 }
