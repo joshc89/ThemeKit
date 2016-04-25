@@ -11,21 +11,36 @@ import ThemeKitCore
 
 // Define your app specific theme
 
+/// License Key for you app's bundle ID. Use "Simulator" for a trial that allows the framework to run on Simulator.
 let ThemeKitLicense =  "AEsLR3FVdiRa5qHzrD1sEXXHvrQ=" // "Simulator"
 
 struct MyTheme: Theme {
     
+    /// Light weight San Fransico font for use on iOS 9+
     let thinSFFont = ".SFUIText-Light"
+    
+    /// Regular weight San Fransico font for use on iOS 9+
     let normalSFFont = ".SFUIText-Regular"
+    
+    /// Medium weight Regular San Fransico font for use on iOS 9+
     let mediumSFFont = ".SFUIText-Semibold"
     
+    /// Light weight Helvetica Neue font for use on iOS 8-
     let thinHFont = "HelveticaNeue-Light"
+    
+    /// Regular weight Helvetica Neue font for use on iOS 8-
     let normalHFont = "HelveticaNeue"
+    
+    /// Medium weight Helvetica Neue font for use on iOS 8-
     let mediumHFont = "HelveticaNeue-Medium"
     
+    /// Use the default text sizes as standard
     let defaultTextSizes = MaterialTextSizes // default
+    
+    /// Use the Apple standard font adjustmentst to give consistent user experience for users with adjusted accessibility settings.
     let textSizeAdjustments = AppleFontAdjustments // default
     
+    // Swap These for the colours in you app
     let themeColours:[ColourStyle:UIColor] = [.Accent: UIColor.yellowColor(),
                                               .Main: UIColor.redColor(),
                                               .Text: UIColor.blackColor().colorWithAlphaComponent(0.87),
@@ -34,6 +49,7 @@ struct MyTheme: Theme {
                                               .SecondaryLightText: UIColor.whiteColor().colorWithAlphaComponent(0.54),
                                               ]
     
+    /// Use standard iOS sans-serif fonts.
     func fontName(textStye:TextStyle) -> String {
         
         let thinFont:String
@@ -50,6 +66,7 @@ struct MyTheme: Theme {
             mediumFont = mediumHFont
         }
         
+        // --- Replace these values to return branded fonts if applicable.
         switch textStye {
         case .Display4:
             return thinFont
@@ -73,6 +90,7 @@ struct MyTheme: Theme {
 
 // Create a vendor...
 
+/// Custom Vendor to return the theme specific to this app.
 class MyVendor: TKThemeVendor {
     
     private var _defaultTheme:Theme? = MyTheme()
@@ -87,7 +105,7 @@ class MyVendor: TKThemeVendor {
     }
 }
 
-// ... and assign it as the default vendor
+// ... and assign it as the default vendor early in the running stage
 extension TKThemeVendor {
     
     override public class func initialize() {
