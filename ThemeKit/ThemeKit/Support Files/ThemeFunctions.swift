@@ -8,7 +8,7 @@
 
 import UIKit
 
-/// Prints the font name for each family of fonts installed in the app. This is useful for debugging fonts appearing incorrectly.
+/// Prints the font name for each family of fonts installed in the app. This is useful for debugging fonts that are appearing incorrectly to check the exact names of those fonts installed in the app.
 public func fontDump() {
     
     var fontsString:String = ""

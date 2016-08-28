@@ -8,9 +8,9 @@
 
 import UIKit
 
-public class TKNavigationBar: UINavigationBar, BarThemeable, FontThemeable, TextColourThemeable, Checking {
+public class TKNavigationBar: UINavigationBar, BarThemeable, TextThemeable {
     
-    let checker = _Checker()
+     
     
     // - initWithFrame(_:) support
     public var createdFromNib:Bool = false
@@ -70,20 +70,68 @@ public class TKNavigationBar: UINavigationBar, BarThemeable, FontThemeable, Text
         }
     }
     
-    public func applyFontTheme(theme: Theme) {
+    // MARK: Inspectable Properties
+    
+    public var tintColourStyleId:String? {
+        get {
+            return tintColourStyle?.rawValue
+        }
+        set {
+            if let rawValue = newValue,
+                let style = ColourStyle(rawValue: rawValue) {
+                tintColourStyle = style
+            } else {
+                tintColourStyle = nil
+            }
+        }
+    }
+
+    public var textStyleId:String? {
+        set {
+            if let idString = newValue,
+                let style = TextStyle(rawValue:idString) {
+                textStyle = style
+            }
+        }
+        get {
+            return textStyle?.rawValue
+        }
+    }
+    
+    public var textColourStyleId:String? {
+        set {
+            if let idString = newValue,
+                let style = ColourStyle(rawValue:idString) {
+                textColourStyle = style
+            }
+        }
+        get {
+            return textColourStyle?.rawValue
+        }
+    }
+    
+    public var barTintColourStyleId:String? {
+        set {
+            if let idString = newValue,
+                let style = ColourStyle(rawValue:idString) {
+                barTintColourStyle = style
+            }
+        }
+        get {
+            return barTintColourStyle?.rawValue
+        }
+    }
+
+
+    // MARK: Theme Functions
+    
+    public func applyTextTheme(theme: Theme) {
         // apply the title text attributes
         var attributes = self.titleTextAttributes ?? [String:AnyObject]()
         
         if let text = textStyle {
             attributes[NSFontAttributeName] = theme.font(text)
         }
-        
-        titleTextAttributes = attributes
-    }
-    
-    public func applyTextColourTheme(theme: Theme) {
-        // apply the title text attributes
-        var attributes = self.titleTextAttributes ?? [String:AnyObject]()
         
         if let textColour = textColourStyle {
             attributes[NSForegroundColorAttributeName] = theme.colour(textColour)

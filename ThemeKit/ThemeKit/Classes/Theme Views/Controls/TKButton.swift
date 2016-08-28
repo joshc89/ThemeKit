@@ -9,9 +9,9 @@
 import UIKit
 
 @IBDesignable
-public class TKButton: UIButton, Themeable, TintColourThemeable, BackgroundColourThemeable, FontThemeable, Checking {
+public class TKButton: UIButton, Themeable, TintColourThemeable, BackgroundColourThemeable, TextThemeable {
     
-    let checker = _Checker()
+     
     
     // - initWithFrame(_:) support
     public var createdFromNib:Bool = false
@@ -58,11 +58,77 @@ public class TKButton: UIButton, Themeable, TintColourThemeable, BackgroundColou
         }
     }
     
+    public var textColourStyle: ColourStyle? {
+        didSet {
+            checkAndUpdateColourStyle(oldValue, textColourStyle)
+        }
+    }
+    
+    // MARK: Inspectable Properties
+    
+    public var backgroundColourStyleId:String? {
+        get {
+            return backgroundColourStyle?.rawValue
+        }
+        set {
+            if let rawValue = newValue,
+                let style = ColourStyle(rawValue: rawValue) {
+                backgroundColourStyle = style
+            } else {
+                backgroundColourStyle = nil
+            }
+        }
+    }
+
+    public var tintColourStyleId:String? {
+        get {
+            return tintColourStyle?.rawValue
+        }
+        set {
+            if let rawValue = newValue,
+                let style = ColourStyle(rawValue: rawValue) {
+                tintColourStyle = style
+            } else {
+                tintColourStyle = nil
+            }
+        }
+    }
+
+    
+    public var textStyleId:String? {
+        set {
+            if let idString = newValue,
+                let style = TextStyle(rawValue:idString) {
+                textStyle = style
+            }
+        }
+        get {
+            return textStyle?.rawValue
+        }
+    }
+    
+    public var textColourStyleId:String? {
+        set {
+            if let idString = newValue,
+                let style = ColourStyle(rawValue:idString) {
+                textColourStyle = style
+            }
+        }
+        get {
+            return textColourStyle?.rawValue
+        }
+    }
+    
     // MARK: - Themeable Functions
-    public func applyFontTheme(theme: Theme) {
-        // apply the custom themes
+    
+    public func applyTextTheme(theme: Theme) {
+        
         if let text = textStyle {
             titleLabel?.font = theme.font(text)
+        }
+        
+        if let colour = textColourStyle {
+            titleLabel?.textColor = theme.colour(colour)
         }
     }
 }

@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		A505D52A1B6E154E00AAD861 /* UIView+TKExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505D5291B6E154E00AAD861 /* UIView+TKExtensions.swift */; };
 		A505D52C1B6E157600AAD861 /* UISearchBar+TKExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505D52B1B6E157600AAD861 /* UISearchBar+TKExtensions.swift */; };
+		A5105AF41CC6024600ED38CB /* Encryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5105AF21CC21F6200ED38CB /* Encryption.swift */; };
+		A5105AF91CC603E500ED38CB /* HMAC.h in Headers */ = {isa = PBXBuildFile; fileRef = A5105AF71CC603E500ED38CB /* HMAC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A5105AFA1CC603E500ED38CB /* HMAC.m in Sources */ = {isa = PBXBuildFile; fileRef = A5105AF81CC603E500ED38CB /* HMAC.m */; };
 		A543191F1C5E6B1500713F3F /* TKBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A543191E1C5E6B1500713F3F /* TKBarButtonItem.swift */; };
 		A54319211C5E6CD400713F3F /* TKTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54319201C5E6CD400713F3F /* TKTabBarItem.swift */; };
 		A54319231C5F432A00713F3F /* ThemeKitCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A59A6CC51B4AB9B100F708DC /* ThemeKitCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -17,14 +20,12 @@
 		A543192A1C6745D400713F3F /* TextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54319291C6745D400713F3F /* TextStyle.swift */; };
 		A54319311C6752D300713F3F /* BackgroundColourThemeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54319301C6752D300713F3F /* BackgroundColourThemeable.swift */; };
 		A54319331C6752F700713F3F /* TintColourThemeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54319321C6752F700713F3F /* TintColourThemeable.swift */; };
-		A543193A1C6757FA00713F3F /* FontThemeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54319391C6757FA00713F3F /* FontThemeable.swift */; };
-		A543193C1C67598F00713F3F /* TextColourThemeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A543193B1C67598F00713F3F /* TextColourThemeable.swift */; };
+		A543193A1C6757FA00713F3F /* TextThemeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54319391C6757FA00713F3F /* TextThemeable.swift */; };
 		A54319491C6762A000713F3F /* TKSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54319481C6762A000713F3F /* TKSlider.swift */; };
 		A543194B1C67631F00713F3F /* ThumbTintColourThemeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A543194A1C67631F00713F3F /* ThumbTintColourThemeable.swift */; };
 		A54319541C67730500713F3F /* BarThemeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54319531C67730500713F3F /* BarThemeable.swift */; };
 		A54319561C67738A00713F3F /* StateTitleTextThemeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54319551C67738A00713F3F /* StateTitleTextThemeable.swift */; };
 		A54319601C677A0000713F3F /* TKToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A543195F1C677A0000713F3F /* TKToolbar.swift */; };
-		A54319641C677AA200713F3F /* MyTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54319631C677AA200713F3F /* MyTheme.swift */; };
 		A56453591C70B8390098F1A9 /* UIColor+TKExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56453571C6F90730098F1A9 /* UIColor+TKExtensions.swift */; };
 		A582E0D21C5CC3EB000F22AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A582E0D11C5CC3EB000F22AB /* AppDelegate.swift */; };
 		A582E0D41C5CC3EB000F22AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A582E0D31C5CC3EB000F22AB /* ViewController.swift */; };
@@ -35,6 +36,8 @@
 		A59A6CC91B4AB9B100F708DC /* ThemeKitCore.h in Headers */ = {isa = PBXBuildFile; fileRef = A59A6CC81B4AB9B100F708DC /* ThemeKitCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A59A6CD01B4AB9B100F708DC /* ThemeKitCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59A6CC51B4AB9B100F708DC /* ThemeKitCore.framework */; };
 		A59A6CD51B4AB9B100F708DC /* ThemeKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59A6CD41B4AB9B100F708DC /* ThemeKitTests.swift */; };
+		A5BE37B21CC7573400EB809E /* NSAttributedString+TKExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BE37B11CC7573400EB809E /* NSAttributedString+TKExtensions.swift */; };
+		A5BE37B41CCEA9FC00EB809E /* MyTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BE37B31CCEA9FC00EB809E /* MyTheme.swift */; };
 		A5C8C3051C5E63330002855B /* NSSingleton.h in Headers */ = {isa = PBXBuildFile; fileRef = A5C8C2EF1C5E63330002855B /* NSSingleton.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A5C8C3061C5E63330002855B /* NSSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C8C2F01C5E63330002855B /* NSSingleton.m */; };
 		A5C8C3071C5E63330002855B /* TKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C8C2F31C5E63330002855B /* TKButton.swift */; };
@@ -50,26 +53,9 @@
 		A5C8C3181C5E636F0002855B /* TKLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C8C3151C5E636F0002855B /* TKLabel.swift */; };
 		A5C8C3191C5E636F0002855B /* TKTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C8C3161C5E636F0002855B /* TKTextField.swift */; };
 		A5C8C31A1C5E636F0002855B /* TKTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C8C3171C5E636F0002855B /* TKTextView.swift */; };
-		A5C8C31C1C5E637B0002855B /* ThemeableText.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C8C31B1C5E637B0002855B /* ThemeableText.swift */; };
-		A5C8C3211C5E638B0002855B /* LicenseChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C8C31E1C5E638B0002855B /* LicenseChecker.swift */; };
 		A5C8C3221C5E638B0002855B /* ThemeConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C8C31F1C5E638B0002855B /* ThemeConstants.swift */; };
 		A5C8C3231C5E638B0002855B /* ThemeFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C8C3201C5E638B0002855B /* ThemeFunctions.swift */; };
-		A5FF88701C679D7C006B0985 /* ThemeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF885F1C679D7C006B0985 /* ThemeButton.swift */; };
-		A5FF88711C679D7C006B0985 /* ThemeSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF88601C679D7C006B0985 /* ThemeSegmentedControl.swift */; };
-		A5FF88721C679D7C006B0985 /* ThemeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF88611C679D7C006B0985 /* ThemeSlider.swift */; };
-		A5FF88731C679D7C006B0985 /* ThemeStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF88621C679D7C006B0985 /* ThemeStepper.swift */; };
-		A5FF88741C679D7C006B0985 /* ThemeSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF88631C679D7C006B0985 /* ThemeSwitch.swift */; };
-		A5FF88751C679D7C006B0985 /* ThemeBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF88651C679D7C006B0985 /* ThemeBarButtonItem.swift */; };
-		A5FF88761C679D7C006B0985 /* ThemeNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF88661C679D7C006B0985 /* ThemeNavigationBar.swift */; };
-		A5FF88771C679D7C006B0985 /* ThemeTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF88671C679D7C006B0985 /* ThemeTabBar.swift */; };
-		A5FF88781C679D7C006B0985 /* ThemeTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF88681C679D7C006B0985 /* ThemeTabBarItem.swift */; };
-		A5FF88791C679D7C006B0985 /* ThemeToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF88691C679D7C006B0985 /* ThemeToolbar.swift */; };
-		A5FF887A1C679D7C006B0985 /* ThemeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF886B1C679D7C006B0985 /* ThemeLabel.swift */; };
-		A5FF887B1C679D7C006B0985 /* ThemeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF886C1C679D7C006B0985 /* ThemeTextField.swift */; };
-		A5FF887C1C679D7C006B0985 /* ThemeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF886D1C679D7C006B0985 /* ThemeTextView.swift */; };
-		A5FF887D1C679D7C006B0985 /* ThemeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF886E1C679D7C006B0985 /* ThemeImageView.swift */; };
-		A5FF887E1C679D7C006B0985 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF886F1C679D7C006B0985 /* ThemeView.swift */; };
-		A5FF88801C67A59A006B0985 /* LicenseIDs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF887F1C67A59A006B0985 /* LicenseIDs.swift */; };
+		A5FF887E1C679D7C006B0985 /* IBInspectableViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF886F1C679D7C006B0985 /* IBInspectableViews.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +92,9 @@
 /* Begin PBXFileReference section */
 		A505D5291B6E154E00AAD861 /* UIView+TKExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+TKExtensions.swift"; path = "Extensions/UIView+TKExtensions.swift"; sourceTree = "<group>"; };
 		A505D52B1B6E157600AAD861 /* UISearchBar+TKExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UISearchBar+TKExtensions.swift"; path = "Extensions/UISearchBar+TKExtensions.swift"; sourceTree = "<group>"; };
+		A5105AF21CC21F6200ED38CB /* Encryption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Encryption.swift; sourceTree = "<group>"; };
+		A5105AF71CC603E500ED38CB /* HMAC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMAC.h; sourceTree = "<group>"; };
+		A5105AF81CC603E500ED38CB /* HMAC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMAC.m; sourceTree = "<group>"; };
 		A543191E1C5E6B1500713F3F /* TKBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKBarButtonItem.swift; sourceTree = "<group>"; };
 		A54319201C5E6CD400713F3F /* TKTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKTabBarItem.swift; sourceTree = "<group>"; };
 		A54319251C61427000713F3F /* TKImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKImageView.swift; sourceTree = "<group>"; };
@@ -113,14 +102,12 @@
 		A54319291C6745D400713F3F /* TextStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextStyle.swift; sourceTree = "<group>"; };
 		A54319301C6752D300713F3F /* BackgroundColourThemeable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundColourThemeable.swift; sourceTree = "<group>"; };
 		A54319321C6752F700713F3F /* TintColourThemeable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TintColourThemeable.swift; sourceTree = "<group>"; };
-		A54319391C6757FA00713F3F /* FontThemeable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontThemeable.swift; sourceTree = "<group>"; };
-		A543193B1C67598F00713F3F /* TextColourThemeable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextColourThemeable.swift; sourceTree = "<group>"; };
+		A54319391C6757FA00713F3F /* TextThemeable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextThemeable.swift; sourceTree = "<group>"; };
 		A54319481C6762A000713F3F /* TKSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKSlider.swift; sourceTree = "<group>"; };
 		A543194A1C67631F00713F3F /* ThumbTintColourThemeable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbTintColourThemeable.swift; sourceTree = "<group>"; };
 		A54319531C67730500713F3F /* BarThemeable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarThemeable.swift; sourceTree = "<group>"; };
 		A54319551C67738A00713F3F /* StateTitleTextThemeable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateTitleTextThemeable.swift; sourceTree = "<group>"; };
 		A543195F1C677A0000713F3F /* TKToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKToolbar.swift; sourceTree = "<group>"; };
-		A54319631C677AA200713F3F /* MyTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyTheme.swift; path = ../MyTheme.swift; sourceTree = "<group>"; };
 		A56453571C6F90730098F1A9 /* UIColor+TKExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+TKExtensions.swift"; path = "Extensions/UIColor+TKExtensions.swift"; sourceTree = "<group>"; };
 		A582E0CF1C5CC3EB000F22AB /* ThemeKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThemeKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A582E0D11C5CC3EB000F22AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -135,6 +122,8 @@
 		A59A6CCF1B4AB9B100F708DC /* ThemeKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThemeKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A59A6CD41B4AB9B100F708DC /* ThemeKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeKitTests.swift; sourceTree = "<group>"; };
 		A59A6CD61B4AB9B100F708DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5BE37B11CC7573400EB809E /* NSAttributedString+TKExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+TKExtensions.swift"; sourceTree = "<group>"; };
+		A5BE37B31CCEA9FC00EB809E /* MyTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTheme.swift; sourceTree = "<group>"; };
 		A5C8C2EF1C5E63330002855B /* NSSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSSingleton.h; sourceTree = "<group>"; };
 		A5C8C2F01C5E63330002855B /* NSSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSSingleton.m; sourceTree = "<group>"; };
 		A5C8C2F31C5E63330002855B /* TKButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKButton.swift; sourceTree = "<group>"; };
@@ -150,26 +139,9 @@
 		A5C8C3151C5E636F0002855B /* TKLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKLabel.swift; sourceTree = "<group>"; };
 		A5C8C3161C5E636F0002855B /* TKTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKTextField.swift; sourceTree = "<group>"; };
 		A5C8C3171C5E636F0002855B /* TKTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKTextView.swift; sourceTree = "<group>"; };
-		A5C8C31B1C5E637B0002855B /* ThemeableText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeableText.swift; sourceTree = "<group>"; };
-		A5C8C31E1C5E638B0002855B /* LicenseChecker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicenseChecker.swift; sourceTree = "<group>"; };
 		A5C8C31F1C5E638B0002855B /* ThemeConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeConstants.swift; sourceTree = "<group>"; };
 		A5C8C3201C5E638B0002855B /* ThemeFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeFunctions.swift; sourceTree = "<group>"; };
-		A5FF885F1C679D7C006B0985 /* ThemeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeButton.swift; sourceTree = "<group>"; };
-		A5FF88601C679D7C006B0985 /* ThemeSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeSegmentedControl.swift; sourceTree = "<group>"; };
-		A5FF88611C679D7C006B0985 /* ThemeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeSlider.swift; sourceTree = "<group>"; };
-		A5FF88621C679D7C006B0985 /* ThemeStepper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeStepper.swift; sourceTree = "<group>"; };
-		A5FF88631C679D7C006B0985 /* ThemeSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeSwitch.swift; sourceTree = "<group>"; };
-		A5FF88651C679D7C006B0985 /* ThemeBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeBarButtonItem.swift; sourceTree = "<group>"; };
-		A5FF88661C679D7C006B0985 /* ThemeNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeNavigationBar.swift; sourceTree = "<group>"; };
-		A5FF88671C679D7C006B0985 /* ThemeTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeTabBar.swift; sourceTree = "<group>"; };
-		A5FF88681C679D7C006B0985 /* ThemeTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeTabBarItem.swift; sourceTree = "<group>"; };
-		A5FF88691C679D7C006B0985 /* ThemeToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeToolbar.swift; sourceTree = "<group>"; };
-		A5FF886B1C679D7C006B0985 /* ThemeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeLabel.swift; sourceTree = "<group>"; };
-		A5FF886C1C679D7C006B0985 /* ThemeTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeTextField.swift; sourceTree = "<group>"; };
-		A5FF886D1C679D7C006B0985 /* ThemeTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeTextView.swift; sourceTree = "<group>"; };
-		A5FF886E1C679D7C006B0985 /* ThemeImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeImageView.swift; sourceTree = "<group>"; };
-		A5FF886F1C679D7C006B0985 /* ThemeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
-		A5FF887F1C67A59A006B0985 /* LicenseIDs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicenseIDs.swift; sourceTree = "<group>"; };
+		A5FF886F1C679D7C006B0985 /* IBInspectableViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBInspectableViews.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +177,7 @@
 				A505D5291B6E154E00AAD861 /* UIView+TKExtensions.swift */,
 				A505D52B1B6E157600AAD861 /* UISearchBar+TKExtensions.swift */,
 				A56453571C6F90730098F1A9 /* UIColor+TKExtensions.swift */,
+				A5BE37B11CC7573400EB809E /* NSAttributedString+TKExtensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -270,6 +243,8 @@
 			children = (
 				A5C8C2EF1C5E63330002855B /* NSSingleton.h */,
 				A5C8C2F01C5E63330002855B /* NSSingleton.m */,
+				A5105AF71CC603E500ED38CB /* HMAC.h */,
+				A5105AF81CC603E500ED38CB /* HMAC.m */,
 				A5C8C3011C5E63330002855B /* TKThemeVendor.swift */,
 				A5C8C2F11C5E63330002855B /* Theme Views */,
 			);
@@ -329,12 +304,10 @@
 				A5C8C3041C5E63330002855B /* Themeable.swift */,
 				A54319301C6752D300713F3F /* BackgroundColourThemeable.swift */,
 				A54319321C6752F700713F3F /* TintColourThemeable.swift */,
-				A54319391C6757FA00713F3F /* FontThemeable.swift */,
-				A543193B1C67598F00713F3F /* TextColourThemeable.swift */,
+				A54319391C6757FA00713F3F /* TextThemeable.swift */,
 				A543194A1C67631F00713F3F /* ThumbTintColourThemeable.swift */,
 				A54319531C67730500713F3F /* BarThemeable.swift */,
 				A54319551C67738A00713F3F /* StateTitleTextThemeable.swift */,
-				A5C8C31B1C5E637B0002855B /* ThemeableText.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -342,8 +315,7 @@
 		A5C8C31D1C5E638B0002855B /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				A5C8C31E1C5E638B0002855B /* LicenseChecker.swift */,
-				A5FF887F1C67A59A006B0985 /* LicenseIDs.swift */,
+				A5105AF21CC21F6200ED38CB /* Encryption.swift */,
 				A5C8C31F1C5E638B0002855B /* ThemeConstants.swift */,
 				A54319271C6745B500713F3F /* ColourStyle.swift */,
 				A54319291C6745D400713F3F /* TextStyle.swift */,
@@ -355,48 +327,10 @@
 		A5FF885D1C679D7C006B0985 /* IBInspectable */ = {
 			isa = PBXGroup;
 			children = (
-				A54319631C677AA200713F3F /* MyTheme.swift */,
-				A5FF886E1C679D7C006B0985 /* ThemeImageView.swift */,
-				A5FF886F1C679D7C006B0985 /* ThemeView.swift */,
-				A5FF885E1C679D7C006B0985 /* Controls */,
-				A5FF88641C679D7C006B0985 /* Navigation */,
-				A5FF886A1C679D7C006B0985 /* Text */,
+				A5BE37B31CCEA9FC00EB809E /* MyTheme.swift */,
+				A5FF886F1C679D7C006B0985 /* IBInspectableViews.swift */,
 			);
 			path = IBInspectable;
-			sourceTree = "<group>";
-		};
-		A5FF885E1C679D7C006B0985 /* Controls */ = {
-			isa = PBXGroup;
-			children = (
-				A5FF885F1C679D7C006B0985 /* ThemeButton.swift */,
-				A5FF88601C679D7C006B0985 /* ThemeSegmentedControl.swift */,
-				A5FF88611C679D7C006B0985 /* ThemeSlider.swift */,
-				A5FF88621C679D7C006B0985 /* ThemeStepper.swift */,
-				A5FF88631C679D7C006B0985 /* ThemeSwitch.swift */,
-			);
-			path = Controls;
-			sourceTree = "<group>";
-		};
-		A5FF88641C679D7C006B0985 /* Navigation */ = {
-			isa = PBXGroup;
-			children = (
-				A5FF88651C679D7C006B0985 /* ThemeBarButtonItem.swift */,
-				A5FF88661C679D7C006B0985 /* ThemeNavigationBar.swift */,
-				A5FF88671C679D7C006B0985 /* ThemeTabBar.swift */,
-				A5FF88681C679D7C006B0985 /* ThemeTabBarItem.swift */,
-				A5FF88691C679D7C006B0985 /* ThemeToolbar.swift */,
-			);
-			path = Navigation;
-			sourceTree = "<group>";
-		};
-		A5FF886A1C679D7C006B0985 /* Text */ = {
-			isa = PBXGroup;
-			children = (
-				A5FF886B1C679D7C006B0985 /* ThemeLabel.swift */,
-				A5FF886C1C679D7C006B0985 /* ThemeTextField.swift */,
-				A5FF886D1C679D7C006B0985 /* ThemeTextView.swift */,
-			);
-			path = Text;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -407,6 +341,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A59A6CC91B4AB9B100F708DC /* ThemeKitCore.h in Headers */,
+				A5105AF91CC603E500ED38CB /* HMAC.h in Headers */,
 				A5C8C3051C5E63330002855B /* NSSingleton.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -475,8 +410,8 @@
 		A59A6CBC1B4AB9B100F708DC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Josh Campion";
 				TargetAttributes = {
 					A582E0CE1C5CC3EB000F22AB = {
@@ -544,24 +479,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5FF887A1C679D7C006B0985 /* ThemeLabel.swift in Sources */,
-				A5FF887C1C679D7C006B0985 /* ThemeTextView.swift in Sources */,
-				A5FF88751C679D7C006B0985 /* ThemeBarButtonItem.swift in Sources */,
-				A5FF88761C679D7C006B0985 /* ThemeNavigationBar.swift in Sources */,
-				A5FF88791C679D7C006B0985 /* ThemeToolbar.swift in Sources */,
-				A5FF887D1C679D7C006B0985 /* ThemeImageView.swift in Sources */,
-				A54319641C677AA200713F3F /* MyTheme.swift in Sources */,
-				A5FF88741C679D7C006B0985 /* ThemeSwitch.swift in Sources */,
+				A5BE37B41CCEA9FC00EB809E /* MyTheme.swift in Sources */,
 				A582E0D41C5CC3EB000F22AB /* ViewController.swift in Sources */,
-				A5FF88721C679D7C006B0985 /* ThemeSlider.swift in Sources */,
-				A5FF88731C679D7C006B0985 /* ThemeStepper.swift in Sources */,
 				A582E0D21C5CC3EB000F22AB /* AppDelegate.swift in Sources */,
-				A5FF88711C679D7C006B0985 /* ThemeSegmentedControl.swift in Sources */,
-				A5FF887B1C679D7C006B0985 /* ThemeTextField.swift in Sources */,
-				A5FF88701C679D7C006B0985 /* ThemeButton.swift in Sources */,
-				A5FF88781C679D7C006B0985 /* ThemeTabBarItem.swift in Sources */,
-				A5FF887E1C679D7C006B0985 /* ThemeView.swift in Sources */,
-				A5FF88771C679D7C006B0985 /* ThemeTabBar.swift in Sources */,
+				A5FF887E1C679D7C006B0985 /* IBInspectableViews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,18 +490,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5FF88801C67A59A006B0985 /* LicenseIDs.swift in Sources */,
 				A5C8C3071C5E63330002855B /* TKButton.swift in Sources */,
 				A54319211C5E6CD400713F3F /* TKTabBarItem.swift in Sources */,
-				A543193A1C6757FA00713F3F /* FontThemeable.swift in Sources */,
+				A5BE37B21CC7573400EB809E /* NSAttributedString+TKExtensions.swift in Sources */,
+				A543193A1C6757FA00713F3F /* TextThemeable.swift in Sources */,
 				A54319541C67730500713F3F /* BarThemeable.swift in Sources */,
 				A5C8C31A1C5E636F0002855B /* TKTextView.swift in Sources */,
 				A5C8C3111C5E63330002855B /* TKView.swift in Sources */,
 				A5C8C3181C5E636F0002855B /* TKLabel.swift in Sources */,
 				A54319561C67738A00713F3F /* StateTitleTextThemeable.swift in Sources */,
 				A54319331C6752F700713F3F /* TintColourThemeable.swift in Sources */,
+				A5105AFA1CC603E500ED38CB /* HMAC.m in Sources */,
 				A5C8C30C1C5E63330002855B /* TKTabBar.swift in Sources */,
-				A5C8C31C1C5E637B0002855B /* ThemeableText.swift in Sources */,
 				A543194B1C67631F00713F3F /* ThumbTintColourThemeable.swift in Sources */,
 				A505D52C1B6E157600AAD861 /* UISearchBar+TKExtensions.swift in Sources */,
 				A5C8C3081C5E63330002855B /* TKSegmentedControl.swift in Sources */,
@@ -593,15 +514,14 @@
 				A5C8C3231C5E638B0002855B /* ThemeFunctions.swift in Sources */,
 				A54319601C677A0000713F3F /* TKToolbar.swift in Sources */,
 				A5C8C30B1C5E63330002855B /* TKNavigationBar.swift in Sources */,
-				A543193C1C67598F00713F3F /* TextColourThemeable.swift in Sources */,
 				A5C8C3061C5E63330002855B /* NSSingleton.m in Sources */,
 				A5C8C3131C5E63330002855B /* Theme.swift in Sources */,
 				A5C8C3091C5E63330002855B /* TKStepper.swift in Sources */,
+				A5105AF41CC6024600ED38CB /* Encryption.swift in Sources */,
 				A54319261C61427000713F3F /* TKImageView.swift in Sources */,
 				A54319491C6762A000713F3F /* TKSlider.swift in Sources */,
 				A54319311C6752D300713F3F /* BackgroundColourThemeable.swift in Sources */,
 				A5C8C3221C5E638B0002855B /* ThemeConstants.swift in Sources */,
-				A5C8C3211C5E638B0002855B /* LicenseChecker.swift in Sources */,
 				A543191F1C5E6B1500713F3F /* TKBarButtonItem.swift in Sources */,
 				A5C8C3121C5E63330002855B /* TKThemeVendor.swift in Sources */,
 				A505D52A1B6E154E00AAD861 /* UIView+TKExtensions.swift in Sources */,
@@ -782,13 +702,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_COMPATIBILITY_VERSION = 0.3.1;
+				DYLIB_CURRENT_VERSION = 0.3.1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_OPTIMIZATION_LEVEL = s;
 				INFOPLIST_FILE = ThemeKit/Info.plist;
@@ -809,13 +728,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_COMPATIBILITY_VERSION = 0.3.1;
+				DYLIB_CURRENT_VERSION = 0.3.1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_OPTIMIZATION_LEVEL = s;
 				INFOPLIST_FILE = ThemeKit/Info.plist;

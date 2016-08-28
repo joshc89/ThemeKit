@@ -9,9 +9,9 @@
 import UIKit
 
 @IBDesignable
-public class TKTextView: UITextView, BackgroundColourThemeable, TintColourThemeable, FontThemeable, TextColourThemeable, Checking {
+public class TKTextView: UITextView, BackgroundColourThemeable, TintColourThemeable, TextThemeable {
     
-    let checker = _Checker()
+     
     
     // - initWithFrame(_:) support
     public var createdFromNib:Bool = false
@@ -63,4 +63,59 @@ public class TKTextView: UITextView, BackgroundColourThemeable, TintColourThemea
             checkAndUpdateColourStyle(oldValue, textColourStyle)
         }
     }
+    
+    // MARK: Inspectable Properties
+    
+    public var backgroundColourStyleId:String? {
+        get {
+            return backgroundColourStyle?.rawValue
+        }
+        set {
+            if let rawValue = newValue,
+                let style = ColourStyle(rawValue: rawValue) {
+                backgroundColourStyle = style
+            } else {
+                backgroundColourStyle = nil
+            }
+        }
+    }
+
+    public var tintColourStyleId:String? {
+        get {
+            return tintColourStyle?.rawValue
+        }
+        set {
+            if let rawValue = newValue,
+                let style = ColourStyle(rawValue: rawValue) {
+                tintColourStyle = style
+            } else {
+                tintColourStyle = nil
+            }
+        }
+    }
+
+    public var textStyleId:String? {
+        set {
+            if let idString = newValue,
+                let style = TextStyle(rawValue:idString) {
+                textStyle = style
+            }
+        }
+        get {
+            return textStyle?.rawValue
+        }
+    }
+    
+    public var textColourStyleId:String? {
+        set {
+            if let idString = newValue,
+                let style = ColourStyle(rawValue:idString) {
+                textColourStyle = style
+            }
+        }
+        get {
+            return textColourStyle?.rawValue
+        }
+    }
+
 }

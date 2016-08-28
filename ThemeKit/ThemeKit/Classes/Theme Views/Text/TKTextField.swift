@@ -11,9 +11,9 @@ import UIKit
 let TKDefaultInsets = UIEdgeInsetsMake(2.0, 7.0, 2.0, 7.0)
 
 @IBDesignable
-public class TKTextField: UITextField, BackgroundColourThemeable, TintColourThemeable, FontThemeable, TextColourThemeable, Checking {
+public class TKTextField: UITextField, BackgroundColourThemeable, TintColourThemeable, TextThemeable {
     
-    let checker = _Checker()
+     
     
     // - initWithFrame(_:) support
     public var createdFromNib:Bool = false
@@ -73,7 +73,6 @@ public class TKTextField: UITextField, BackgroundColourThemeable, TintColourThem
         }
     }
     
-    
     private var _placeholderTextStyle:TextStyle?
     
     /// This can be set explicitly to configure the style of the placeholder text, otherwise it defaults to the textStyle property.
@@ -96,6 +95,86 @@ public class TKTextField: UITextField, BackgroundColourThemeable, TintColourThem
             }
         }
     }
+    
+    // MARK: Inspectable Properties
+    
+    public var backgroundColourStyleId:String? {
+        get {
+            return backgroundColourStyle?.rawValue
+        }
+        set {
+            if let rawValue = newValue,
+                let style = ColourStyle(rawValue: rawValue) {
+                backgroundColourStyle = style
+            } else {
+                backgroundColourStyle = nil
+            }
+        }
+    }
+    
+    public var tintColourStyleId:String? {
+        get {
+            return tintColourStyle?.rawValue
+        }
+        set {
+            if let rawValue = newValue,
+                let style = ColourStyle(rawValue: rawValue) {
+                tintColourStyle = style
+            } else {
+                tintColourStyle = nil
+            }
+        }
+    }
+
+    public var textStyleId:String? {
+        set {
+            if let idString = newValue,
+                let style = TextStyle(rawValue:idString) {
+                textStyle = style
+            }
+        }
+        get {
+            return textStyle?.rawValue
+        }
+    }
+    
+    public var textColourStyleId:String? {
+        set {
+            if let idString = newValue,
+                let style = ColourStyle(rawValue:idString) {
+                textColourStyle = style
+            }
+        }
+        get {
+            return textColourStyle?.rawValue
+        }
+    }
+
+    public var placeholderTextStyleId:String? {
+        set {
+            if let idString = newValue,
+                let style = TextStyle(rawValue:idString) {
+                textStyle = style
+            }
+        }
+        get {
+            return textStyle?.rawValue
+        }
+    }
+    
+    public var placeholderTextColourStyleId:String? {
+        set {
+            if let idString = newValue,
+                let style = ColourStyle(rawValue:idString) {
+                textColourStyle = style
+            }
+        }
+        get {
+            return textColourStyle?.rawValue
+        }
+    }
+    
+    // MARK: Text Field Methods
     
     /// can set to nil to return to set textInsets to the default value but will always return a value
     @IBInspectable public var textInsetsString:String? {
@@ -193,7 +272,7 @@ public class TKTextField: UITextField, BackgroundColourThemeable, TintColourThem
     
     override public func placeholderRectForBounds(bounds: CGRect) -> CGRect {
         
-        let superRect = super.placeholderRectForBounds(bounds)
+        // let superRect = super.placeholderRectForBounds(bounds)
         let textRect = textRectForBounds(bounds)
         
 //        print("placeholder: \(superRect) -> \(textRect)")
@@ -208,30 +287,6 @@ public class TKTextField: UITextField, BackgroundColourThemeable, TintColourThem
                 invalidateIntrinsicContentSize()
                 setNeedsLayout()
             }
-        }
-    }
-    
-    @IBInspectable public var placeholderTextStyleId:String? {
-        set {
-            if let idString = newValue,
-                let style = TextStyle(rawValue:idString) {
-                    placeholderTextStyle = style
-            }
-        }
-        get {
-            return placeholderTextStyle?.rawValue
-        }
-    }
-    
-    @IBInspectable public var placeholderTextColourStyleId:String? {
-        set {
-            if let idString = newValue,
-                let style = ColourStyle(rawValue:idString) {
-                    placeholderTextColourStyle = style
-            }
-        }
-        get {
-            return placeholderTextColourStyle?.rawValue
         }
     }
     

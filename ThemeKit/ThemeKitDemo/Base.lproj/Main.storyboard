@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wLN-eD-t5n">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wLN-eD-t5n">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
@@ -22,10 +22,10 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2nJ-bF-Ohu">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LQh-Z3-JPf">
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LQh-Z3-JPf">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="532"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Display4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGv-nQ-TuS" customClass="ThemeLabel" customModule="ThemeKitDemo" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Display4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGv-nQ-TuS" customClass="ThemeLabel" customModule="ThemeKitDemo" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="16" width="584" height="133"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -35,7 +35,7 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="textStyleId" value="Display4"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Display3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qa5-ig-LSH" customClass="ThemeLabel" customModule="ThemeKitDemo" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Display3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qa5-ig-LSH" customClass="ThemeLabel" customModule="ThemeKitDemo" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="157" width="584" height="66"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -45,7 +45,7 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="textStyleId" value="Display3"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Display2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zeZ-W8-VMa" customClass="ThemeLabel" customModule="ThemeKitDemo" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Display2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zeZ-W8-VMa" customClass="ThemeLabel" customModule="ThemeKitDemo" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="231" width="584" height="53"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -55,7 +55,7 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="textStyleId" value="Display2"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Display1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="moW-vi-xMJ" customClass="ThemeLabel" customModule="ThemeKitDemo" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Display1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="moW-vi-xMJ" customClass="ThemeLabel" customModule="ThemeKitDemo" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="292" width="584" height="40"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -65,7 +65,7 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="textStyleId" value="Display1"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Headline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iA7-aL-Gxe" customClass="ThemeLabel" customModule="ThemeKitDemo" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Headline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iA7-aL-Gxe" customClass="ThemeLabel" customModule="ThemeKitDemo" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="340" width="584" height="28"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -75,7 +75,7 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="textStyleId" value="Headline"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eV2-M3-dgJ" customClass="ThemeLabel" customModule="ThemeKitDemo" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eV2-M3-dgJ" customClass="ThemeLabel" customModule="ThemeKitDemo" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="376" width="584" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -85,7 +85,7 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="textStyleId" value="Title"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SubHeadline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1M-Nb-wwM" customClass="ThemeLabel" customModule="ThemeKitDemo" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="SubHeadline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1M-Nb-wwM" customClass="ThemeLabel" customModule="ThemeKitDemo" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="408" width="584" height="19"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -95,7 +95,7 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="textStyleId" value="SubHeadline"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Body1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYf-Nl-KWC" customClass="ThemeLabel" customModule="ThemeKitDemo" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Body1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYf-Nl-KWC" customClass="ThemeLabel" customModule="ThemeKitDemo" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="435" width="584" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -105,7 +105,7 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="textStyleId" value="Body1"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Body2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N7d-Ij-XD8" customClass="ThemeLabel" customModule="ThemeKitDemo" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Body2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N7d-Ij-XD8" customClass="ThemeLabel" customModule="ThemeKitDemo" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="460" width="584" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -115,7 +115,7 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="textStyleId" value="Body2"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AOd-71-y6R" customClass="ThemeLabel" customModule="ThemeKitDemo" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AOd-71-y6R" customClass="ThemeLabel" customModule="ThemeKitDemo" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="510" width="584" height="14"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -125,7 +125,7 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="textStyleId" value="Caption"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Button" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ud4-IN-FMt" customClass="ThemeLabel" customModule="ThemeKitDemo" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Button" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ud4-IN-FMt" customClass="ThemeLabel" customModule="ThemeKitDemo" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="485" width="584" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -192,7 +192,12 @@
                             <constraint firstItem="LQh-Z3-JPf" firstAttribute="width" secondItem="vCx-fA-o5f" secondAttribute="width" id="zgy-Rh-EeF"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Text Styles" id="EIi-Ia-Cmg"/>
+                    <tabBarItem key="tabBarItem" title="Text Styles" id="EIi-Ia-Cmg" customClass="ThemeTabBarItem" customModule="ThemeKitDemo" customModuleProvider="target">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="textStyleId" value="Body2"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="textColourStyleId" value="Text"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x95-iZ-lZs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -234,26 +239,41 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="onTintColourId" value="Accent"/>
                                 </userDefinedRuntimeAttributes>
                             </switch>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lap-Cv-xpl" customClass="ThemeView" customModule="ThemeKitDemo" customModuleProvider="target">
+                                <rect key="frame" x="20" y="151" width="560" height="64"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="AHA-ya-aZj"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="lap-Cv-xpl" secondAttribute="trailing" id="3at-2D-c5d"/>
                             <constraint firstItem="0bd-RZ-jEN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5Yc-9F-Ywj"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3oX-PY-aNZ" secondAttribute="trailing" id="7Ij-av-edS"/>
                             <constraint firstItem="3oX-PY-aNZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="J1u-eB-nTD"/>
                             <constraint firstItem="Mla-uZ-yCH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="VuV-Re-xN8"/>
+                            <constraint firstItem="lap-Cv-xpl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="WSl-t1-mhS"/>
                             <constraint firstItem="0bd-RZ-jEN" firstAttribute="top" secondItem="3oX-PY-aNZ" secondAttribute="bottom" constant="8" id="Wjg-6B-s95"/>
                             <constraint firstItem="3oX-PY-aNZ" firstAttribute="top" secondItem="Mla-uZ-yCH" secondAttribute="bottom" constant="8" id="YKF-vD-3b8"/>
+                            <constraint firstItem="lap-Cv-xpl" firstAttribute="top" secondItem="0bd-RZ-jEN" secondAttribute="bottom" constant="8" id="hFC-5F-bj5"/>
                             <constraint firstItem="Mla-uZ-yCH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="jAQ-vs-Kad"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Mla-uZ-yCH" secondAttribute="trailing" id="mqq-M4-bwJ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Controls" image="ic_check_circle" id="RZn-qg-9Af"/>
+                    <tabBarItem key="tabBarItem" title="Controls" image="ic_check_circle" id="RZn-qg-9Af" customClass="ThemeTabBarItem" customModule="ThemeKitDemo" customModuleProvider="target">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="textStyleId" value="Caption"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="textColourStyleId" value="SecondaryText"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1081" y="-7"/>
         </scene>
-        <!--View Controller-->
+        <!--Text VC-->
         <scene sceneID="4zv-7B-gbK">
             <objects>
                 <viewController id="PyO-UL-U9O" customClass="ViewController" customModule="ThemeKitDemo" customModuleProvider="target" sceneMemberID="viewController">
@@ -265,7 +285,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hMu-fW-Q1C" customClass="ThemeLabel" customModule="ThemeKitDemo" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hMu-fW-Q1C" customClass="ThemeLabel" customModule="ThemeKitDemo" customModuleProvider="target">
                                 <rect key="frame" x="20" y="211" width="560" height="28"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -275,7 +295,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="textColourStyleId" value="Accent"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ytD-cY-lbf" customClass="ThemeLabel" customModule="ThemeKitDemo" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ytD-cY-lbf" customClass="ThemeLabel" customModule="ThemeKitDemo" customModuleProvider="target">
                                 <rect key="frame" x="20" y="247" width="560" height="19"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -304,7 +324,7 @@
                                 <rect key="frame" x="0.0" y="116" width="600" height="75"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Headline Text Field" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="liv-ZG-Ssg" customClass="ThemeTextField" customModule="ThemeKitDemo" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Headline Text Field" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="liv-ZG-Ssg" customClass="ThemeTextField" customModule="ThemeKitDemo" customModuleProvider="target">
                                 <rect key="frame" x="20" y="274" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -317,7 +337,7 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Some Placeholder" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xLQ-wb-DI9" customClass="ThemeTextField" customModule="ThemeKitDemo" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Some Placeholder" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xLQ-wb-DI9" customClass="ThemeTextField" customModule="ThemeKitDemo" customModuleProvider="target">
                                 <rect key="frame" x="20" y="312" width="560" height="64"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -327,7 +347,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="textInsetsString" value="{12,12,12,12}"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FS3-eK-rRk" customClass="ThemeTextView" customModule="ThemeKitDemo" customModuleProvider="target">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FS3-eK-rRk" customClass="ThemeTextView" customModule="ThemeKitDemo" customModuleProvider="target">
                                 <rect key="frame" x="20" y="384" width="560" height="115"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -376,10 +396,19 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="Lxw-gl-jaL">
+                    <navigationItem key="navigationItem" title="Text VC" id="Lxw-gl-jaL">
                         <rightBarButtonItems>
-                            <barButtonItem title="Item" id="5Dp-VF-AbZ"/>
-                            <barButtonItem title="Item" id="KAg-gH-w3h"/>
+                            <barButtonItem title="Item" id="5Dp-VF-AbZ" customClass="ThemeBarButtonItem" customModule="ThemeKitDemo" customModuleProvider="target">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="textStyleId" value="Body2"/>
+                                </userDefinedRuntimeAttributes>
+                            </barButtonItem>
+                            <barButtonItem title="Item" id="KAg-gH-w3h" customClass="ThemeBarButtonItem" customModule="ThemeKitDemo" customModuleProvider="target">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="textStyleId" value="Caption"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="textColourStyleId" value="SecondaryText"/>
+                                </userDefinedRuntimeAttributes>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                 </viewController>
@@ -393,11 +422,15 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="wLN-eD-t5n" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="9ir-Iw-Alm">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="9ir-Iw-Alm" customClass="ThemeTabBar" customModule="ThemeKitDemo" customModuleProvider="target">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="tintColourStyleId" value="Main"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="barTintColourStyleId" value="Accent"/>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="0gp-rE-2ZB" kind="relationship" relationship="viewControllers" id="sr3-0o-M1E"/>
@@ -413,13 +446,20 @@
         <scene sceneID="gvJ-51-DmH">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ahb-jP-Hij" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Text" image="ic_check_circle" id="Cqt-RM-qEx"/>
+                    <tabBarItem key="tabBarItem" title="Text" image="ic_check_circle" id="Cqt-RM-qEx" customClass="ThemeTabBarItem" customModule="ThemeKitDemo" customModuleProvider="target">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="textStyleId" value="Caption"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="k1j-Xe-qjb" customClass="ThemeNavigationBar" customModule="ThemeKitDemo" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="barTintColourStyleId" value="Main"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="tintColourStyleId" value="Accent"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="textStyleId" value="Title"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="textColourStyleId" value="Text"/>
                         </userDefinedRuntimeAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
