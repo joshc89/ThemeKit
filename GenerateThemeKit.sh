@@ -13,21 +13,22 @@ declare -a ALWAYS_LICENSED=(
 "com.apple.InterfaceBuilder.IBCocoaTouchPlugin.IBCocoaTouchTool"
 )
 
-ID="My-Hiscox"
-
-# PocketSEO
-#declare -a LICENSED_IDS=(
-#"io.pocketseo"
-#"io.pocketseo.URLMetricsExtension"
-#"io.pocketseoTests"
-#"io.pocketseoUITests"
-#)
+ID="PSEO"
 
 declare -a LICENSED_IDS=(
-"uk.co.thedistance.My-Hiscox"
-"uk.co.thedistance.My-HiscoxTests"
-"uk.co.thedistance.My-HiscoxUITests"
+"io.pocketseo"
+"io.pocketseo.URLMetricsExtension"
+"io.pocketseoTests"
+"io.pocketseoUITests"
 )
+
+#ID="My-Hiscox"
+#
+#declare -a LICENSED_IDS=(
+#"uk.co.thedistance.My-Hiscox"
+#"uk.co.thedistance.My-HiscoxTests"
+#"uk.co.thedistance.My-HiscoxUITests"
+#)
 
 ALL_LICENSED=("${ALWAYS_LICENSED[@]}" "${LICENSED_IDS[@]}")
 
@@ -36,8 +37,11 @@ ALL_LICENSED=("${ALWAYS_LICENSED[@]}" "${LICENSED_IDS[@]}")
 git checkout master
 
 LATEST_TAG=$(git describe --abbrev=0)
+NEW_TAG= "${LATEST_TAG}.1"
+NEW_BRANCH="Compiled-${ID}"
 
-git branch 'Compiled-${ID}'
+git branch "${NEW_BRANCH}"
+git checkout "${NEW_BRANCH}"
 
 ## Create the swift file used to compile the framework with
 LICENSE_SWIFT="let licensedIdentifiers = [\n"
@@ -52,13 +56,14 @@ echo "$LICENSE_SWIFT" > 'ThemeKit/ThemeKit/Support Files/LicenseIDs.swift'
 
 ## Compile Xcode project to allow carthage to create the .framework
 
-git commit -m 'Updated License IDs for project ${ID}'
-git tag "${LATEST_TAG}.1"
+git add .
+git commit -m "Updated License IDs for project ${ID}"
+git tag "${NEW_TAG}"
 
-## make carthage use the local git file to compile the .framework with so the new branch doesn't have to be pushed
+## make carthage use the local git file to compile the .framework so the new branch doesn't have to be pushed
 
 WD=$(pwd)
-echo 'ThemeKitCore "file://${WD}"'
+echo "git \"file://${WD}\"" > 'cartfile'
 carthage update
 
 ## Create the complete framework
@@ -69,7 +74,7 @@ mkdir -p "${COMPILED_PATH}/Build/iOS"
 
 ## Copy the Archived files...
 
-cp -r 'Carthage/Build/iOS/ThemeKitCore.framework' "${COMPILED_PATH}/Build/iOS"
+cp -r 'Carthage/Build/iOS/ThemeKitCore.framework' "${COMPILED_PATH}/Compiled/iOS"
 
 for f in Carthage/Build/iOS/*.bcsymbolmap
 do
@@ -92,4 +97,8 @@ LICENSED_BUNDLE_ID_TEXT+="\n* $i"
 done
 echo $LICENSED_BUNDLE_ID_TEXT > $COMPILED_PATH/LicensedBundleIDs.txt
 
+## clean up the temporary git features
 
+git tag -d "${NEW_TAG}"
+git checkout master
+git branch -d "${NEW_BRANCH}"

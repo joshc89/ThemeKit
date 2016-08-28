@@ -11,7 +11,7 @@ import UIKit
 @IBDesignable
 public class TKSwitch:UISwitch, Themeable, ThumbTintColourThemeable, Checking {
     
-    let checker = _Checker()
+    // let checker = _Checker()
     
     // - initWithFrame(_:) support
     public var createdFromNib:Bool = false
@@ -49,8 +49,6 @@ public class TKSwitch:UISwitch, Themeable, ThumbTintColourThemeable, Checking {
         }
     }
     
-    // MARK: Custom Theme Properties
-    
     public var onTintColourStyle:ColourStyle?  {
         didSet {
             if oldValue != onTintColourStyle {
@@ -58,6 +56,35 @@ public class TKSwitch:UISwitch, Themeable, ThumbTintColourThemeable, Checking {
             }
         }
     }
+    
+    // MARK: Inspectable Properties
+    
+    public var thumbTintColourStyleId:String? {
+        set {
+            if let idString = newValue,
+                let style = ColourStyle(rawValue: idString) {
+                thumbTintColourStyle = style
+            }
+        }
+        get {
+            return thumbTintColourStyle?.rawValue
+        }
+    }
+    
+    public var onTintColourId:String? {
+        set {
+            if let idString = newValue,
+                let style = ColourStyle(rawValue: idString) {
+                onTintColourStyle = style
+            }
+        }
+        get {
+            return onTintColourStyle?.rawValue
+        }
+    }
+
+    
+    // MARK: Theme Functions
     
     public func applyTheme(theme: Theme) {
         

@@ -188,3 +188,6 @@ Compiled/**/*
 
 ## Don't commit the built products created by Carthage
 Carthage/**/*
+
+## Don't commit the resolved cartfile so the framework is rebuilt each time
+Cartfile.resolved

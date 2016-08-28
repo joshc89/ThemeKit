@@ -10,7 +10,7 @@ import UIKit
 
 public class TKToolbar: UIToolbar, BarThemeable, Checking {
     
-    let checker = _Checker()
+    // let checker = _Checker()
     
     // - initWithFrame(_:) support
     public var createdFromNib:Bool = false
@@ -51,6 +51,36 @@ public class TKToolbar: UIToolbar, BarThemeable, Checking {
             checkAndUpdateColourStyle(oldValue, barTintColourStyle)
         }
     }
+    
+    // MARK: Inspectable Properties
+    
+    public var tintColourStyleId:String? {
+        get {
+            return tintColourStyle?.rawValue
+        }
+        set {
+            if let rawValue = newValue,
+                let style = ColourStyle(rawValue: rawValue) {
+                tintColourStyle = style
+            } else {
+                tintColourStyle = nil
+            }
+        }
+    }
+    
+    public var barTintColourStyleId:String? {
+        set {
+            if let idString = newValue,
+                let style = ColourStyle(rawValue:idString) {
+                barTintColourStyle = style
+            }
+        }
+        get {
+            return barTintColourStyle?.rawValue
+        }
+    }
+
+    // MARK: Theme Functions
     
     public func applyTheme(theme:Theme) {
         

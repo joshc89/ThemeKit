@@ -9,9 +9,9 @@
 import UIKit
 
 @IBDesignable
-public class TKTabBarItem: UITabBarItem, FontThemeable, TextColourThemeable, Checking {
+public class TKTabBarItem: UITabBarItem, TextThemeable, Checking {
     
-    let checker = _Checker()
+    // let checker = _Checker()
     
     // - initWithFrame(_:) support
     public var createdFromNib:Bool = false
@@ -49,4 +49,31 @@ public class TKTabBarItem: UITabBarItem, FontThemeable, TextColourThemeable, Che
             checkAndUpdateColourStyle(oldValue, textColourStyle)
         }
     }
+    
+    // MARK: Inspectable Properties
+    
+    public var textStyleId:String? {
+        set {
+            if let idString = newValue,
+                let style = TextStyle(rawValue:idString) {
+                textStyle = style
+            }
+        }
+        get {
+            return textStyle?.rawValue
+        }
+    }
+    
+    public var textColourStyleId:String? {
+        set {
+            if let idString = newValue,
+                let style = ColourStyle(rawValue:idString) {
+                textColourStyle = style
+            }
+        }
+        get {
+            return textColourStyle?.rawValue
+        }
+    }
+
 }

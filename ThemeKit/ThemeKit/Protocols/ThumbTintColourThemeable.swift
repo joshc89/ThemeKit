@@ -21,6 +21,8 @@ public protocol ThumbTintColourThemeable: Themeable {
     
     var thumbTintColourStyle:ColourStyle? { get set }
     
+    var thumbTintColourStyleId:String? { get set }
+    
     func applyThumbTintTheme(theme:Theme)
     
 }
@@ -32,10 +34,4 @@ public extension ThumbTintColourThemeable where Self: ThumbTint {
             thumbTintColor = theme.colour(style)
         }
     }
-}
-
-public protocol ThumbTintColourInspectable: ThumbTintColourThemeable {
-
-    var thumbTintColourStyleId:String? { get set }
-    
 }

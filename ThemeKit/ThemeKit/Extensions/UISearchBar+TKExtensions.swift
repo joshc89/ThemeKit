@@ -10,6 +10,13 @@ import UIKit
 
 extension UISearchBar {
     
+    
+    /**
+     
+     Safe convenience function for accessing the `UITextField` contained in a `UISearchBar`.
+     
+     - returns: The `UITextField` backing this `UISearchBar` or `nil` if none is found.
+    */
     func containedTextField() -> UITextField? {
         
         var textField:UITextField?

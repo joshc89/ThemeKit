@@ -12,6 +12,8 @@ public protocol TintColourThemeable: Themeable {
     
     var tintColourStyle:ColourStyle? { get set }
     
+    var tintColourStyleId:String? { get set }
+    
     func applyTintTheme(theme:Theme)
 }
 
@@ -24,8 +26,3 @@ public extension TintColourThemeable where Self:UIView {
     }
 }
 
-public protocol TintColourInspectable: TintColourThemeable {
-    
-    var tintColourStyleId:String? { get set }
-    
-}
