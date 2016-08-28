@@ -8,9 +8,9 @@
 
 import UIKit
 
-public class TKToolbar: UIToolbar, BarThemeable, Checking {
+public class TKToolbar: UIToolbar, BarThemeable {
     
-    // let checker = _Checker()
+     
     
     // - initWithFrame(_:) support
     public var createdFromNib:Bool = false

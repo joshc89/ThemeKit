@@ -8,9 +8,9 @@
 
 import UIKit
 
-public class TKSlider: UISlider, ThumbTintColourThemeable, Checking {
+public class TKSlider: UISlider, ThumbTintColourThemeable {
     
-    // let checker = _Checker()
+     
     
     // - initWithFrame(_:) support
     public var createdFromNib:Bool = false

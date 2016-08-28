@@ -9,9 +9,9 @@
 import UIKit
 
 @IBDesignable
-public class TKSegmentedControl: UISegmentedControl, BackgroundColourThemeable, TintColourThemeable, TextThemeable, Checking {
+public class TKSegmentedControl: UISegmentedControl, BackgroundColourThemeable, TintColourThemeable, TextThemeable {
     
-    // let checker = _Checker()
+     
     
     // - initWithFrame(_:) support
     public var createdFromNib:Bool = false

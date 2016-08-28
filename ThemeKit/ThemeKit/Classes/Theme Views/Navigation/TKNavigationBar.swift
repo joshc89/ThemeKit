@@ -8,9 +8,9 @@
 
 import UIKit
 
-public class TKNavigationBar: UINavigationBar, BarThemeable, TextThemeable, Checking {
+public class TKNavigationBar: UINavigationBar, BarThemeable, TextThemeable {
     
-    // let checker = _Checker()
+     
     
     // - initWithFrame(_:) support
     public var createdFromNib:Bool = false

@@ -11,9 +11,6 @@ import ThemeKitCore
 
 // Define your app specific theme
 
-/// License Key for you app's bundle ID. Use "Simulator" for a trial that allows the framework to run on Simulator.
-let ThemeKitLicense =  "AEsLR3FVdiRa5qHzrD1sEXXHvrQ=" // "Simulator"
-
 struct MyTheme: Theme {
     
     /// Light weight San Fransico font for use on iOS 9+
@@ -111,7 +108,6 @@ extension TKThemeVendor {
     override public class func initialize() {
         
         if self == TKThemeVendor.self {
-            ThemeKit.setLicenseKey(ThemeKitLicense)
             assert(MyVendor.shared().defaultTheme != nil)
         }
         

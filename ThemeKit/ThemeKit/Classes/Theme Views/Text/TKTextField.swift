@@ -11,9 +11,9 @@ import UIKit
 let TKDefaultInsets = UIEdgeInsetsMake(2.0, 7.0, 2.0, 7.0)
 
 @IBDesignable
-public class TKTextField: UITextField, BackgroundColourThemeable, TintColourThemeable, TextThemeable, Checking {
+public class TKTextField: UITextField, BackgroundColourThemeable, TintColourThemeable, TextThemeable {
     
-    // let checker = _Checker()
+     
     
     // - initWithFrame(_:) support
     public var createdFromNib:Bool = false
@@ -272,7 +272,7 @@ public class TKTextField: UITextField, BackgroundColourThemeable, TintColourThem
     
     override public func placeholderRectForBounds(bounds: CGRect) -> CGRect {
         
-        let superRect = super.placeholderRectForBounds(bounds)
+        // let superRect = super.placeholderRectForBounds(bounds)
         let textRect = textRectForBounds(bounds)
         
 //        print("placeholder: \(superRect) -> \(textRect)")

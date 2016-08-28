@@ -8,9 +8,9 @@
 
 import UIKit
 
-public class TKStepper: UIStepper, BackgroundColourThemeable, TintColourThemeable, Checking {
+public class TKStepper: UIStepper, BackgroundColourThemeable, TintColourThemeable {
     
-    // let checker = _Checker()
+     
     
     // - initWithFrame(_:) support
     public var createdFromNib:Bool = false

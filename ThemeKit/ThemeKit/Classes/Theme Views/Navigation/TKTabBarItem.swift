@@ -9,9 +9,9 @@
 import UIKit
 
 @IBDesignable
-public class TKTabBarItem: UITabBarItem, TextThemeable, Checking {
+public class TKTabBarItem: UITabBarItem, TextThemeable {
     
-    // let checker = _Checker()
+     
     
     // - initWithFrame(_:) support
     public var createdFromNib:Bool = false

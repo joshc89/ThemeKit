@@ -8,9 +8,9 @@
 
 import UIKit
 
-public class TKView: UIView, BackgroundColourThemeable, TintColourThemeable, Checking {
+public class TKView: UIView, BackgroundColourThemeable, TintColourThemeable {
     
-    // let checker = _Checker()
+     
     
     // - initWithFrame(_:) support
     public var createdFromNib:Bool = false

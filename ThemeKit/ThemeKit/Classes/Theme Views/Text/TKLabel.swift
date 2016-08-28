@@ -8,9 +8,9 @@
 
 import UIKit
 
-public class TKLabel: UILabel, BackgroundColourThemeable, TintColourThemeable, TextThemeable, Checking {
+public class TKLabel: UILabel, BackgroundColourThemeable, TintColourThemeable, TextThemeable {
     
-    // let checker = _Checker()
+     
     
     // - initWithFrame(_:) support
     public var createdFromNib:Bool = false

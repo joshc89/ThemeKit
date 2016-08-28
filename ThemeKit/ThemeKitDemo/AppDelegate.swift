@@ -17,11 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, willFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
         
-        ThemeKit.setLicenseKey(ThemeKitLicense)
+        // Initialise your shared vendor first so it is used by the framework
         let _ = MyVendor.shared()
         
         // Override point for customization after application launch.
-        // ThemeView.appearance().backgroundColourStyleId = "Accent"
         
         return true
     }

@@ -12,15 +12,6 @@
 		A5105AF41CC6024600ED38CB /* Encryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5105AF21CC21F6200ED38CB /* Encryption.swift */; };
 		A5105AF91CC603E500ED38CB /* HMAC.h in Headers */ = {isa = PBXBuildFile; fileRef = A5105AF71CC603E500ED38CB /* HMAC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A5105AFA1CC603E500ED38CB /* HMAC.m in Sources */ = {isa = PBXBuildFile; fileRef = A5105AF81CC603E500ED38CB /* HMAC.m */; };
-		A5105B021CC6C12D00ED38CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5105B011CC6C12D00ED38CB /* AppDelegate.swift */; };
-		A5105B041CC6C12D00ED38CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5105B031CC6C12D00ED38CB /* ViewController.swift */; };
-		A5105B071CC6C12D00ED38CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5105B051CC6C12D00ED38CB /* Main.storyboard */; };
-		A5105B091CC6C12D00ED38CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5105B081CC6C12D00ED38CB /* Assets.xcassets */; };
-		A5105B0C1CC6C12D00ED38CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5105B0A1CC6C12D00ED38CB /* LaunchScreen.storyboard */; };
-		A5105B111CC6C1E000ED38CB /* Encryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5105AF21CC21F6200ED38CB /* Encryption.swift */; };
-		A5105B121CC6C1F100ED38CB /* HMAC.m in Sources */ = {isa = PBXBuildFile; fileRef = A5105AF81CC603E500ED38CB /* HMAC.m */; };
-		A5105B171CC6C25300ED38CB /* HMAC.h in Headers */ = {isa = PBXBuildFile; fileRef = A5105AF71CC603E500ED38CB /* HMAC.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		A5105B191CC6C27000ED38CB /* Bridging.h in Headers */ = {isa = PBXBuildFile; fileRef = A5105B181CC6C26D00ED38CB /* Bridging.h */; };
 		A543191F1C5E6B1500713F3F /* TKBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A543191E1C5E6B1500713F3F /* TKBarButtonItem.swift */; };
 		A54319211C5E6CD400713F3F /* TKTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54319201C5E6CD400713F3F /* TKTabBarItem.swift */; };
 		A54319231C5F432A00713F3F /* ThemeKitCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A59A6CC51B4AB9B100F708DC /* ThemeKitCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -62,7 +53,6 @@
 		A5C8C3181C5E636F0002855B /* TKLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C8C3151C5E636F0002855B /* TKLabel.swift */; };
 		A5C8C3191C5E636F0002855B /* TKTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C8C3161C5E636F0002855B /* TKTextField.swift */; };
 		A5C8C31A1C5E636F0002855B /* TKTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C8C3171C5E636F0002855B /* TKTextView.swift */; };
-		A5C8C3211C5E638B0002855B /* LicenseChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C8C31E1C5E638B0002855B /* LicenseChecker.swift */; };
 		A5C8C3221C5E638B0002855B /* ThemeConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C8C31F1C5E638B0002855B /* ThemeConstants.swift */; };
 		A5C8C3231C5E638B0002855B /* ThemeFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C8C3201C5E638B0002855B /* ThemeFunctions.swift */; };
 		A5FF887E1C679D7C006B0985 /* IBInspectableViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF886F1C679D7C006B0985 /* IBInspectableViews.swift */; };
@@ -105,14 +95,6 @@
 		A5105AF21CC21F6200ED38CB /* Encryption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Encryption.swift; sourceTree = "<group>"; };
 		A5105AF71CC603E500ED38CB /* HMAC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMAC.h; sourceTree = "<group>"; };
 		A5105AF81CC603E500ED38CB /* HMAC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMAC.m; sourceTree = "<group>"; };
-		A5105AFF1CC6C12D00ED38CB /* ThemeKitLicenseGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThemeKitLicenseGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A5105B011CC6C12D00ED38CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A5105B031CC6C12D00ED38CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A5105B061CC6C12D00ED38CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A5105B081CC6C12D00ED38CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A5105B0B1CC6C12D00ED38CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		A5105B0D1CC6C12D00ED38CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A5105B181CC6C26D00ED38CB /* Bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridging.h; sourceTree = "<group>"; };
 		A543191E1C5E6B1500713F3F /* TKBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKBarButtonItem.swift; sourceTree = "<group>"; };
 		A54319201C5E6CD400713F3F /* TKTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKTabBarItem.swift; sourceTree = "<group>"; };
 		A54319251C61427000713F3F /* TKImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKImageView.swift; sourceTree = "<group>"; };
@@ -157,20 +139,12 @@
 		A5C8C3151C5E636F0002855B /* TKLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKLabel.swift; sourceTree = "<group>"; };
 		A5C8C3161C5E636F0002855B /* TKTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKTextField.swift; sourceTree = "<group>"; };
 		A5C8C3171C5E636F0002855B /* TKTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKTextView.swift; sourceTree = "<group>"; };
-		A5C8C31E1C5E638B0002855B /* LicenseChecker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicenseChecker.swift; sourceTree = "<group>"; };
 		A5C8C31F1C5E638B0002855B /* ThemeConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeConstants.swift; sourceTree = "<group>"; };
 		A5C8C3201C5E638B0002855B /* ThemeFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeFunctions.swift; sourceTree = "<group>"; };
 		A5FF886F1C679D7C006B0985 /* IBInspectableViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBInspectableViews.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A5105AFC1CC6C12D00ED38CB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A582E0CC1C5CC3EB000F22AB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -208,20 +182,6 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
-		A5105B001CC6C12D00ED38CB /* ThemeKitLicenseGenerator */ = {
-			isa = PBXGroup;
-			children = (
-				A5105B011CC6C12D00ED38CB /* AppDelegate.swift */,
-				A5105B031CC6C12D00ED38CB /* ViewController.swift */,
-				A5105B181CC6C26D00ED38CB /* Bridging.h */,
-				A5105B051CC6C12D00ED38CB /* Main.storyboard */,
-				A5105B081CC6C12D00ED38CB /* Assets.xcassets */,
-				A5105B0A1CC6C12D00ED38CB /* LaunchScreen.storyboard */,
-				A5105B0D1CC6C12D00ED38CB /* Info.plist */,
-			);
-			path = ThemeKitLicenseGenerator;
-			sourceTree = "<group>";
-		};
 		A582E0D01C5CC3EB000F22AB /* ThemeKitDemo */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,7 +202,6 @@
 				A582E0D01C5CC3EB000F22AB /* ThemeKitDemo */,
 				A59A6CC71B4AB9B100F708DC /* ThemeKit */,
 				A59A6CD31B4AB9B100F708DC /* ThemeKitTests */,
-				A5105B001CC6C12D00ED38CB /* ThemeKitLicenseGenerator */,
 				A59A6CC61B4AB9B100F708DC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -253,7 +212,6 @@
 				A59A6CC51B4AB9B100F708DC /* ThemeKitCore.framework */,
 				A59A6CCF1B4AB9B100F708DC /* ThemeKitTests.xctest */,
 				A582E0CF1C5CC3EB000F22AB /* ThemeKitDemo.app */,
-				A5105AFF1CC6C12D00ED38CB /* ThemeKitLicenseGenerator.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -357,7 +315,6 @@
 		A5C8C31D1C5E638B0002855B /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				A5C8C31E1C5E638B0002855B /* LicenseChecker.swift */,
 				A5105AF21CC21F6200ED38CB /* Encryption.swift */,
 				A5C8C31F1C5E638B0002855B /* ThemeConstants.swift */,
 				A54319271C6745B500713F3F /* ColourStyle.swift */,
@@ -379,15 +336,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		A5105B161CC6C24700ED38CB /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A5105B191CC6C27000ED38CB /* Bridging.h in Headers */,
-				A5105B171CC6C25300ED38CB /* HMAC.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A59A6CC21B4AB9B100F708DC /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -401,24 +349,6 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		A5105AFE1CC6C12D00ED38CB /* ThemeKitLicenseGenerator */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A5105B0E1CC6C12D00ED38CB /* Build configuration list for PBXNativeTarget "ThemeKitLicenseGenerator" */;
-			buildPhases = (
-				A5105AFB1CC6C12D00ED38CB /* Sources */,
-				A5105AFC1CC6C12D00ED38CB /* Frameworks */,
-				A5105AFD1CC6C12D00ED38CB /* Resources */,
-				A5105B161CC6C24700ED38CB /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = ThemeKitLicenseGenerator;
-			productName = ThemeKitLicenseGenerator;
-			productReference = A5105AFF1CC6C12D00ED38CB /* ThemeKitLicenseGenerator.app */;
-			productType = "com.apple.product-type.application";
-		};
 		A582E0CE1C5CC3EB000F22AB /* ThemeKitDemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A582E0E01C5CC3EB000F22AB /* Build configuration list for PBXNativeTarget "ThemeKitDemo" */;
@@ -481,12 +411,9 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Josh Campion";
 				TargetAttributes = {
-					A5105AFE1CC6C12D00ED38CB = {
-						CreatedOnToolsVersion = 7.3;
-					};
 					A582E0CE1C5CC3EB000F22AB = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = KHA7R7624Z;
@@ -516,22 +443,11 @@
 				A582E0CE1C5CC3EB000F22AB /* ThemeKitDemo */,
 				A59A6CC41B4AB9B100F708DC /* ThemeKitCore */,
 				A59A6CCE1B4AB9B100F708DC /* ThemeKitTests */,
-				A5105AFE1CC6C12D00ED38CB /* ThemeKitLicenseGenerator */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		A5105AFD1CC6C12D00ED38CB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A5105B0C1CC6C12D00ED38CB /* LaunchScreen.storyboard in Resources */,
-				A5105B091CC6C12D00ED38CB /* Assets.xcassets in Resources */,
-				A5105B071CC6C12D00ED38CB /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A582E0CD1C5CC3EB000F22AB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -559,17 +475,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A5105AFB1CC6C12D00ED38CB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A5105B111CC6C1E000ED38CB /* Encryption.swift in Sources */,
-				A5105B041CC6C12D00ED38CB /* ViewController.swift in Sources */,
-				A5105B121CC6C1F100ED38CB /* HMAC.m in Sources */,
-				A5105B021CC6C12D00ED38CB /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A582E0CB1C5CC3EB000F22AB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -617,7 +522,6 @@
 				A54319491C6762A000713F3F /* TKSlider.swift in Sources */,
 				A54319311C6752D300713F3F /* BackgroundColourThemeable.swift in Sources */,
 				A5C8C3221C5E638B0002855B /* ThemeConstants.swift in Sources */,
-				A5C8C3211C5E638B0002855B /* LicenseChecker.swift in Sources */,
 				A543191F1C5E6B1500713F3F /* TKBarButtonItem.swift in Sources */,
 				A5C8C3121C5E63330002855B /* TKThemeVendor.swift in Sources */,
 				A505D52A1B6E154E00AAD861 /* UIView+TKExtensions.swift in Sources */,
@@ -648,22 +552,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A5105B051CC6C12D00ED38CB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A5105B061CC6C12D00ED38CB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		A5105B0A1CC6C12D00ED38CB /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A5105B0B1CC6C12D00ED38CB /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 		A582E0D51C5CC3EB000F22AB /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -683,34 +571,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		A5105B0F1CC6C12D00ED38CB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ANALYZER_NONNULL = YES;
-				INFOPLIST_FILE = ThemeKitLicenseGenerator/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = uk.co.joshcampion.ThemeKitLicenseGenerator;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = ThemeKitLicenseGenerator/Bridging.h;
-			};
-			name = Debug;
-		};
-		A5105B101CC6C12D00ED38CB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ANALYZER_NONNULL = YES;
-				INFOPLIST_FILE = ThemeKitLicenseGenerator/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = uk.co.joshcampion.ThemeKitLicenseGenerator;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = ThemeKitLicenseGenerator/Bridging.h;
-			};
-			name = Release;
-		};
 		A582E0DE1C5CC3EB000F22AB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -842,7 +702,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -869,7 +728,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -913,15 +771,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A5105B0E1CC6C12D00ED38CB /* Build configuration list for PBXNativeTarget "ThemeKitLicenseGenerator" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A5105B0F1CC6C12D00ED38CB /* Debug */,
-				A5105B101CC6C12D00ED38CB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		A582E0E01C5CC3EB000F22AB /* Build configuration list for PBXNativeTarget "ThemeKitDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

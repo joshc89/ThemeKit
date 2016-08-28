@@ -9,9 +9,9 @@
 import UIKit
 
 @IBDesignable
-public class TKSwitch:UISwitch, Themeable, ThumbTintColourThemeable, Checking {
+public class TKSwitch:UISwitch, Themeable, ThumbTintColourThemeable {
     
-    // let checker = _Checker()
+     
     
     // - initWithFrame(_:) support
     public var createdFromNib:Bool = false
